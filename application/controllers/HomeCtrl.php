@@ -8,13 +8,13 @@ class HomeCtrl extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('HomeMdl');
+		$this->load->model('Home_model');
 		$this->load->helper('url_helper');
 	}
 
 	public function index()
 	{
-		$data['classes'] = $this->HomeMdl->get_classes();
+		$data['classes'] = $this->Home_model->get_classes();
 		$data['title'] = 'Hawk Fitness Classes';
 
 		$this->load->view('templates/header', $data);

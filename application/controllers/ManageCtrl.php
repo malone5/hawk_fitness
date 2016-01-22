@@ -10,7 +10,7 @@ class ManageCtrl extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('ManageMdl');
+		$this->load->model('Manage_model');
 		$this->load->helper('url_helper');
 	}
 
@@ -18,7 +18,7 @@ class ManageCtrl extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in')) {
 
-			$data['classes'] = $this->ManageMdl->get_classes();
+			$data['classes'] = $this->Manage_model->get_classes();
 			$data['title'] = 'Hawk Fitness Classes';
 
 			$this->load->view('templates/header', $data);
@@ -64,7 +64,7 @@ class ManageCtrl extends CI_Controller {
 		    }
 		    else
 		    {
-		        $this->ManageMdl->set_classes();
+		        $this->Manage_model->set_classes();
 		        $this->load->view('manage/success', $data);
 		    }
 		} 

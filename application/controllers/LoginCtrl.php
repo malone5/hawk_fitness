@@ -4,7 +4,7 @@ class LoginCtrl extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model('UserMdl', '', TRUE);
+		$this->load->model('User_model', '', TRUE);
 	}
 
 	function index() {
@@ -30,7 +30,7 @@ class LoginCtrl extends CI_Controller {
 		$username = $this->input->post('uname');
 
 		// Query the DB
-		$result = $this->UserMdl->login($username, $password);
+		$result = $this->User_model->login($username, $password);
 
 		if($result) {
 			$sess_array = array();
