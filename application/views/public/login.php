@@ -11,10 +11,13 @@
      </div>
      <div class="col-md-4"></div>
  </div>
+ 
 <?php
     echo validation_errors();
     echo form_open('login'); 
 ?>
+
+
          <table align="center">
 
              <thead>
@@ -24,7 +27,7 @@
                  <tr>
                      <td>
                          <div class="input-group">
-                             <input name="uname" type="text" size="20"  class="form-control" placeholder="Username" />
+                             <input id="username" name="uname" type="text" size="20"  class="form-control" placeholder="username" />
                              <span class="input-group-addon" style="cursor:pointer;">
                                  <span class="glyphicon glyphicon-user"></span>
                              </span>
@@ -34,7 +37,7 @@
                  <tr>
                      <td>
                          <div class="input-group">
-                             <input name="pword" type="password" size="20" class="form-control" placeholder="Password" />
+                             <input id="username" name="pword" type="password" size="20" class="form-control" placeholder="password" />
                             <span class="input-group-addon" style="cursor:pointer;">
                                 <span class="glyphicon glyphicon-asterisk"></span>
                             </span>
