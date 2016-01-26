@@ -1,33 +1,54 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
- <head>
-   <title>Login</title>
- </head>
- <body>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <div class="text-center">
-        <p>username = admin1</p>
-        <p>password = secrete</p>
-      </div>
+ <div class="row">
+     <div class="col-md-4"></div>
+     <div class="info col-md-4">
+         <span>username = admin1</span>
+     </div>
+     <div class="col-md-4"></div>
+ </div> <div class="row">
+     <div class="col-md-4"></div>
+     <div class="info col-md-4">
+         <span>password = secrete</span>
+     </div>
+     <div class="col-md-4"></div>
+ </div>
+<?php
+    echo validation_errors();
+    echo form_open('login'); 
+?>
+         <table align="center">
 
-      <?php echo validation_errors(); ?>
-      <?php echo form_open('login'); ?>
-        <div class="input-group">
-            <input name="uname" type="text" size="20" class="form-control" placeholder="Username" />
-            <span class="input-group-addon" style="cursor:pointer;">
-                <span class="glyphicon glyphicon-user"></span>
-            </span>
-        </div>
-        <div class="input-group">
-            <input name="pword" type="password" size="20" class="form-control" placeholder="Password" />
-            <span class="input-group-addon" style="cursor:pointer;">
-                <span class="glyphicon glyphicon-asterisk"></span>
-            </span>
-        </div>
-        <input class="btn" type="submit" value="Login"/>
+             <thead>
 
-      </form>
-    </div>
-  </div>
- </body>
-</html>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>
+                         <div class="input-group">
+                             <input name="uname" type="text" size="20"  class="form-control" placeholder="Username" />
+                             <span class="input-group-addon" style="cursor:pointer;">
+                                 <span class="glyphicon glyphicon-user"></span>
+                             </span>
+                         </div>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <div class="input-group">
+                             <input name="pword" type="password" size="20" class="form-control" placeholder="Password" />
+                            <span class="input-group-addon" style="cursor:pointer;">
+                                <span class="glyphicon glyphicon-asterisk"></span>
+                            </span>
+                         </div>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <div class="input-group col-md-4 ">
+                             <input class="btn btn-success" type="submit" value="Login"/>
+                         </div>
+                     </td>
+                 </tr>
+             </tbody>
+
+         </table>
+</form>
