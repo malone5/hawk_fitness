@@ -3,17 +3,31 @@
    <title>Login</title>
  </head>
  <body>
-   <h1>Login to Hawkfitness Admin</h1>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="text-center">
+        <p>username = admin1</p>
+        <p>password = secrete</p>
+      </div>
 
-   <?php echo validation_errors(); ?>
-   <?php echo form_open('login'); ?>
-     <label for="uname">Username:</label>
-     <input type="text" size="20" id="username" name="uname"/> admin1
-     <br/>
-     <label for="pword">Password:</label>
-     <input type="password" size="20" id="passowrd" name="pword"/> secrete
-     <br/>
-     <input type="submit" value="Login"/>
-   </form>
+      <?php echo validation_errors(); ?>
+      <?php echo form_open('login'); ?>
+        <div class="input-group">
+            <input name="uname" type="text" size="20" class="form-control" placeholder="Username" />
+            <span class="input-group-addon" style="cursor:pointer;">
+                <span class="glyphicon glyphicon-user"></span>
+            </span>
+        </div>
+        <div class="input-group">
+            <input name="pword" type="password" size="20" class="form-control" placeholder="Password" />
+            <span class="input-group-addon" style="cursor:pointer;">
+                <span class="glyphicon glyphicon-asterisk"></span>
+            </span>
+        </div>
+        <input class="btn" type="submit" value="Login"/>
+
+      </form>
+    </div>
+  </div>
  </body>
 </html>

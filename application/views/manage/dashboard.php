@@ -1,24 +1,24 @@
 <div class="row text-center">
-  <h2><?php echo $title; ?> </h2>
+  <h2><?php echo $title; ?>  <a href="<?php echo site_url('manage/logout'); ?>">Logout</a> </h2>
 
-  <a href="<?php echo site_url('manage/create/'); ?>">
-     <button>Create Class</button>
+  <a class="btn btn-primary" href="<?php echo site_url('manage/create/'); ?>">
+     Create Class
   </a>
   </br>
-  <a href="<?php echo site_url('manage/classtypes'); ?>">
-     <button>Manage Class Types</button>
+  <a class="btn btn-primary" href="<?php echo site_url('manage/classtypes'); ?>">
+     Manage Class Types
   </a>
   </br>
-  <a href="<?php echo site_url('manage/profile'); ?>">
-     <button>Edit Profile</button>
+  <a class="btn btn-primary" href="<?php echo site_url('manage/profile'); ?>">
+     Edit Profile
   </a>
   </br>
-  <a href="<?php echo site_url('manage/reports'); ?>">
-     <button>Reports</button>
+  <a class="btn btn-primary" href="<?php echo site_url('manage/reports'); ?>">
+     Reports
   </a>
   </br>
-  <a href="<?php echo site_url('manage/logout'); ?>">
-     <button>Logout</button>
+  <a class="btn btn-primary" href="<?php echo site_url('manage/logout'); ?>">
+     Logout
   </a>
 
 

@@ -1,1 +1,1 @@
-reports
+<h3 class="text-center">Reports</h3>

@@ -1,1 +1,1 @@
-edit class types
+<h3 class="text-center">Manage Class Types</h3>

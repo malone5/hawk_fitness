@@ -1,1 +1,1 @@
-edit profile
+<h3 class="text-center">Edit Profile</h3>

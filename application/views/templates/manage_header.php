@@ -28,47 +28,7 @@
 
 </head>
 <body>
-	<header class="cd-main-header">
-		<a href="<?php echo site_url('/'); ?>" class="cd-logo">HawkFitness<!-- <img src="img/cd-logo.svg" alt="Logo"> --></a>
-		
-		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
-
-		<nav class="cd-nav">
-			<ul class="cd-top-nav">
-				<li><a href="#0">Manage Classes</a></li>
-			</ul>
-		</nav>
-	</header> <!-- .cd-main-header -->
-
-	<main class="cd-main-content">
-
-	<nav class="cd-side-nav"> <!-- Navigation start-->
-      <ul>
-        <li class="cd-label">Main</li>
-        <li class="has-children overview">
-          <a href="#0">Manage</a>
-        </li>
-            <li class="has-children bookmarks">
-          	<a href="#0">Reports</a>
-        </li>
 
 
-      </ul>
-
-      <ul>
-        <li class="cd-label">Secondary</li>
-
-
-        <li class="has-children users">
-          <a href="#0">Profile</a>
-          
-        </li>
-      </ul>
-
-      <ul>
-        <li class="cd-label">Action</li>
-        <li class="action-btn"><a href="#0">+ Button</a></li>
-      </ul>
-    </nav>
 
 	<!-- VIEW START -->

@@ -15,6 +15,6 @@
 	<body>
 		<div class="row">
 			<div class="jumbotron text-center">
-			  <h1><?php echo $title ?></h1>
+			  <h1><a href="<?php echo site_url('/'); ?>">HawkFitness</a></h1>
 			</div>
 		</div>

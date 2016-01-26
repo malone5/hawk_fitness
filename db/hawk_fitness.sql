@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2016 at 12:39 AM
+-- Generation Time: Jan 26, 2016 at 06:40 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hawkfitness`
+-- Database: `hawk_fitness`
 --
 
 -- --------------------------------------------------------
@@ -34,19 +34,16 @@ CREATE TABLE IF NOT EXISTS `fit_classes` (
   `location` varchar(20) NOT NULL,
   `start_time` varchar(8) NOT NULL,
   `date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `fit_classes`
 --
 
 INSERT INTO `fit_classes` (`id`, `slug`, `class_type`, `instructor`, `location`, `start_time`, `date`) VALUES
-(14, '', 'Yoga', 'Sean', 'Boylin Gym', '8:30 PM', '2015-10-14'),
-(15, '', 'Butt Buster', 'Miles Autsin', 'Boylin Gym', '9:30om', '2015-10-31'),
-(16, '', 'qwer', 'qwer', 'qwer', 'qewr', '2015-11-04'),
-(17, '', 'cas', 'cas', 'cas', 'cas', '2015-11-27'),
-(18, '', 'cas', 'cas', 'cas', 'cas', '2015-11-27'),
-(19, '', 'qwer', 'qwer', 'qwer', 'qwer', '2015-11-09');
+(20, '', 'Yoga', 'Ms. Sexy Pants', 'Boylin Gyn', '8:30pm', '2016-02-02'),
+(21, '', 'Military Workout', 'Sgt. Richard', 'The MAC', '7:00pm', '2016-01-30'),
+(22, '', 'Squats and Squats and Squates', 'Squat Master Flex', 'Boylin Gym', '5:00pm', '2016-02-01');
 
 -- --------------------------------------------------------
 
@@ -95,7 +92,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `fit_classes`
 --
 ALTER TABLE `fit_classes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `users`
 --

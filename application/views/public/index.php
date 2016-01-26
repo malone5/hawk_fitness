@@ -17,9 +17,9 @@
 
     	<h3><?php echo $class_item['class_type']; ?></h3>
     	<div class="main">
-    		<?php echo $class_item['instructor']; ?>
-        <?php echo $class_item['location']; ?>
-        <?php echo $class_item['start_time']; ?>
+    		<?php echo $class_item['instructor']; ?>,
+        <?php echo $class_item['location']; ?>,
+        <?php echo $class_item['start_time']; ?>,
         <?php echo $class_item['date']; ?>
     	</div>
 

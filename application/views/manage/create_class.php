@@ -13,15 +13,15 @@
 <!-- TEST -->
 
 
-    <div class="content-wrapper">
+    <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h2><?php echo $title; ?>  <a href="<?php echo site_url('manage/logout'); ?>">Logout</a> </h2>
 
-      <h2 class="text-center"><?php echo $title; ?></h2>
-
-      <a href="manage/logout">Logout</a>
+      
 
       <?php echo validation_errors(); ?>
 
-      <?php echo form_open('create'); //open a form in the 'create' controller ?> 
+      <?php echo form_open('manage/create'); //open a form in the 'create' controller ?> 
       
 
           <div class="input-group">
@@ -60,8 +60,9 @@
               </span>
           </div>
 
-          <input style="float: right;" class="btn" type="submit" name="submit" value="Add class" />
+          <input style="float: right;" class="btn" type="submit" name="submit" value="Add Class" />
 
+        </div>
         </div>
     </div> <!-- .content-wrapper -->
 </main> <!-- .cd-main-content -->
