@@ -2,13 +2,9 @@
 <div class="row text-center">
   <h2><?php echo $title; ?> </h2>
 
-  <a href="<?php echo site_url('login/'); ?>">
-     <button>Login To Managerial State</button>
-  </a>
+  <a class= "btn btn-success" href="<?php echo site_url('login/'); ?>">Login</a>
 
-  <a href="<?php echo site_url('manage/create/'); ?>">
-     <button>Add Classes To Scheduale</button>
-  </a>
+  <a class="btn btn-success" href="<?php echo site_url('manage/create/'); ?>">Add Class </a>
 </div>
 
 </div class="row text-center">
