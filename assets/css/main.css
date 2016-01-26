@@ -1,11 +1,8 @@
-.input-group {
-  margin: 10px;
-}
 .btn-success{
-  background-color: #78AFDF;
-  border-color: #78AFDF;
+  background-color:#3D93DC;
+  border-color:#3D93DC;
 }
 .btn-success:hover{
-  background-color:#54A1E3;
-  border-color:#54A1E3;
+  background-color:#5AADF3;
+  border-color:#5AADF3;
 }
