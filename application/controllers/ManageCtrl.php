@@ -20,7 +20,8 @@ class ManageCtrl extends CI_Controller {
 
 			$data['classes'] = $this->Manage_model->get_classes();
 			$data['title'] = 'HawkFitness Admin Dashboard';
-
+			$data['css']='manage.css';
+			
 			$this->load->view('templates/header', $data);
 			$this->load->view('manage/dashboard', $data);
 			$this->load->view('templates/footer');
