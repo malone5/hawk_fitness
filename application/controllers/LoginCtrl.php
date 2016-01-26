@@ -18,7 +18,7 @@ class LoginCtrl extends CI_Controller {
 		if($this->form_validation->run() == FALSE) {
 			// Field validation failed. Redirct.
 			$data['title'] = "Hawkfitness Admin Login";
-
+			$data['css'] = 'login.css';
 			$this->load->helper(array('form'));
 			$this->load->view('templates/header', $data);
 			$this->load->view('public/login');
