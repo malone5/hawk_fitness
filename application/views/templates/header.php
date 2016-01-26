@@ -9,7 +9,7 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
-		<link rel="stylesheet" href="../../assets/css/main.css" >
+		<link rel="stylesheet" href="<?php echo base_url('assets/css')?>/main.css" >
 
 	</head>
 	<body>
