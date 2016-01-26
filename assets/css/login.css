@@ -1,0 +1,20 @@
+.input-group {
+    margin:5px;
+    width:300px;
+}
+.btn{
+    width:300px;
+}
+.btn{
+    background-color: #DDDDDD;
+    border-color: #DDDDDD;
+    color:black;
+}
+.btn:hover{
+   background-color: #EEEEEE;
+    border-color: #EEEEEE;
+    color:black;
+}
+.info{
+    text-align: center;
+}
