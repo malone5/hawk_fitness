@@ -12,11 +12,12 @@
      <div class="col-md-4"></div>
  </div>
  
-<?php
-    echo validation_errors();
-    echo form_open('login'); 
-?>
-
+<div class="text-center" style="color:red;">
+    </br>
+    <?php
+        echo validation_errors();?>
+</div>
+ <?php echo form_open('login'); ?>
 
          <table align="center">
 
