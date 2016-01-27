@@ -18,7 +18,7 @@
 	
 	<body>
 		<div class="row">
-			<div class="jumbotron text-center">
+			<div class="jumbotron text-center"  style="box-shadow: 0px 0px 7px 0px #777;">
 			  <h1><a href="<?php echo site_url('/'); ?>">HawkFitness</a></h1>
 			</div>
 		</div>
