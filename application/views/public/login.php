@@ -28,7 +28,7 @@
                  <tr>
                      <td>
                          <div class="input-group">
-                             <input id="username" name="uname" type="text" size="20"  class="form-control" placeholder="username" />
+                             <input id="username" name="uname" type="text" size="20"  class="form-control" placeholder="username" autofocus />
                              <span class="input-group-addon" style="cursor:pointer;">
                                  <span class="glyphicon glyphicon-user"></span>
                              </span>
