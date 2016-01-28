@@ -4,18 +4,16 @@
 -
 -->
 
-
-<!--<text class="date"><?php// echo date('m/d',$class_item['date']);?></text>-->
-
-
 <div class="schedule-container">
     <div class="row">
     <?php  
+         //counter to offset first day so that everything can be centered perfectly
           $counter = 0;
+          
             //foreach loop for days array
             foreach($week as $w){
             $class_count = 0;// counter for how many classes are in each day 
-          
+                
                 if($counter<1){
                     echo'<div class = "week-schedule col-md-2 col-md-offset-1">';
                 }
@@ -48,11 +46,6 @@
 
                     $class_count++;
                 }        
-//                else{
-//                    //if class is not scheduled for particular day
-//                   $class_count++;
-//                }
-               
              }//end foreach loop for classes  
                 
                 //check if there are no scheduled classes for a partcular day
