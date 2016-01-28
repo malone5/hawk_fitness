@@ -6,3 +6,66 @@
   background-color:#5AADF3;
   border-color:#5AADF3;
 }
+.schedule-container{
+    
+    margin:auto;
+    width:65%;
+}
+
+/*
+.test, .weekschedule{
+    margin-left:auto;
+    margin-right:auto;
+}
+*/
+
+.day{
+    border-bottom: 1px solid #B5B0A4;
+    border-radius:2px;
+    background-color:#B5B0A4;
+    color:white;
+/*                border-bottom:1px solid white;*/
+}
+.day h3{
+    text-align: center;
+    font-weight: 300;
+    font-size: 20px;
+    padding-top: 5px;
+}
+.details{
+    text-align: left;
+    font-weight: 100;
+    font-size:13px;
+    background-color:#0D64B2;
+    padding-bottom: 8px;
+    padding-right:2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 25px;
+/*                font-family: 'Roboto', sans-serif;*/
+    color:White;
+}
+.location{
+
+}
+.date{
+    font-size: 14px;
+}
+.time{
+
+}
+.class-name{
+    border-top:1px solid #B5B0A4;
+}
+.info{
+    padding-left: 5px;
+}
+/*
+.class-list:nth-child(odd){
+    border-left:8px solid #669966;
+    border-right:8px solid #669966;
+}
+.class-list:nth-child(even){
+    border-left:8px solid #990033;
+    border-right:8px solid #990033;
+    
+}*/

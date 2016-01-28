@@ -16,6 +16,7 @@ class HomeCtrl extends CI_Controller {
 	{
 		$data['classes'] = $this->Home_model->get_classes();
 		$data['title'] = 'Hawk Fitness Classes';
+        $data['week'] = array('Monday','Tuesday','Wednesday','Thursday','Friday');
 		$data['css']='main.css';
 
 		$this->load->view('templates/header', $data);
