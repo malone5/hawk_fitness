@@ -1,0 +1,48 @@
+#diffBrand{
+    font-size:50px;
+    color:White;
+}
+.navbar-default{
+    background-color:#0D64B2;
+    border-color:#0D64B2;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color:White;
+}
+.navbar-default .navbar-nav>li>a {
+    color:White;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover,{
+    background-color:#0D1D41;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav.navbar-collapse.in.visible-xs>a:focus{
+    background-color:#0D1D41;
+    color:White;
+}
+
+/*
+.navbar-default .navbar-nav>li>a:focus{
+    background-color:#0D1D41;
+    color:white;
+}
+*/
+.btn.btn-login.hidden-xs{
+    background-color:green;
+    border-color:green;
+    width:110px;
+}
+.btn.btn-login.visible-xs{
+    background-color:green;
+    border-color:green;
+}
+.btn.btn-login.hidden-xs:hover{
+    background-color:#1ead44;
+    border-color:green;
+    width:110px;
+    color:white;
+}
+.btn.btn-login.visible-xs:hover{
+    background-color:1ead44;
+    border-color:green;
+    color:white;
+}

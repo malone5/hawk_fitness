@@ -1,12 +1,10 @@
-		<div class="row text-center">
-
-			<hr>
-			<em>HawkFitness&copy; 2015</em>
-
-			<!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-			<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.jss"></script> -->
-
-		</div>
+		<div class="container-fluid">
+            <div class="row text-center">
+                <hr>
+                <p>HawkFitness&copy; 2015</p>
+        
+            </div>
+        </div>
 
 	</body>
 </html>
