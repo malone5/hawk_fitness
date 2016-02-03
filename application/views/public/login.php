@@ -26,7 +26,7 @@
         <div class=" all-info">
             <section id="section1">
                 <div class="home text-center">
-                    <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> Login</span></a>
+                    <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> back to Home</span></a>
                 </div>
             </section>
 
