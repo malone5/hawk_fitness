@@ -1,23 +1,67 @@
-.input-group {
+.all-info{
+    background-color:#dcf4fa;
+    height:100%;
+}
+.form-group{
     margin:5px;
     width:300px;
 }
+
 .btn{
     width:300px;
 }
 .btn{
-    background-color: #DDDDDD;
-    border-color: #DDDDDD;
-    color:black;
+    background-color: #16367e;
+    border-color: #16367e;
+    color:White;
 }
 .btn:hover{
-   background-color: #EEEEEE;
-    border-color: #EEEEEE;
-    color:black;
+   background-color: #1d49ac;
+    border-color: #1d49ac;
+    color:white;
 }
+.home{
+    width:110px;
+}
+.home-link span{
+    background-color:#7c7c7c;
+    font-size:20px; 
+    color:white; 
+    width:92px;
+    height:25px;
+    text-decoration:none;
+    border-radius:4px;
+}
+.home-link span:hover{
+    text-decoration: none;
+    color:white;
+    background-color:#a0a0a0;
+}
+
 .info{
     text-align: center;
 }
 #section1{
-    padding-top: 100px;
+    height:auto;
+
 }
+.login-container{
+    text-align: center;
+    width:300px;
+    height:200px;
+    margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+body{
+      overflow-y:hidden;
+
+}
+@media screen and (min-width:800px){
+    body{
+      overflow-y:hidden;
+
+    }
+}
+
+

@@ -21,10 +21,9 @@ class LoginCtrl extends CI_Controller {
 			$data['title'] = "Hawkfitness Admin Login";
 			$data['extraRef'] = array(
                 '<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">',
-                '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">'
             );
-			$this->load->view('templates/header', $data);
-			$this->load->view('public/login');
+//	needs to be REMOVED		$this->load->view('templates/header', $data);
+			$this->load->view('public/login',$data);
 		} else {
 			//Go to manage area
 			redirect('manage/');

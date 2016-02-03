@@ -15,6 +15,7 @@ class HomeCtrl extends CI_Controller {
 	public function index()
 	{
 		$data['classes'] = $this->Home_model->get_classes();
+        $data['last_check']=date('m/d/y h:ia');
 		$data['title'] = 'Hawk Fitness Classes';
         $data['week'] = array('Monday','Tuesday','Wednesday','Thursday','Friday');
 		$data['extraRef']=array(
