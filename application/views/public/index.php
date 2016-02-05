@@ -13,66 +13,75 @@
             <h4>All classes are free to all students, employees and members.  No need to sign up in advance.  Just show up with a water bottle.  We have yoga mats if you need one. Fitness Center Demo Workouts also available.  Please contact jcascone@monmouth.edu</h4>
         </div>
     </div>
-</section><!--Enc Section 1-->
-
-<section id="section2">
-    <div class="container-fluid">
-        <div class ="row">
-            <?php  
-                  $counter = 0;
-                    //foreach loop for days array
-                    foreach($week as $w){
-                    $class_count = 0;// counter for how many classes are in each day 
-
-                        if($counter<1){
-                            echo'<div class = "week-schedule col-md-2 col-md-offset-1">';
-                        }
-                        else{
-                            echo '<div class = "week-schedule col-md-2">';
-                        }
-                    echo '<div class="day">
-                                <h3>'.$w.'</h3>
-                            </div>
-                            <div class="details">';
-                    //for each loop for classes begins
-                    foreach ($classes as $class_item){
-
-                        //if start date of class is equal to day of W
-                        if(date("l",strtotime($class_item['date']))==$w) {
-                            echo '<div class="class-list">';
-                            echo '<div class="class-name">
-                                    <text class="info">'.$class_item['class_type'].'</text>
-                                 </div>
-                                <div class="location">
-                                    <text class="info">'.$class_item['location'].'<text>
-                                </div>
-                                <div class="time">
-                                    <text class="info">'.$class_item['start_time'].'<text>
-                                </div>
-                                <div class="instructor">
-                                    <text class="info">'.$class_item['instructor'].'</text>
-                                </div>';
-                                echo "</div>";// div for end of class list
-
-                            $class_count++;
-                        }        
-                     }//end foreach loop for classes  
-
-                        //check if there are no scheduled classes for a partcular day
-                        if($class_count==0){
-                            echo '<p class="info"> No scheduled classes.Check back later for updates.</p>';
-                        }
-                        $class_count=0;
-                        $counter++;
-                        echo "</div>";// div for end of details
-                    echo "</div>";//div for end of day 
-                }
-            ?>
+        <div class="Logo  text-center">     
+            <div class="drop">
+                <h3>HawkFitness</h3>      
             </div>
         </div>
-</section><!--End Section 2-->
+    </div>
+
+    
+</section><!--Enc Section 1-->
 
 <section id="section3">
+    
+    <!-- Beginning of class schedule -->
+     <div class="schedule-wrapper">
+        <div class="container-fluid">
+            <div class ="row">
+                <?php  
+                      $counter = 0;
+                        //foreach loop for days array
+                        foreach($week as $w){
+                        $class_count = 0;// counter for how many classes are in each day 
+
+                            if($counter<1){
+                                echo'<div class = "week-schedule col-md-2 col-md-offset-1">';
+                            }
+                            else{
+                                echo '<div class = "week-schedule col-md-2">';
+                            }
+                        echo '<div class="day">
+                                    <h3>'.$w.'</h3>
+                                </div>
+                                <div class="details">';
+                        //for each loop for classes begins
+                        foreach ($classes as $class_item){
+
+                            //if start date of class is equal to day of W
+                            if(date("l",strtotime($class_item['date']))==$w) {
+                                echo '<div class="class-list">';
+                                echo '<div class="class-name">
+                                        <text class="info">'.$class_item['class_type'].'</text>
+                                     </div>
+                                    <div class="location">
+                                        <text class="info">'.$class_item['location'].'<text>
+                                    </div>
+                                    <div class="time">
+                                        <text class="info">'.$class_item['start_time'].'<text>
+                                    </div>
+                                    <div class="instructor">
+                                        <text class="info">'.$class_item['instructor'].'</text>
+                                    </div>';
+                                    echo "</div>";// div for end of class list
+
+                                $class_count++;
+                            }        
+                         }//end foreach loop for classes  
+
+                            //check if there are no scheduled classes for a partcular day
+                            if($class_count==0){
+                                echo '<p class="info"> No scheduled classes.Check back later for updates.</p>';
+                            }
+                            $class_count=0;
+                            $counter++;
+                            echo "</div>";// div for end of details
+                        echo "</div>";//div for end of day 
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <h3 class="text-center">All Classes Offered</h3>
