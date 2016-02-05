@@ -1,3 +1,8 @@
+#section1{
+    background-color:white;
+    height:100vh;
+
+}
 .input-group {
     margin:5px;
     width:300px;
@@ -36,17 +41,19 @@
 .info{
     text-align: center;
 }
-#section1{
-    background-color:#95C0F4;
-    height:100vh;
 
-}
 .login-container{
     padding-top: 180px;
 }
 body{
       overflow-y:hidden;
 
+}
+.web-title{
+    text-align: center;
+}
+.important-text{
+    font-size: 10px;
 }
 @media screen and (min-width:800){
     body{overflow-y:hidden;}

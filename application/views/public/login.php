@@ -25,7 +25,7 @@
 	<body>
         <section id="section1">
             <div class="home text-center">
-                <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> Login</span></a>
+                <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
             </div>
             <div class="login-container">
                 <div class="text-center" style="color:red;">
@@ -41,6 +41,9 @@
 
                              </thead>
                              <tbody>
+                                 <tr>
+                                     <td><p class="web-title">HawkFitness<span class="important-text">(admin login)</span></p></td>
+                                 </tr>
                                  <tr>
                                      <td>
                                          <div class="form-group has-feedback">
@@ -60,10 +63,15 @@
                                  </tr>
                                  <tr>
                                      <td>
-                                         <div class="input-group col-md-4 ">
+                                         <div class="input-group col-md-4">
                                              <input class="btn btn-success" type="submit" value="Login"/>
                                          </div>
                                      </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                        <a href="">Forgot Password?</a>
+                                    </td>
                                  </tr>
                              </tbody>
 
