@@ -25,7 +25,7 @@
 
     
 </section><!--Enc Section 1-->
-
+<div class="wrapper">
 <section id="section2">
     <div class="container-fluid">
          <!-- Beginning of class schedule -->
@@ -38,6 +38,7 @@
         </div>
     </div>
 </section><!--End opf Section2-->
+</div>
 
 <!--
 <section id="section3">
