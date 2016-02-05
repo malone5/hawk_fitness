@@ -3,19 +3,20 @@
     height:100vh;
 
 }
-.input-group {
-    margin:5px;
+.errors{
+    color:red;
+    text-align: center;
+    font-size: 15px;
+}
+.form-group,.btn {
     width:300px;
 }
-.btn{
-    width:300px;
-}
-.btn{
+.form-group .btn-default{
     background-color: #DDDDDD;
     border-color: #DDDDDD;
     color:black;
 }
-.btn:hover{
+.btn-defualt:hover, .btn-defualt:focus{
    background-color: #EEEEEE;
     border-color: #EEEEEE;
     color:black;
@@ -51,6 +52,7 @@ body{
 }
 .web-title{
     text-align: center;
+    font-size: 25px;
 }
 .important-text{
     font-size: 10px;

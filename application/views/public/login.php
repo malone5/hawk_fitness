@@ -29,9 +29,7 @@
             </div>
             <div class="login-container">
                 <div class="text-center" style="color:red;">
-                    
-                    <?php
-                        echo validation_errors();?>
+               
                 </div>
                  <?php echo form_open('login'); ?>
 
@@ -44,6 +42,10 @@
                                  <tr>
                                      <td><p class="web-title">HawkFitness<span class="important-text">(admin login)</span></p></td>
                                  </tr>
+                                 
+                                <?php
+                                   echo '<tr><td><div class="errors">'.validation_errors().'</div></td></tr>'; 
+                                 ?>
                                  <tr>
                                      <td>
                                          <div class="form-group has-feedback">
@@ -63,8 +65,8 @@
                                  </tr>
                                  <tr>
                                      <td>
-                                         <div class="input-group col-md-4">
-                                             <input class="btn btn-success" type="submit" value="Login"/>
+                                         <div class="form-group ">
+                                             <input class="btn btn-defualt" type="submit" value="Login"/>
                                          </div>
                                      </td>
                                  </tr>

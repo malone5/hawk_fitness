@@ -13,16 +13,13 @@ class LoginCtrl extends CI_Controller {
 		
 		//cedentials validation
 
-		$this->form_validation->set_rules('uname', 'Username', 'trim|required');
-		$this->form_validation->set_rules('pword', 'Password', 'trim|required|callback_password_check');
+		$this->form_validation->set_rules('uname', 'Username', 'trim');
+		$this->form_validation->set_rules('pword', 'Password', 'trim|callback_password_check');
 
 		if($this->form_validation->run() == FALSE) {
 			// Field validation failed. Redirct.
 			$data['title'] = "Hawkfitness Admin Login";
-			$data['extraRef'] = array(
-                '<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">',
-            );
-//	needs to be REMOVED		$this->load->view('templates/header', $data);
+			$data['extraRef'] = array('<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">');
 			$this->load->view('public/login',$data);
 		} else {
 			//Go to manage area
@@ -31,13 +28,13 @@ class LoginCtrl extends CI_Controller {
 	}
 
 	function password_check($password) {
-		//Field validation succeeses. Validata against database
+		//Field validation succeeses. Validate against database
 		$username = $this->input->post('uname');
 
 		// Query the DB
 		$result = $this->User_model->login($username, $password);
 
-		if($result) {
+		if($result ==true) {
 			$sess_array = array();
 			foreach ($result as $row) {
 
@@ -48,7 +45,7 @@ class LoginCtrl extends CI_Controller {
 			return TRUE;
 
 		} else {
-			$this->form_validation->set_message('password_check', 'Invalid username or password');
+			$this->form_validation->set_message('password_check', 'Invalid username or password.');
 			return FALSE;
 		}
 	}

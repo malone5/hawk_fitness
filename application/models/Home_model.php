@@ -7,15 +7,12 @@ class Home_model extends CI_Model {
 	}
 
 	public function get_classes($slug = FALSE)
-	{
-		if ($slug === FALSE)
-		{
-			$query = $this->db->get('fit_classes');
-			return $query->result_array();
-		}
-
-		$query = $this->db->get_where('fit_classes', array('slug' => $slug));
-		return $query->row_array();
+	{  
+        $this ->db->select('*');
+        $this ->db-> from('fit_classes');
+        $this ->db->join('class_type','fit_Classes.class_type=class_type.id');
+        $query=$this->db->get();
+        return $query->result();
 	}
 
 }
