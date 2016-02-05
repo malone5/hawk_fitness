@@ -4,7 +4,7 @@ class LoginCtrl extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model('UserMdl', '', TRUE);
+		$this->load->model('User_model', '', TRUE);
 	}
 
 	function index() {
@@ -17,7 +17,10 @@ class LoginCtrl extends CI_Controller {
 
 		if($this->form_validation->run() == FALSE) {
 			// Field validation failed. Redirct.
+			$data['title'] = "Hawkfitness Admin Login";
+			$data['css'] = 'login.css';
 			$this->load->helper(array('form'));
+			$this->load->view('templates/header', $data);
 			$this->load->view('public/login');
 		} else {
 			//Go to manage area
@@ -30,7 +33,7 @@ class LoginCtrl extends CI_Controller {
 		$username = $this->input->post('uname');
 
 		// Query the DB
-		$result = $this->UserMdl->login($username, $password);
+		$result = $this->User_model->login($username, $password);
 
 		if($result) {
 			$sess_array = array();
@@ -43,7 +46,7 @@ class LoginCtrl extends CI_Controller {
 			return TRUE;
 
 		} else {
-			$this->form_validation->set_message('check_database', 'Invalid username or password');
+			$this->form_validation->set_message('password_check', 'Invalid username or password');
 			return FALSE;
 		}
 	}
