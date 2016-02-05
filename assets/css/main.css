@@ -1,20 +1,31 @@
 
 #section1{
+
     position:relative;
-    padding-top: 260px;
-    background-color:#f1f1f1;
+ 
+/*    background-color:#;*/
     color:#0d1d41;
     padding-bottom:40px;
     height:500px;
+ background-color: rgba(255,255,255,0.5);
+
+}
+.dummy{
+      background: url("../images/mac.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size:cover;
+  background-size:cover;
+    opacity:.4;
+    height:500px;
+    background-color: rgba(255,255,255,0.5);
 }
 #section1 h4{
   margin-left:250px;
   margin-right:250px;
 }
-.section2{
-    padding-top:150px;
-    background-color:#B5B0A4;
-    padding-bottom:20px;
+#section2{
+    padding-top: 20px;
 }
 #section3{
     background-color:#C7D6E9;
@@ -41,7 +52,7 @@
     margin-right:10px;
 }
 .Logo{
-
+    opacity: 1;
     position:absolute;
     bottom:-25px;
     width: 100%;
@@ -132,10 +143,6 @@
     }
     .day h3{
         font-size:40px;
-    }
-    
-    #section1{
-        padding-top: 170px;
     }
     #section2{
         height:auto;
