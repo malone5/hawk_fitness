@@ -15,7 +15,7 @@
         <!--Custom or extra css or js references-->
         
 		<?php 
-            if (isset($extraRef) and !empty($extra)){
+            if (isset($extraRef)){
 			foreach($extraRef as $link){
                 echo $link;
             }
@@ -23,27 +23,29 @@
 	</head>
 	
 	<body>
-        <div class=" all-info">
-            <section id="section1">
-                <div class="home text-center">
-                    <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> back to Home</span></a>
-                </div>
-            </section>
-
+        <section id="section1">
+            <div class="home text-center">
+                <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
+            </div>
             <div class="login-container">
-                <h3 style="color:#0d1d41;">Admin Login</h3>
-                <div style="color:red;">
-
-                    <?php
-                        echo validation_errors();?>
+                <div class="text-center" style="color:red;">
+               
                 </div>
-                 <form action="login" method="post">
+                 <?php echo form_open('login'); ?>
+
                          <table align="center">
 
                              <thead>
 
                              </thead>
                              <tbody>
+                                 <tr>
+                                     <td><p class="web-title">HawkFitness<span class="important-text">(admin login)</span></p></td>
+                                 </tr>
+                                 
+                                <?php
+                                   echo '<tr><td><div class="errors">'.validation_errors().'</div></td></tr>'; 
+                                 ?>
                                  <tr>
                                      <td>
                                          <div class="form-group has-feedback">
@@ -64,15 +66,19 @@
                                  <tr>
                                      <td>
                                          <div class="form-group ">
-                                             <input class="btn " type="submit" value="Login"/>
+                                             <input class="btn btn-defualt" type="submit" value="Login"/>
                                          </div>
                                      </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                        <a href="">Forgot Password?</a>
+                                    </td>
                                  </tr>
                              </tbody>
 
                          </table>
                 </form>
             </div>
-        </div>
-    </body>
-</html>
+        </section>
+</body>

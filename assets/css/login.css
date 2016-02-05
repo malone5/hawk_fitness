@@ -1,24 +1,25 @@
-.all-info{
-    background-color:#dcf4fa;
-    height:100%;
-}
-.form-group{
-    margin:5px;
-    width:300px;
-}
+#section1{
+    background-color:white;
+    height:100vh;
 
-.btn{
+}
+.errors{
+    color:red;
+    text-align: center;
+    font-size: 15px;
+}
+.form-group,.btn {
     width:300px;
 }
-.btn{
-    background-color: #16367e;
-    border-color: #16367e;
-    color:White;
+.form-group .btn-default{
+    background-color: #DDDDDD;
+    border-color: #DDDDDD;
+    color:black;
 }
-.btn:hover{
-   background-color: #1d49ac;
-    border-color: #1d49ac;
-    color:white;
+.btn-defualt:hover, .btn-defualt:focus{
+   background-color: #EEEEEE;
+    border-color: #EEEEEE;
+    color:black;
 }
 .home{
     width:110px;
@@ -41,27 +42,21 @@
 .info{
     text-align: center;
 }
-#section1{
-    height:auto;
 
-}
 .login-container{
-    text-align: center;
-    width:300px;
-    height:200px;
-    margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+    padding-top: 180px;
 }
 body{
       overflow-y:hidden;
 
 }
-@media screen and (min-width:800px){
-    body{
-      overflow-y:hidden;
-
-    }
+.web-title{
+    text-align: center;
+    font-size: 25px;
 }
-
-
+.important-text{
+    font-size: 10px;
+}
+@media screen and (min-width:800){
+    body{overflow-y:hidden;}
+}

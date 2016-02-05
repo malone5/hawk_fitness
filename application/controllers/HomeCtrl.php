@@ -20,8 +20,8 @@ class HomeCtrl extends CI_Controller {
         $data['week'] = array('Monday','Tuesday','Wednesday','Thursday','Friday');
 		$data['extraRef']=array(
                 '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">',
-                '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">'
-                
+                '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
+                '<script src="'.base_url('assets/js/grabSchedule.js').'"></script>'
         );
 
 		$this->load->view('templates/header', $data);
@@ -29,9 +29,10 @@ class HomeCtrl extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
     
-    public function logins()
+    public function getSchedule()
     {
-        
+        $users = $this->Home_model->get_classes();
+        echo json_encode($users);
     }
 
 }
