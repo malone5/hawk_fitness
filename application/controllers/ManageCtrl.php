@@ -21,9 +21,9 @@ class ManageCtrl extends CI_Controller {
 			$data['classes'] = $this->Manage_model->get_classes();
 			$data['title'] = 'HawkFitness Admin Dashboard';
 
-			$this->load->view('templates/header', $data);
+			$this->load->view('templates/admin_header', $data);
 			$this->load->view('manage/dashboard', $data);
-			$this->load->view('templates/footer');
+			$this->load->view('templates/admin_footer');
 
 		} else {
 			// If no session, redirect to login
@@ -59,9 +59,9 @@ class ManageCtrl extends CI_Controller {
 		    {
 		        $data['title'] = 'Add Fitness Class';
 
-				$this->load->view('templates/header', $data);
+				$this->load->view('templates/admin_header', $data);
 		        $this->load->view('manage/create_class');
-		        $this->load->view('templates/manage_footer');
+		        $this->load->view('templates/admin_footer');
 
 		    }
 		    else
@@ -82,9 +82,9 @@ class ManageCtrl extends CI_Controller {
 
 		$data['title'] = 'Edit class types!';
 
-		$this->load->view('templates/header', $data);
+		$this->load->view('templates/admin_header', $data);
 		$this->load->view('manage/edit_classtypes');
-		$this->load->view('templates/footer');
+		$this->load->view('templates/admin_footer');
 
 	}
 
@@ -93,9 +93,9 @@ class ManageCtrl extends CI_Controller {
 
 		$data['title'] = 'Edit profile!';
 
-		$this->load->view('templates/header', $data);
+		$this->load->view('templates/admin_header', $data);
 		$this->load->view('manage/edit_profile');
-		$this->load->view('templates/footer');
+		$this->load->view('templates/admin_footer');
 		
 	}
 
@@ -104,9 +104,9 @@ class ManageCtrl extends CI_Controller {
 
 		$data['title'] = 'Reports!';
 
-		$this->load->view('templates/header', $data);
+		$this->load->view('templates/admin_header', $data);
 		$this->load->view('manage/reports');
-		$this->load->view('templates/footer');
+		$this->load->view('templates/admin_footer');
 		
 	}
 
