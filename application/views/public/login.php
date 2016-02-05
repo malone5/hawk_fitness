@@ -15,7 +15,7 @@
         <!--Custom or extra css or js references-->
         
 		<?php 
-            if (isset($extraRef) and !empty($extra)){
+            if (isset($extraRef)){
 			foreach($extraRef as $link){
                 echo $link;
             }
@@ -23,21 +23,18 @@
 	</head>
 	
 	<body>
-        <div class=" all-info">
-            <section id="section1">
-                <div class="home text-center">
-                    <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> back to Home</span></a>
-                </div>
-            </section>
-
+        <section id="section1">
+            <div class="home text-center">
+                <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> Login</span></a>
+            </div>
             <div class="login-container">
-                <h3 style="color:#0d1d41;">Admin Login</h3>
-                <div style="color:red;">
-
+                <div class="text-center" style="color:red;">
+                    
                     <?php
                         echo validation_errors();?>
                 </div>
-                 <form action="login" method="post">
+                 <?php echo form_open('login'); ?>
+
                          <table align="center">
 
                              <thead>
@@ -63,8 +60,8 @@
                                  </tr>
                                  <tr>
                                      <td>
-                                         <div class="form-group ">
-                                             <input class="btn " type="submit" value="Login"/>
+                                         <div class="input-group col-md-4 ">
+                                             <input class="btn btn-success" type="submit" value="Login"/>
                                          </div>
                                      </td>
                                  </tr>
@@ -73,6 +70,5 @@
                          </table>
                 </form>
             </div>
-        </div>
-    </body>
-</html>
+        </section>
+</body>
