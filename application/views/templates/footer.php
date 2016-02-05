@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 		<div class="navbar navbar-fixed-bottom">
 			<div class="row text-center">
 				<hr>
@@ -17,6 +18,16 @@
 				<em>HawkFitness&copy; 2015</em>
 			</div>
 		</div>
+=======
+		<div class="container-fluid">
+            <div class="row text-center">
+                <hr>
+                <p>HawkFitness&copy; 2015</p>
+        
+            </div>
+        </div>
+
+>>>>>>> a0752ab779d41f884d4d60a2b3fcf5eecdce8d73
 	</body>
 </html>
 <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
