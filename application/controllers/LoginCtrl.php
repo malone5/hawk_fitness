@@ -5,12 +5,13 @@ class LoginCtrl extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('User_model', '', TRUE);
+        $this->load->library('form_validation');
+        $this->load->helper('form');
 	}
 
 	function index() {
 		
 		//cedentials validation
-		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('uname', 'Username', 'trim|required');
 		$this->form_validation->set_rules('pword', 'Password', 'trim|required|callback_password_check');
@@ -18,10 +19,11 @@ class LoginCtrl extends CI_Controller {
 		if($this->form_validation->run() == FALSE) {
 			// Field validation failed. Redirct.
 			$data['title'] = "Hawkfitness Admin Login";
-			$data['css'] = 'login.css';
-			$this->load->helper(array('form'));
-			$this->load->view('templates/header', $data);
-			$this->load->view('public/login');
+			$data['extraRef'] = array(
+                '<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">',
+            );
+//	needs to be REMOVED		$this->load->view('templates/header', $data);
+			$this->load->view('public/login',$data);
 		} else {
 			//Go to manage area
 			redirect('manage/');

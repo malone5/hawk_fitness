@@ -3,7 +3,7 @@
   $(function() {
     $( "#datepicker" ).datepicker({
       showButtonPanel: true,
-      dateFormat: "yy-mm-dd"
+      dateFormat: "yy-mm-dd",
     });
   });
 
@@ -59,6 +59,13 @@
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
           </div>
+        <div class="input-group">
+              <input hidden name="date" type="text" id="datepicker" size="30" class="form-control" placeholder="Select Date" />
+              <span class="input-group-addon" style="cursor:pointer;">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+
 
           <input style="float: right;" class="btn" type="submit" name="submit" value="Add Class" />
 
