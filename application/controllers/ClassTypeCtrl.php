@@ -12,8 +12,11 @@ class ClassTypeCtrl extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->helper('url_helper');
+		$this->load->library('form_validation');
+		$this->load->model('ClassType_model');
 	}
 
+	// Display  all current Class Types in database
 	public function index()
 	{
 
@@ -32,7 +35,7 @@ class ClassTypeCtrl extends CI_Controller {
 
 		} else {
 			// If no session, redirect to login
-			redirect('public/login', 'refresh');
+			redirect('/login', 'refresh');
 		}
 
 	}
@@ -41,20 +44,113 @@ class ClassTypeCtrl extends CI_Controller {
         // database fetch code
     }
 
-	function addClassType() {
+	function createClassType() {
         // database insert code
+        if($this->session->userdata('logged_in')) {
+
+        	$this->load->helper('form');
+        	$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
+			
+			$data['title'] = 'Add New Class Type';
+
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			$this->form_validation->set_rules('description', 'Description', 'required');
+
+			
+
+			if ($this->form_validation->run() === FALSE)
+			{
+				$this->load->view('templates/admin_header', $data);
+				$this->load->view('manage/create_classtype', $data);
+				$this->load->view('templates/admin_footer');
+			}
+			else
+			{
+				
+				$this->ClassType_model->insertClasstype();
+				redirect('manage/classtypes', 'refresh');
+			}
+
+		} else {
+			// If no session, redirect to login
+			redirect('/login', 'refresh');
+		}
     }
 
      function fetchClassType() {
         // database fetch code
+
+        if($this->session->userdata('logged_in')) {
+
+
+
+			
+
+		} else {
+			// If no session, redirect to login
+			redirect('/login', 'refresh');
+		}
     } 
 
-    function updateClassType() {
+    function editClassType($id) {
         // database update code
+        if($this->session->userdata('logged_in')) {
+
+        	// take the 3rd segment/slug of the url which is the classtype id.  e.g. manage/classtypes/[ID HERE]
+        	$id = $this->uri->segment(4);
+
+        	$data['title'] = 'Edit Class Type';
+			$data['classtype'] = $this->ClassType_model->get_classtype($id);
+
+			if (empty($data['classtype']))
+			{
+				show_404();
+			}
+
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			$this->form_validation->set_rules('description', 'Description', 'required');
+
+			if ($this->form_validation->run() === FALSE)
+			{
+				$this->load->view('templates/admin_header', $data);
+				$this->load->view('manage/edit_classtype', $data);
+				$this->load->view('templates/admin_footer');
+			}
+			else
+			{
+				$this->ClassType_model->updateClasstype($id);
+				redirect('manage/classtypes');
+			}
+	
+
+		} else {
+			// If no session, redirect to login
+			redirect('/login', 'refresh');
+		}
+
+
     }
 
-    function deleteClassType() {
+    function deleteClassType($id) {
         // database delete code
+        if($this->session->userdata('logged_in')) {
+        	$id = $this->uri->segment(4);
+        	$data['class_to_delete'] = $this->ClassType_model->get_classtype($id);
+
+        	if (empty($data['class_to_delete']))
+			{
+				show_404();
+			}
+
+			$this->ClassType_model->deleteClasstype($id);
+			redirect('manage/classtypes');
+
+			
+
+		} else {
+			// If no session, redirect to login
+			redirect('/login', 'refresh');
+		}
     }
 
     

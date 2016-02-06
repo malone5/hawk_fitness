@@ -55,10 +55,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //Other routes
 $route['login'] = 'LoginCtrl/index';
 
-// Manage routes
+// Manager routes
 $route['manage/logout'] = 'ManageCtrl/logout';
 $route['manage/profile'] = 'ManageCtrl/profile';
-$route['manage/classtypes'] = 'ManageCtrl/classTypes';
+// Class Type CRUD
+$route['manage/classtypes'] = 'ClassTypeCtrl/index';
+$route['manage/new_classtype'] = 'ClassTypeCtrl/createClassType';
+$route['manage/classtypes/edit/(:num)'] = 'ClassTypeCtrl/editClassType/$1';
+$route['manage/classtypes/delete/(:num)'] = 'ClassTypeCtrl/deleteClassType/$1';
+
 $route['manage/reports'] = 'ManageCtrl/reports';
 $route['manage/create'] = 'ManageCtrl/createClass';
 $route['manage'] = 'ManageCtrl/index';

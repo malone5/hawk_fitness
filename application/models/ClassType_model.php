@@ -14,5 +14,41 @@ class ClassType_model extends CI_Model{
           return $query->result_array();
      }
 
+     function get_classtype($id)
+     {
+          $query = $this->db->get_where('class_type', array('id' => $id));
+          return $query->row_array();
+     }
+
+     function insertClasstype() {
+
+          $data = array(
+               'name' => $this->input->post('name'),
+               'description' => $this->input->post('description'),
+               );
+
+          return $this->db->insert('class_type', $data);
+
+     }
+
+     function updateClasstype($id) {
+
+          $data = array(
+               'name' => $this->input->post('name'),
+               'description' => $this->input->post('description'),
+               );
+
+          // Get the class type row
+          $this->db->where('id', $id);
+          return $this->db->update('class_type', $data);
+
+     }
+
+     function deleteClasstype($id) {
+
+          // delete the provided classtype
+          return $this->db->delete('class_type', array('id' => $id));
+
+     }
 
 }
