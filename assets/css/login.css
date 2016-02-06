@@ -1,20 +1,62 @@
-.input-group {
-    margin:5px;
+#section1{
+    background-color:white;
+    height:100vh;
+
+}
+.errors{
+    color:red;
+    text-align: center;
+    font-size: 15px;
+}
+.form-group,.btn {
     width:300px;
 }
-.btn{
-    width:300px;
-}
-.btn{
+.form-group .btn-default{
     background-color: #DDDDDD;
     border-color: #DDDDDD;
     color:black;
 }
-.btn:hover{
+.btn-defualt:hover, .btn-defualt:focus{
    background-color: #EEEEEE;
     border-color: #EEEEEE;
     color:black;
 }
+.home{
+    width:110px;
+}
+.home-link span{
+    background-color:#7c7c7c;
+    font-size:20px; 
+    color:white; 
+    width:92px;
+    height:25px;
+    text-decoration:none;
+    border-radius:4px;
+}
+.home-link span:hover{
+    text-decoration: none;
+    color:white;
+    background-color:#a0a0a0;
+}
+
 .info{
     text-align: center;
+}
+
+.login-container{
+    padding-top: 180px;
+}
+body{
+      overflow-y:hidden;
+
+}
+.web-title{
+    text-align: center;
+    font-size: 25px;
+}
+.important-text{
+    font-size: 10px;
+}
+@media screen and (min-width:800){
+    body{overflow-y:hidden;}
 }
