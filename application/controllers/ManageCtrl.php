@@ -39,55 +39,6 @@ class ManageCtrl extends CI_Controller {
 	    redirect('/', 'refresh');
 	}
 
-	public function createClass()
-	{
-
-		if($this->session->userdata('logged_in')) {
-		    $this->load->helper('form');
-		    $this->load->library('form_validation');
-		    $this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
-
-		    $data['title'] = 'Add a new fitness class!';
-
-		    $this->form_validation->set_rules('class_type', 'ClassType', 'required');
-		    $this->form_validation->set_rules('instructor', 'Instructor', 'required');
-	      	$this->form_validation->set_rules('location', 'Location', 'required');
-	      	$this->form_validation->set_rules('start_time', 'StartTime', 'required');
-	      	$this->form_validation->set_rules('date', 'Date');
-
-		    if ($this->form_validation->run() === FALSE)
-		    {
-		        $data['title'] = 'Add Fitness Class';
-
-				$this->load->view('templates/admin_header', $data);
-		        $this->load->view('manage/create_class');
-		        $this->load->view('templates/admin_footer');
-
-		    }
-		    else
-		    {
-		        $this->Manage_model->set_classes();
-		        $this->load->view('manage/success', $data);
-		    }
-		} 
-		else 
-		{
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
-	}
-
-
-	public function classTypes() {
-
-		$data['title'] = 'Edit class types!';
-
-		$this->load->view('templates/admin_header', $data);
-		$this->load->view('manage/edit_classtypes');
-		$this->load->view('templates/admin_footer');
-
-	}
-
 
 	public function profile() {
 
@@ -99,7 +50,7 @@ class ManageCtrl extends CI_Controller {
 		
 	}
 
-
+	//This will be removed to a "Report Controller" when reports are implemented
 	public function reports() {
 
 		$data['title'] = 'Reports!';
