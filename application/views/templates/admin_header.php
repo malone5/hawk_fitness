@@ -17,25 +17,29 @@
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
 
+    <!-- Jquery/UI JS/CSS-->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" >
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
     <!-- MetisMenu CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/metisMenu/dist/metisMenu.min.css') ?>" >
-    <!-- <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"> -->
+    
 
     <!-- Timeline CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/css/sb-admin-2.css') ?>" >
-    <!-- <link href="../dist/css/timeline.css" rel="stylesheet"> -->
-
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/css/sb-admin-2.css') ?>" >
-    <!-- <link href="../dist/css/sb-admin-2.css" rel="stylesheet"> -->
+    
 
     <!-- Morris Charts CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/morrisjs/morris.css') ?>" >
-    <!-- <link href="../bower_components/morrisjs/morris.css" rel="stylesheet"> -->
+    
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/font-awesome/css/font-awesome.min.css') ?>" >
-    <!-- <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    
     
     <!-- Custom Static CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/admin.css') ?>" >
@@ -45,7 +49,8 @@
 	<?php }?>
 
 
-
+    
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -114,7 +119,7 @@
                             <a href="<?php echo site_url('manage/'); ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo site_url('manage/create/'); ?>"><i class="fa fa-list fa-fw"></i> Fitness CLasses</a>
+                            <a href="<?php echo site_url('manage/fitnessclasses'); ?>"><i class="fa fa-list fa-fw"></i> Fitness CLasses</a>
                         </li>
                         <li>
                             <a href="<?php echo site_url('manage/classtypes'); ?>"><i class="fa fa-edit fa-fw"></i>Class Types</a>

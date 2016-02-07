@@ -1,0 +1,7 @@
+.navbar-static-top {
+	/* stops the nav bar from showing on top of datepicker */
+	z-index: 1;
+}
+
+/* fixes a bug where jqueryUI create a thin div at bottom of page */
+#ui-datepicker-div {display: none;}

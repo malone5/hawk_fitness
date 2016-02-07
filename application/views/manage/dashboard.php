@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <a href="<?php echo site_url('manage/create/'); ?>">
+            <a href="<?php echo site_url('manage/fitnessclasses'); ?>">
                 <div class="panel-footer">
                     <span class="pull-left">Manage Classes</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

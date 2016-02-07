@@ -14,11 +14,20 @@ class ClassType_model extends CI_Model{
           return $query->result_array();
      }
 
+     function get_classtype_names()
+     {
+          $query = $this->db->query('SELECT id, name FROM class_type');
+          return $query->result_array();
+
+     }
+
      function get_classtype($id)
      {
           $query = $this->db->get_where('class_type', array('id' => $id));
           return $query->row_array();
      }
+
+
 
      function insertClasstype() {
 

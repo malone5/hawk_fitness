@@ -5,7 +5,7 @@
 */
 
 //session_start(); // Call PHP's session object to access it through CI
-class ClassTypeCtrl extends CI_Controller {
+class FitClassCtrl extends CI_Controller {
 
 	function __construct()
 	{
@@ -13,7 +13,7 @@ class ClassTypeCtrl extends CI_Controller {
 		$this->load->database();
 		$this->load->helper('url_helper');
 		$this->load->library('form_validation');
-		$this->load->model('ClassType_model');
+		$this->load->model('FitClass_model');
 	}
 
 	// Display  all current Class Types in database
@@ -23,14 +23,14 @@ class ClassTypeCtrl extends CI_Controller {
 		if($this->session->userdata('logged_in')) {
 
 			// load class type model
-			$this->load->model('ClassType_model');
+			$this->load->model('FitClass_model');
 			// call the model function to get the data
-			$classtypes = $this->ClassType_model->get_classtype_list();
-			$data['classtypelist'] = $classtypes;
-			$data['title'] = 'Class Types';
+			$classes = $this->FitClass_model->get_fitclass_list();
+			$data['fitclasslist'] = $classes;
+			$data['title'] = 'Fitness Classes';
 
 			$this->load->view('templates/admin_header', $data);
-			$this->load->view('manage/classtypes', $data);
+			$this->load->view('manage/fitclasses', $data);
 			$this->load->view('templates/admin_footer');
 
 		} else {
@@ -40,11 +40,11 @@ class ClassTypeCtrl extends CI_Controller {
 
 	}
 
-	function fetchAllClassTypes() {
+	function fetchAllClasses() {
         // database fetch code
     }
 
-	function createClassType() {
+	function createFitClass() {
         // database insert code
         if($this->session->userdata('logged_in')) {
 
@@ -53,22 +53,31 @@ class ClassTypeCtrl extends CI_Controller {
 			
 			$data['title'] = 'Add New Class Type';
 
-			$this->form_validation->set_rules('name', 'Name', 'required');
-			$this->form_validation->set_rules('description', 'Description', 'required');
+			# Genereate the dropdown data for the "Class Type" selection
+			$this->load->model('ClassType_model');
+			$data['classtype_options'] = $this->ClassType_model->get_classtype_names();
+
+
+			$this->form_validation->set_rules('class_type', 'ClassType', 'required');
+		    $this->form_validation->set_rules('instructor', 'Instructor', 'required');
+	      	$this->form_validation->set_rules('location', 'Location', 'required');
+	      	$this->form_validation->set_rules('start_time', 'StartTime', 'required');
+	      	$this->form_validation->set_rules('date', 'Date');
+
 
 			
 
 			if ($this->form_validation->run() === FALSE)
 			{
 				$this->load->view('templates/admin_header', $data);
-				$this->load->view('manage/create_classtype', $data);
+				$this->load->view('manage/create_class', $data);
 				$this->load->view('templates/admin_footer');
 			}
 			else
 			{
 				
-				$this->ClassType_model->insertClasstype();
-				redirect('manage/classtypes', 'refresh');
+				$this->FitClass_model->insertFitClass();
+				redirect('manage/fitnessclasses', 'refresh');
 			}
 
 		} else {
@@ -77,7 +86,7 @@ class ClassTypeCtrl extends CI_Controller {
 		}
     }
 
-     function fetchClassType() {
+     function fetchFitClass() {
         // database fetch code
 
         if($this->session->userdata('logged_in')) {
@@ -92,34 +101,43 @@ class ClassTypeCtrl extends CI_Controller {
 		}
     } 
 
-    function editClassType($id) {
+    function editFitClass($id) {
         // database update code
         if($this->session->userdata('logged_in')) {
 
-        	// take the 3rd segment/slug of the url which is the classtype id.  e.g. manage/classtypes/[ID HERE]
+        	// take the 3rd segment/slug of the url which is the classtype id.  e.g. manage/classtypes/(action)/[ID HERE]
         	$id = $this->uri->segment(4);
 
-        	$data['title'] = 'Edit Class Type';
-			$data['classtype'] = $this->ClassType_model->get_classtype($id);
+        	$data['title'] = 'Edit Fitness Class';
+        	# get the specified class to edit
+			$data['class'] = $this->FitClass_model->get_fitclass($id);
 
-			if (empty($data['classtype']))
+			# Genereate the dropdown data for the "Class Type" selection
+			$this->load->model('ClassType_model');
+			$data['classtype_options'] = $this->ClassType_model->get_classtype_names();
+
+			if (empty($data['class']))
 			{
 				show_404();
 			}
 
-			$this->form_validation->set_rules('name', 'Name', 'required');
-			$this->form_validation->set_rules('description', 'Description', 'required');
+			$this->form_validation->set_rules('class_type', 'ClassType', 'required');
+		    $this->form_validation->set_rules('instructor', 'Instructor', 'required');
+	      	$this->form_validation->set_rules('location', 'Location', 'required');
+	      	$this->form_validation->set_rules('start_time', 'StartTime', 'required');
+	      	$this->form_validation->set_rules('date', 'Date');
+
 
 			if ($this->form_validation->run() === FALSE)
 			{
 				$this->load->view('templates/admin_header', $data);
-				$this->load->view('manage/edit_classtype', $data);
+				$this->load->view('manage/edit_class', $data);
 				$this->load->view('templates/admin_footer');
 			}
 			else
 			{
-				$this->ClassType_model->updateClasstype($id);
-				redirect('manage/classtypes');
+				$this->FitClass_model->updateFitClass($id);
+				redirect('manage/fitnessclasses');
 			}
 	
 
@@ -131,19 +149,20 @@ class ClassTypeCtrl extends CI_Controller {
 
     }
 
-    function deleteClassType($id) {
+    function deleteFitClass($id) {
         // database delete code
         if($this->session->userdata('logged_in')) {
+
         	$id = $this->uri->segment(4);
-        	$data['class_to_delete'] = $this->ClassType_model->get_classtype($id);
+        	$data['class_to_delete'] = $this->FitClass_model->get_fitclass($id);
 
         	if (empty($data['class_to_delete']))
 			{
 				show_404();
 			}
 
-			$this->ClassType_model->deleteClasstype($id);
-			redirect('manage/classtypes');
+			$this->FitClass_model->deleteFitClass($id);
+			redirect('manage/fitnessclasses');
 
 			
 
