@@ -1,58 +1,84 @@
- <div class="row">
-     <div class="col-md-4"></div>
-     <div class="info col-md-4">
-         <span>username = admin1</span>
-     </div>
-     <div class="col-md-4"></div>
- </div> <div class="row">
-     <div class="col-md-4"></div>
-     <div class="info col-md-4">
-         <span>password = secrete</span>
-     </div>
-     <div class="col-md-4"></div>
- </div>
- 
-<div class="text-center" style="color:red;">
-    </br>
-    <?php
-        echo validation_errors();?>
-</div>
- <?php echo form_open('login'); ?>
+<html>
+	<head>
+		<title><?php echo $title;?></title>
+        
+        <!--jQuery references-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+        
+        <!--disable zoom function for mobile devices-->
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        
+        <!--Custom or extra css or js references-->
+        
+		<?php 
+            if (isset($extraRef)){
+			foreach($extraRef as $link){
+                echo $link;
+            }
+		 }?>
+	</head>
+	
+	<body>
+        <section id="section1">
+            <div class="home text-center">
+                <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
+            </div>
+            <div class="login-container">
+                <div class="text-center" style="color:red;">
+               
+                </div>
+                 <?php echo form_open('login'); ?>
 
-         <table align="center">
+                         <table align="center">
 
-             <thead>
+                             <thead>
 
-             </thead>
-             <tbody>
-                 <tr>
-                     <td>
-                         <div class="input-group">
-                             <input id="username" name="uname" type="text" size="20"  class="form-control" placeholder="username" autofocus />
-                             <span class="input-group-addon" style="cursor:pointer;">
-                                 <span class="glyphicon glyphicon-user"></span>
-                             </span>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td>
-                         <div class="input-group">
-                             <input id="username" name="pword" type="password" size="20" class="form-control" placeholder="password" />
-                            <span class="input-group-addon" style="cursor:pointer;">
-                                <span class="glyphicon glyphicon-asterisk"></span>
-                            </span>
-                         </div>
-                     </td>
-                 </tr>
-                 <tr>
-                     <td>
-                         <div class="input-group col-md-4 ">
-                             <input class="btn btn-success" type="submit" value="Login"/>
-                         </div>
-                     </td>
-                 </tr>
-             </tbody>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td><p class="web-title">HawkFitness<span class="important-text">(admin login)</span></p></td>
+                                 </tr>
+                                 
+                                <?php
+                                   echo '<tr><td><div class="errors">'.validation_errors().'</div></td></tr>'; 
+                                 ?>
+                                 <tr>
+                                     <td>
+                                         <div class="form-group has-feedback">
+                                             <input id="username" name="uname" type="text" size="20"  class="form-control" placeholder="username" autofocus required/>
+                                            <span title = "enter username" class="glyphicon glyphicon-user form-control-feedback"></span>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="form-group has-feedback">
+                                             <input id="username" name="pword" type="password" size="20" class="form-control" placeholder="password" required />
+                                            <span title ="enter password" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
 
-         </table>
-</form>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="form-group ">
+                                             <input class="btn btn-defualt" type="submit" value="Login"/>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                        <a href="">Forgot Password?</a>
+                                    </td>
+                                 </tr>
+                             </tbody>
+
+                         </table>
+                </form>
+            </div>
+        </section>
+</body>

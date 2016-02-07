@@ -69,7 +69,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">HawkFitness Admin</a>
+                <a class="navbar-brand" href="<?php echo site_url('/'); ?>">HawkFitness Admin</a>
             </div>
             <!-- /.navbar-header -->
 

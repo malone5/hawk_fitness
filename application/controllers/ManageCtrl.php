@@ -27,7 +27,7 @@ class ManageCtrl extends CI_Controller {
 
 		} else {
 			// If no session, redirect to login
-			redirect('public/login', 'refresh');
+			redirect('/login', 'refresh');
 		}
 		
 	}

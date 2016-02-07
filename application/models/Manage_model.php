@@ -20,9 +20,6 @@ class Manage_model extends CI_Model {
 
 	public function set_classes()
 	{
-	    $this->load->helper('url');
-
-	    $slug = url_title($this->input->post('id'), 'dash', TRUE);
 
 	    $data = array(
 	        'class_type' => $this->input->post('class_type'),
