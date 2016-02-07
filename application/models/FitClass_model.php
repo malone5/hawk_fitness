@@ -10,12 +10,7 @@ class FitClass_model extends CI_Model{
      function get_fitclass_list()
      {
 
-          $this->db->select('*');
-          $this->db->from('class_type');
-          // Make a join that combines the columns of both tables ( so we can access the foriegn key for "Class Type")
-          $this->db->join('fit_classes', ' class_type.id = fit_classes.class_type');
-          $this->db->order_by("date", "desc");
-          $query = $this->db->get();
+          $query = $this->db->get('fit_classes');
 
           return $query->result_array();
      }
