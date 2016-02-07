@@ -18,7 +18,7 @@
               
                 <select class="form-control" name="class_type">
                   <?php foreach($classtype_options as $option): ?>
-                    <option value="<?php echo $option['id']; ?>" ><?php echo $option['name']; ?><br /></option>
+                    <option value="<?php echo $option['name']; ?>" ><?php echo $option['name']; ?><br /></option>
                   <?php endforeach; ?>
                 </select>
               

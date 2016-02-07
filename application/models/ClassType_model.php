@@ -16,7 +16,7 @@ class ClassType_model extends CI_Model{
 
      function get_classtype_names()
      {
-          $query = $this->db->query('SELECT id, name FROM class_type');
+          $query = $this->db->query('SELECT name FROM class_type');
           return $query->result_array();
 
      }
