@@ -53,17 +53,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // Template ---->    $route['URL_STRING'] = 'CLASS/FUNCTION/ID';
 
 //Other routes
-$route['login'] = 'LoginCtrl/index';
 
-// Manage routes
+
+// Manager (logout, profile, other possible additions)
 $route['manage/logout'] = 'ManageCtrl/logout';
 $route['manage/profile'] = 'ManageCtrl/profile';
-$route['manage/classtypes'] = 'ManageCtrl/classTypes';
+
+// Class Type CRUD
+$route['manage/classtypes'] = 'ClassTypeCtrl/index';
+$route['manage/new_classtype'] = 'ClassTypeCtrl/createClassType';
+$route['manage/classtypes/edit/(:num)'] = 'ClassTypeCtrl/editClassType/$1';
+$route['manage/classtypes/delete/(:num)'] = 'ClassTypeCtrl/deleteClassType/$1';
+
+// Fitness Class CRUD
+$route['manage/fitnessclasses'] = 'FitClassCtrl/index';
+$route['manage/new_fitnessclass'] = 'FitClassCtrl/createFitClass';
+$route['manage/fitnessclasses/edit/(:num)'] = 'FitClassCtrl/editFitClass/$1';
+$route['manage/fitnessclasses/delete/(:num)'] = 'FitClassCtrl/deleteFitClass/$1';
+
 $route['manage/reports'] = 'ManageCtrl/reports';
-$route['manage/create'] = 'ManageCtrl/createClass';
 $route['manage'] = 'ManageCtrl/index';
 
 //Public routes
+$route['login'] = 'LoginCtrl/index';
 $route['/'] = 'HomeCtrl/index';
 $route['default_controller'] = 'HomeCtrl/index'; //
 

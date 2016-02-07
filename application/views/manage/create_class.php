@@ -1,35 +1,36 @@
-<script>
 
-  $(function() {
-    $( "#datepicker" ).datepicker({
-      showButtonPanel: true,
-      dateFormat: "yy-mm-dd",
-    });
-  });
-
-</script>
 
 
 <!-- TEST -->
 
 
-    <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <h2><?php echo $title; ?>  <a href="<?php echo site_url('manage/logout'); ?>">Logout</a> </h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-sm-12">
+      <a class="btn btn-default" href="<?php echo site_url('manage/fitnessclasses'); ?>">Back</a>
+      <h2><?php echo $title; ?>  </h2>
 
       
 
       <?php echo validation_errors(); ?>
 
-      <?php echo form_open('manage/create'); //open a form in the 'create' controller ?> 
-      
-
-          <div class="input-group">
-              <input name="class_type" type="text" size="30" class="form-control" placeholder="Class Type" />
+      <?php echo form_open('manage/new_fitnessclass'); //open a form in the 'create' controller ?> 
+              
+                <select class="form-control" name="class_type">
+                  <?php foreach($classtype_options as $option): ?>
+                    <option value="<?php echo $option['id']; ?>" ><?php echo $option['name']; ?><br /></option>
+                  <?php endforeach; ?>
+                </select>
+              
+              
+                  
+              
+              
+              <!-- <input name="class_type" type="text" size="30" class="form-control" placeholder="Class Type" />
               <span class="input-group-addon" style="cursor:pointer;">
                   <span class="glyphicon glyphicon-tag"></span>
-              </span>
-          </div>
+              </span> -->
+          
 
           <div class="input-group">
               <input name="instructor" type="text"  size="30" class="form-control" placeholder="instructor" />
@@ -59,26 +60,20 @@
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
           </div>
-        <div class="input-group">
-              <input hidden name="date" type="text" id="datepicker" size="30" class="form-control" placeholder="Select Date" />
-              <span class="input-group-addon" style="cursor:pointer;">
-                  <span class="glyphicon glyphicon-calendar"></span>
-              </span>
-          </div>
-
 
           <input style="float: right;" class="btn" type="submit" name="submit" value="Add Class" />
 
-        </div>
-        </div>
-    </div> <!-- .content-wrapper -->
-</main> <!-- .cd-main-content -->
-
-<!-- END TEST -->
+    </div>
+  </div>
+</div> <!-- .content-wrapper -->
 
 
 
-
-
-
-
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showButtonPanel: true,
+      dateFormat: "yy-mm-dd"
+    });
+  });
+</script>
