@@ -18,10 +18,10 @@
                     // If the optionID matches the class_type id the we give the "selected" attribute so it is the default value
                     foreach($classtype_options as $option) 
                     {
-                        if ($class['class_type'] == $option['id']) {
+                        if ($class['class_type'] == $option['name']) {
                             echo '<option selected="selected" value="'.$option['id'].'" >'.$option['name'].'</option>';
                         } else {
-                            echo '<option value="'.$option['id'].'" >'.$option['name'].'</option>';
+                            echo '<option value="'.$option['name'].'" >'.$option['name'].'</option>';
                         }
                     }
                 ?>

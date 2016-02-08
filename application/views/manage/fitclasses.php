@@ -22,7 +22,7 @@
                         <?php foreach ($fitclasslist as $fitclass_item): ?>
                             <tr>
                                 <td><?php echo  $fitclass_item['id']; ?></td>
-                                <td><?php echo  $fitclass_item['name']; ?></td>
+                                <td><?php echo  $fitclass_item['class_type']; ?></td>
                                 <td><?php echo  $fitclass_item['instructor']; ?></td>
                                 <td><?php echo  $fitclass_item['location']; ?></td>
                                 <td><?php echo  $fitclass_item['start_time']; ?></td>
@@ -53,7 +53,7 @@
                                             <div class="modal-body">
                                                 <div class="alert alert-danger">
                                                     <span class="glyphicon glyphicon-warning-sign"></span> 
-                                                    Are you sure you want to delete: <?php echo $fitclass_item['name'] . " with " . $fitclass_item['instructor'] . " on " . $fitclass_item['date']; ?>
+                                                    Are you sure you want to delete: <?php echo $fitclass_item['class_type'] . " with " . $fitclass_item['instructor'] . " on " . $fitclass_item['date']; ?>
                                                 </div>
                                             </div>
                                             <div class="modal-footer ">
