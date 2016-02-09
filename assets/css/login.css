@@ -57,6 +57,31 @@ body{
 .important-text{
     font-size: 10px;
 }
+table .btn.btn-forgot{
+    background-color: #DDDDDD;
+    border-color: #DDDDDD;
+    font-weight: bold;
+    font-size:15px;
+    color:black;
+    width:80px;
+    text-align: center;
+}
+#email{
+    height:30px;
+    border: 1px solid #CCC;
+    border-radius:5px;
+    padding-left:10px;
+}
+.form-name{
+    margin-bottom:40px;
+}
+.form-name h3{
+    color:#041d41;
+    font-size:30px;
+}
+
+
+
 @media screen and (min-width:800){
     body{overflow-y:hidden;}
 }

@@ -72,7 +72,7 @@
                                  </tr>
                                  <tr>
                                     <td>
-                                        <a href="">Forgot Password?</a>
+                                        <a href="<?php echo site_url('forgotPassword')?>">Forgot Password?</a>
                                     </td>
                                  </tr>
                              </tbody>

@@ -49,6 +49,12 @@ class LoginCtrl extends CI_Controller {
 			return FALSE;
 		}
 	}
+    
+    function forgotPassword(){
+        $data['title'] = "Forgot Password";
+        $data['extraRef'] = array('<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">');
+        $this ->load->view('public/forgotPassword',$data);
+    }
 }
 
 
