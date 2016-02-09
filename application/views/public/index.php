@@ -27,43 +27,17 @@
 </section><!--Enc Section 1-->
 <div class="wrapper">
 <section id="section2">
-    <div class="container-fluid">
+    <div class="anchorDay text-center">
+        <a class="visible-xs-block" id="anchor-day" style="font-size:15px"><strong>Today's Schedule</strong></a>
+    </div>
          <!-- Beginning of class schedule -->
          <div class="schedule-wrapper">
-            <div class="container-fluid">
+            <div id="fit-schedule" class="container-fluid">
                 <div id="schedule" class ="row">
                     <!--Dynamic Schedule-->
                 </div>
             </div>
         </div>
-    </div>
 </section><!--End opf Section2-->
 </div>
 
-<!--
-<section id="section3">
-    
- 
-    <div class="container-fluid">
-        <div class="row">
-            <h3 class="text-center">All Classes Offered</h3>
-            <div class="class-description">
-                <h4>Zumba:</h4>
-                <p>Features exotic rhythms set to high-energy Latin and international beats. Before participants know it, they’re getting fit and their energy levels are soaring! There’s no other fitness class like a Zumba Fitness-Party. It’s easy to do, effective and totally exhilarating!</p>
-            </div>
-            <div class="class-description">
-                <h4>Bootcamp</h4>
-                <p>Interval training and cardio to get your heart pumping, 45 minute class.</p>
-            </div>
-            <div class="class-description">
-                <h4>Pilates</h4>
-                <p>A balanced development of the body through core strength, flexibility, and incorporates a brief cardio routine and an extended toning routine using mat Pilates techniques.</p>
-            </div>
-            <div class="class-description">
-                <h4>Pilates Yoga Fusion</h4>
-                <p>Blend of core Pilates movements and traditional yoga stretches and various poses.</p>
-            </div>
-        </div>
-    </div>
-</section>End Section 3
--->
