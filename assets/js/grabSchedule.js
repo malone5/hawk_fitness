@@ -134,6 +134,6 @@ $("#schedule").ready(function(){
 
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top
-	    }, 1100, 'swing');
+	    }, 700, 'swing');
 	});
 });
