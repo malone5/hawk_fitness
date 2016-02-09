@@ -7,15 +7,15 @@
     color:#0d1d41;
     padding-bottom:40px;
     height:500px;
- background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.5);
 
 }
 .dummy{
-      background: url("../images/mac.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size:cover;
-  background-size:cover;
+    background: url("../images/mac.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size:cover;
+    background-size:cover;
     opacity:.4;
     height:500px;
     background-color: rgba(255,255,255,0.5);
@@ -61,6 +61,7 @@
 .Logo h3{
     font-size: 40px;
     text-align: center;
+    color:#004bc3;
 }
 .drop{
     margin:0 auto;
@@ -68,21 +69,18 @@
 
 }
 
-.schedule-container{
-    margin-left: auto; 
-    margin-right:auto;
-    
-}
-
 .week-schedule{
-  width:17%;
+  width:15%;
 }
 
 
 .day{
+/*
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+*/
     border-bottom: 1px solid #C7D6E9;
-    border-radius:2px;
-/*    background-color:#B5B0A4;*/
+
     background-color:#C7D6E9;
     color:black;
     box-shadow: 0 3px 7px 0 #777;
@@ -94,18 +92,22 @@
     padding-top: 5px;
 }
 .details{
+
     text-align: center;
     font-weight: 200;
     font-size:16px;
-    background-color:#0D64B2;
+    background-color:#f1f1f1;
     padding-bottom: 8px;
     padding-right:2px;
-    border-bottom-left-radius: 2px;
+    border-top-style: none;
+/*
+    border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+*/
     box-shadow: 0 3px 7px 0 #777;
 
 /*                font-family: 'Roboto', sans-serif;*/
-    color:White;
+    color:black;
 }
 .location{
 
@@ -120,6 +122,7 @@
     border-top:1px solid #B5B0A4;
 }
 .info{
+    padding-top: 3px;
     margin-left: 5px;
 }
 
@@ -128,10 +131,12 @@
 */
 @media (max-width: 992px) {
    
+/*
     .schedule-container{
         margin-left:auto;
         margin-right: auto;
     }
+*/
     .week-schedule{
         margin-left:auto;
         margin-right:auto;
