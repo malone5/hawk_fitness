@@ -38,9 +38,8 @@
     color:white;
     background-color:#a0a0a0;
 }
-
-.info{
-    text-align: center;
+.resetInfo{
+    color:#007000;
 }
 
 .login-container{
@@ -60,11 +59,12 @@ body{
 table .btn.btn-forgot{
     background-color: #DDDDDD;
     border-color: #DDDDDD;
-    font-weight: bold;
     font-size:15px;
     color:black;
     width:80px;
     text-align: center;
+    margin-left:108px;
+    margin-top: 10px;
 }
 #email{
     height:30px;

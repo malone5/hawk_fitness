@@ -28,17 +28,32 @@
                 <a class="home-link" href="<?php echo site_url('login');?>"><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
             </div>
             <div class="login-container">
+                <?php if(isset($info)){
+                        if($info =='1'){
+                            echo "<div class='resetInfo text-center'>
+                                    <p>Password has been reset.</br>Email has been sent to <b>".$_POST['email']."</b> with temporary password and instructions to change password.</b></p>
+                                </div>"; 
+                        }
+                        if($info=='0'){
+                            echo "<div class='resetInfo text-center' style='color:red'>
+                                    <p>There is no account linked to the email provided in our records.</p>
+                                </div>";
+                        }
+                }?>
                 <div class="form-name text-center">
                     <h3>Password Reset Form</h3>
                 </div>
-                 <?php echo form_open('login'); ?>
+                 <?php echo form_open('forgotPassword'); ?>
                 
                     <table align="center">
                         <tr>
                             <td>
                                 <label>Email: </label> <input type ="email" id="email" name = "email" placeholder="email" autofocus required />
-                                <input type="submit" class="btn btn-forgot" value="reset"/>
+<!--                                <input type="submit" class="btn btn-forgot" value="reset"/>-->
                             </td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" class="btn btn-forgot" name="reset" value="reset"/></td>
                         </tr>
                     </table>
                 </form>
