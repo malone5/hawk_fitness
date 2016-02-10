@@ -4,6 +4,9 @@
 
         function __construct() {
             parent::__construct();
+            if($this->session->userdata('logged_in')==true){
+                redirect('manage');
+            }
             $this->load->model('User_model', '', TRUE);
             $this->load->library('form_validation');
             $this->load->helper('form');

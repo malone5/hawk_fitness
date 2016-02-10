@@ -10,6 +10,9 @@ class FitClassCtrl extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+        if($this->session->userdata('logged_in')!=TRUE){
+            redirect('login');
+        }
 		$this->load->database();
 		$this->load->helper('url_helper');
 		$this->load->library('form_validation');
@@ -20,7 +23,7 @@ class FitClassCtrl extends CI_Controller {
 	public function index()
 	{
 
-		if($this->session->userdata('logged_in')) {
+//		if($this->session->userdata('logged_in')) {
 
 			// load class type model
 			$this->load->model('FitClass_model');
@@ -33,10 +36,10 @@ class FitClassCtrl extends CI_Controller {
 			$this->load->view('manage/fitclasses', $data);
 			$this->load->view('templates/admin_footer');
 
-		} else {
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
+//		} else {
+//			// If no session, redirect to login
+//			redirect('/login', 'refresh');
+//		}
 
 	}
 
@@ -46,12 +49,12 @@ class FitClassCtrl extends CI_Controller {
 
 	function createFitClass() {
         // database insert code
-        if($this->session->userdata('logged_in')) {
+//        if($this->session->userdata('logged_in')) {
 
         	$this->load->helper('form');
         	$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
 			
-			$data['title'] = 'Add New Class Type';
+			$data['title'] = 'Add New Class to Schedule';
 
 			# Genereate the dropdown data for the "Class Type" selection
 			$this->load->model('ClassType_model');
@@ -63,8 +66,19 @@ class FitClassCtrl extends CI_Controller {
 	      	$this->form_validation->set_rules('location', 'Location', 'required');
 	      	$this->form_validation->set_rules('start_time', 'StartTime', 'required');
 	      	$this->form_validation->set_rules('date', 'Date');
-
-
+            
+            $class_type=array();
+            $instructor=array();
+            $location=array();
+            $start_time=array();
+            $date=array();
+            if($this->input->post('submit')=='Add Class'){
+                $class_type=$this->input->post('class_type');
+                $instructor=$this->input->post('instructor');
+                $location=$this->input->post('location');
+                $start_time=$this->input->post('start_time');
+                $date=$this->input->post('date');
+            }
 			
 
 			if ($this->form_validation->run() === FALSE)
@@ -75,15 +89,15 @@ class FitClassCtrl extends CI_Controller {
 			}
 			else
 			{
-				
-				$this->FitClass_model->insertFitClass();
+				//$this->FitClass_model->insertFitClass();
+				$this->FitClass_model->insertFitClass($class_type,$instructor,$location,$start_time,$date);
 				redirect('manage/fitnessclasses', 'refresh');
 			}
 
-		} else {
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
+//		} else {
+//			// If no session, redirect to login
+//			redirect('/login', 'refresh');
+//		}
     }
 
      function fetchFitClass() {

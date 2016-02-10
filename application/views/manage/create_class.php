@@ -26,9 +26,9 @@
         <?php echo form_open('manage/new_fitnessclass'); //open a form in the 'create' controller ?> 
             <div id="extra-wrapper"> 
                 <div id="extra" style = "margin-bottom:20px">
-                    <select class="form-control" name="class_type">
+                    <select class="form-control" required name="class_type[]">
                       <?php foreach($classtype_options as $option): ?>
-                        <option value="<?php echo $option['name']; ?>" ><?php echo $option['name']; ?><br /></option>
+                        <option required value="<?php echo $option['name']; ?>" ><?php echo $option['name']; ?><br /></option>
                       <?php endforeach; ?>
                     </select>
 
@@ -43,21 +43,21 @@
 
 
               <div class="input-group">
-                  <input name="instructor" type="text"  size="30" class="form-control" placeholder="instructor" />
+                  <input name="instructor[]" type="text"  size="30" class="form-control" placeholder="instructor" required />
                   <span class="input-group-addon" style="cursor:pointer;">
                       <span class="glyphicon glyphicon-education"></span>
                   </span>
               </div>
 
               <div class="input-group">
-                  <input name="location" type="text" size="30" class="form-control" placeholder="Location" />
+                  <input name="location[]" type="text" size="30" class="form-control" placeholder="Location" required />
                   <span class="input-group-addon" style="cursor:pointer;">
                       <span class="glyphicon glyphicon-map-marker"></span>
                   </span>
               </div>
 
               <div class="input-group">
-                  <input name="start_time" type="text" size="30" class="form-control" placeholder="Start Time" />
+                  <input name="start_time[]" type="text" size="30" class="form-control" placeholder="Start Time" required />
                   <span class="input-group-addon" style="cursor:pointer;">
                       <span class="glyphicon glyphicon-time"></span>
                   </span>
@@ -65,7 +65,7 @@
 
 
               <div class="input-group">
-                  <input name="date" type="text" id="datepicker" size="30" class="form-control" placeholder="Select Date" />
+                  <input name="date[]" type="text" size="30" class="datepickers form-control" placeholder="Select Date" required />
                   <span class="input-group-addon" style="cursor:pointer;">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -82,6 +82,17 @@
 
 <script>
     $(document).ready(function(){
+//        $( ".datepicker" ).datepicker({
+//              showButtonPanel: true,
+//              dateFormat: "yy-mm-dd"
+//        });
+
+        $(document).on('focus',".datepickers", function(){
+                $(this).datepicker({
+                     showButtonPanel: true,
+                    dateFormat: "yy-mm-dd"
+                });
+        });                               
         counter=1;
        
         $("#amount").html(counter);
@@ -105,11 +116,7 @@
                 $("#amount").html(counter);
             }
         });
-        
-        $( "#datepicker" ).datepicker({
-              showButtonPanel: true,
-              dateFormat: "yy-mm-dd"
-        });
+    
 
     });
 
