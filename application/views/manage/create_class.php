@@ -12,7 +12,7 @@
 
       
 
-      <?php echo validation_errors(); ?>
+      <?php if(isset($success))echo $success; ?>
        
         <div style="width:200px;float:right; margin-right:10px;">
             <span style="margin-right:20px;">Add more entries: </span>

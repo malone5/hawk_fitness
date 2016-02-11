@@ -20,32 +20,20 @@ class FitClass_model extends CI_Model{
           $query = $this->db->get_where('fit_classes', array('id' => $id));
           return $query->row_array();
      }
-        function insertCLass($data1,$data2,$data3,$data4,$data5){
+    function insertClass($data1,$data2,$data3,$data4,$data5){
             $data=array();
             for($i=0;$i<sizeof($data1);$i++){
+                
                 $data[]=array('class_type'=>$data1[$i],
                               'instructor'=>$data2[$i],
-                              'locaiton' =>$data3[$i],
+                              'location' =>$data3[$i],
                               'start_time'=>$data4[$i],
                               'date'=>$data5[$i]
                              );
             }
             return $this->db->insert_batch('fit_classes',$data);
         }
-//     function insertFitClass() {
-//
-//          $data = array(
-//               'class_type' => $this->input->post('class_type'),
-//               'instructor' => $this->input->post('instructor'),
-//               'location' => $this->input->post('location'),
-//               'start_time' => $this->input->post('start_time'),
-//               'date' => $this->input->post('date'),
-//          );
-//
-//          return $this->db->insert('fit_classes', $data);
-//
-//     }
-
+    
      function updateFitClass($id) {
 
           $data = array(
