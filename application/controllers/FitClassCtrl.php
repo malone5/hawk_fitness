@@ -10,6 +10,9 @@ class FitClassCtrl extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+        if($this->session->userdata('logged_in')!=TRUE){
+            redirect('login');
+        }
 		$this->load->database();
 		$this->load->helper('url_helper');
 		$this->load->library('form_validation');
@@ -19,9 +22,6 @@ class FitClassCtrl extends CI_Controller {
 	// Display  all current Class Types in database
 	public function index()
 	{
-
-		if($this->session->userdata('logged_in')) {
-
 			// load class type model
 			$this->load->model('FitClass_model');
 			// call the model function to get the data
@@ -33,77 +33,53 @@ class FitClassCtrl extends CI_Controller {
 			$this->load->view('manage/fitclasses', $data);
 			$this->load->view('templates/admin_footer');
 
-		} else {
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
 
 	}
 
-	function fetchAllClasses() {
-        // database fetch code
-    }
-
 	function createFitClass() {
         // database insert code
-        if($this->session->userdata('logged_in')) {
+        if($this->input->post('submit')=='Add Class'){
+                
+            $class_type=$this->input->post('class_type');
+            $instructor=$this->input->post('instructor');
+            $location=$this->input->post('location');
+            $start_time=$this->input->post('start_time');
+            $date=$this->input->post('date');
+            
+           $add = $this->FitClass_model->insertClass($class_type,$instructor,$location,$start_time,$date);
+            if($add){
+                $data['success']='classes have been added!';
+                $this->load->helper('form');
 
+                $data['title'] = 'Add New Class to Schedule';
+
+                # Genereate the dropdown data for the "Class Type" selection
+                $this->load->model('ClassType_model');
+                $data['classtype_options'] = $this->ClassType_model->get_classtype_names();
+				$this->load->view('templates/admin_header', $data);
+				$this->load->view('manage/create_class', $data);
+				$this->load->view('templates/admin_footer');
+            }
+        }
+        else{
+            
         	$this->load->helper('form');
-        	$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
-			
-			$data['title'] = 'Add New Class Type';
+        
+			$data['title'] = 'Add New Class to Schedule';
 
 			# Genereate the dropdown data for the "Class Type" selection
 			$this->load->model('ClassType_model');
 			$data['classtype_options'] = $this->ClassType_model->get_classtype_names();
-
-
-			$this->form_validation->set_rules('class_type', 'ClassType', 'required');
-		    $this->form_validation->set_rules('instructor', 'Instructor', 'required');
-	      	$this->form_validation->set_rules('location', 'Location', 'required');
-	      	$this->form_validation->set_rules('start_time', 'StartTime', 'required');
-	      	$this->form_validation->set_rules('date', 'Date');
-
-
-			
-
-			if ($this->form_validation->run() === FALSE)
-			{
 				$this->load->view('templates/admin_header', $data);
 				$this->load->view('manage/create_class', $data);
 				$this->load->view('templates/admin_footer');
-			}
-			else
-			{
-				
-				$this->FitClass_model->insertFitClass();
-				redirect('manage/fitnessclasses', 'refresh');
-			}
+        }
 
-		} else {
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
+
     }
-
-     function fetchFitClass() {
-        // database fetch code
-
-        if($this->session->userdata('logged_in')) {
-
-
-
-			
-
-		} else {
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
-    } 
 
     function editFitClass($id) {
         // database update code
-        if($this->session->userdata('logged_in')) {
 
         	// take the 3rd segment/slug of the url which is the classtype id.  e.g. manage/classtypes/(action)/[ID HERE]
         	$id = $this->uri->segment(4);
@@ -141,17 +117,11 @@ class FitClassCtrl extends CI_Controller {
 			}
 	
 
-		} else {
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
-
-
-    }
+		} 
+    
 
     function deleteFitClass($id) {
         // database delete code
-        if($this->session->userdata('logged_in')) {
 
         	$id = $this->uri->segment(4);
         	$data['class_to_delete'] = $this->FitClass_model->get_fitclass($id);
@@ -166,13 +136,7 @@ class FitClassCtrl extends CI_Controller {
 
 			
 
-		} else {
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
-    }
-
-    
+		} 
 
 }
 
