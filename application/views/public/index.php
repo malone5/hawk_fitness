@@ -25,7 +25,7 @@
 
     
 </section><!--Enc Section 1-->
-
+<div class="wrapper">
 <section id="section2">
     <div class="anchorDay text-center">
         <a class="visible-xs-block" id="anchor-day" style="font-size:15px"><strong>Today's Schedule</strong></a>
@@ -39,4 +39,5 @@
             </div>
         </div>
 </section><!--End opf Section2-->
+</div>
 
