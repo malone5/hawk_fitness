@@ -4,6 +4,9 @@
 
         function __construct() {
             parent::__construct();
+            if($this->session->userdata('logged_in')==true){
+                redirect('manage');
+            }
             $this->load->model('User_model', '', TRUE);
             $this->load->library('form_validation');
             $this->load->helper('form');
@@ -74,12 +77,6 @@
                     $data['extraRef'] = array('<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">');
                     $this ->load->view('public/forgotPassword',$data);
                 }
-//                $data['title'] = "Forgot Password";
-//                $data['pass']=$newPassword;
-//                $data['info'] ='1';
-                //$data['info']="Password has been reset.\r\nEmail sent to <b>".$email."</b> with temporary password and instructions to change password.";
-//                $data['extraRef'] = array('<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">');
-//                $this ->load->view('public/forgotPassword',$data);
             }
             else{
                 $data['title'] = "Forgot Password";
