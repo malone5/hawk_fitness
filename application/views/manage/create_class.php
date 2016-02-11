@@ -14,6 +14,7 @@
 
       <?php if(isset($success))echo $success; ?>
        
+<!--
         <div style="width:200px;float:right; margin-right:10px;">
             <span style="margin-right:20px;">Add more entries: </span>
             <div style="margin-left:60px;">
@@ -22,14 +23,16 @@
                 <a id="add" class="glyphicon glyphicon-plus" style="text-decoration:none; font-size:20px;" href="javascript:;"></a>
             </div>
         </div>  
+-->
         
         <?php echo form_open('manage/new_fitnessclass'); //open a form in the 'create' controller ?> 
             <div id="extra-wrapper"> 
+                <?php  for($i=0;$i<3;$i++){?>
                 <div id="extra" style = "margin-bottom:20px">
                     <select class="form-control" required name="class_type[]">
-                      <?php foreach($classtype_options as $option): ?>
+                      <?php foreach($classtype_options as $option){ ?>
                         <option required value="<?php echo $option['name']; ?>" ><?php echo $option['name']; ?><br /></option>
-                      <?php endforeach; ?>
+                      <?php } ?>
                     </select>
 
 
@@ -70,7 +73,7 @@
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
               </div>
-            </div><!--end of extra div-->
+            </div><!--end of extra div--><?php }?>
         </div><!--end of extra wrapper-->
           <input style="float: right;" class="btn" type="submit" name="submit" value="Add Class" />
         </form>
@@ -82,42 +85,49 @@
 
 <script>
     $(document).ready(function(){
+          $( ".datepickers" ).datepicker({
+                  showButtonPanel: true,
+                  dateFormat: "yy-mm-dd"
+            });
+    });
+
+   // $(document).ready(function(){
 //        $( ".datepicker" ).datepicker({
 //              showButtonPanel: true,
 //              dateFormat: "yy-mm-dd"
 //        });
+//
+//        $(document).on('focus',".datepickers", function(){
+//                $(this).datepicker({
+//                     showButtonPanel: true,
+//                    dateFormat: "yy-mm-dd"
+//                });
+//        });                               
+//        counter=1;
+//       
+//        $("#amount").html(counter);
+//         $("#remove").hide();
+//       $("#add").on('click',function(){
+//            counter++;
+//            $("#remove").show();
+//            $("#amount").html(counter);
+//            var temp = $("#extra").html();
+//            $("#extra-wrapper").append("<div id='added-form"+counter+"'>"+temp+"</div>");
+//            $("#added-form"+counter).css("margin-top","25px");
+//       });
+//        
+//        $("#remove").on("click", function(){
+//            if(counter==1){
+//                 $("#remove").hide();
+//            }
+//            else{
+//               $("#added-form"+counter).remove(); 
+//                counter--;
+//                $("#amount").html(counter);
+//            }
+//        });
+//    
 
-        $(document).on('focus',".datepickers", function(){
-                $(this).datepicker({
-                     showButtonPanel: true,
-                    dateFormat: "yy-mm-dd"
-                });
-        });                               
-        counter=1;
-       
-        $("#amount").html(counter);
-         $("#remove").hide();
-       $("#add").on('click',function(){
-            counter++;
-            $("#remove").show();
-            $("#amount").html(counter);
-            var temp = $("#extra").html();
-            $("#extra-wrapper").append("<div id='added-form"+counter+"'>"+temp+"</div>");
-            $("#added-form"+counter).css("margin-top","25px");
-       });
-        
-        $("#remove").on("click", function(){
-            if(counter==1){
-                 $("#remove").hide();
-            }
-            else{
-               $("#added-form"+counter).remove(); 
-                counter--;
-                $("#amount").html(counter);
-            }
-        });
-    
-
-    });
+   // });
 
 </script>
