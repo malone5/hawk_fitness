@@ -12,7 +12,7 @@
 
       
 
-      <?php if(isset($success))echo $success; ?>
+       <?php if(isset($success))echo '<div class="success">'.$success.'</div>'; ?>
        
 <!--
         <div style="width:200px;float:right; margin-right:10px;">
@@ -27,7 +27,6 @@
         
         <?php echo form_open('manage/new_fitnessclass'); //open a form in the 'create' controller ?> 
             <div id="extra-wrapper"> 
-                <?php  for($i=0;$i<3;$i++){?>
                 <div id="extra" style = "margin-bottom:20px">
                     <select class="form-control" required name="class_type[]">
                       <?php foreach($classtype_options as $option){ ?>
@@ -73,7 +72,7 @@
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
               </div>
-            </div><!--end of extra div--><?php }?>
+            </div><!--end of extra div-->
         </div><!--end of extra wrapper-->
           <input style="float: right;" class="btn" type="submit" name="submit" value="Add Class" />
         </form>
