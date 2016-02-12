@@ -48,17 +48,7 @@ class FitClassCtrl extends CI_Controller {
             
            $add = $this->FitClass_model->insertClass($class_type,$instructor,$location,$start_time,$date);
             if($add){
-                $data['success']='classes have been added!';
-                $this->load->helper('form');
-
-                $data['title'] = 'Add New Class to Schedule';
-
-                # Genereate the dropdown data for the "Class Type" selection
-                $this->load->model('ClassType_model');
-                $data['classtype_options'] = $this->ClassType_model->get_classtype_names();
-				$this->load->view('templates/admin_header', $data);
-				$this->load->view('manage/create_class', $data);
-				$this->load->view('templates/admin_footer');
+            	redirect('manage/fitnessclasses');
             }
         }
         else{
