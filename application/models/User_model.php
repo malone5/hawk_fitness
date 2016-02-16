@@ -20,6 +20,21 @@ Class User_model extends CI_Model {
 
 		}
 	}
+    function checkEmail($email){
+        $this->db->select('id, uname');
+        $this->db->from('users');
+        $this->db->where('email',$email);
+        $query = $this->db->get();
+        if($query ->num_rows()==1)
+        return true;
+        
+    }
+    function updatePassword($email, $password){
+        $this->db->set('pword', $password);
+        $this->db->where('email', $email);
+        $this->db->update('users');
+        return true;
+    }
 }
 
 ?>

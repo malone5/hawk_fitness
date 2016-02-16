@@ -76,6 +76,7 @@ $route['manage'] = 'ManageCtrl/index';
 
 //Public routes
 $route['login'] = 'LoginCtrl/index';
+$route['forgotPassword'] = 'LoginCtrl/forgotPassword';
 $route['/'] = 'HomeCtrl/index';
 $route['default_controller'] = 'HomeCtrl/index'; //
 
