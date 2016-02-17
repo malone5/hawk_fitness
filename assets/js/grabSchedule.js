@@ -1,4 +1,5 @@
 $(document).ready(function(){
+   
     var q =new Date();
     //array to retrieve current day
     var weekToDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday",
@@ -30,7 +31,7 @@ $(document).ready(function(){
                     if(j<4){
                         var class_count=0;
                         if(j<1){
-                            txt+="<div id ='"+week[j]+"' class='week-schedule col-md-2 col-md-offset-2'>";
+                            txt+="<div id ='"+week[j]+"' class='week-schedule col-md-2 col-md-offset-1'>";
                         }
                         else{
                             txt+="<div id ='"+week[j]+"' class='week-schedule col-md-2'>";
@@ -38,12 +39,23 @@ $(document).ready(function(){
                         txt+="<div class='box-wrapper "+week[j]+"1'><div class='day "+week[j]+"'><h3>"+week[j]+"</h3></div><div class='details "+week[j]+"'>";
                         for (var i=0; i<data.length;i++)
                         {
-                            var d = new Date(data[i]["date"]);
-                            var c = d.getDay();
-                            var e = week[c];
-                            if (e == week[j]){
+                            var class_date = new Date(data[i]["date"]);
+                            var class_day = class_date.getDay(); //integer value of the day 
+                            var string_day = week[class_day]; // string value of the day
+                            if (string_day == week[j]){
 
                                 txt+="<div class='class-list'><div class='class-name'><span class='info'>"+data[i]["class_type"]+"</span> </div><div class='location'><span class='info'>"+data[i]["location"]+"</span></div><div class='time'><span class='info'>"+data[i]["start_time"]+"</span></div><div class='instructor'><span class='info'>"+data[i]["instructor"]+"</span></div></div>";
+                                
+                                 if (typeof session_check !== 'undefined') {
+                                     //admin view of links next to each class
+                                      txt+="<div class='check-in'><a href='checkin/"+data[i]["id"]+"'>Sign in</a></div>";
+                                    }
+                                else{
+                                    //regular user view of links/options next to each class
+                                      txt+='<div id="share" class="social-media">'+
+                                                '<div class="social-buttons"><a class="sharer button" data-sharer="facebook" data-url=""><span class="fa fa-facebook fa-1x"></span></a></div>'; 
+                                      txt+='<div class="social-buttons-twitter"><a class="sharer button" data-sharer="twitter" data-title="Checkout Sharer.js!" data-via="ellisonleao" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/"><span class="fa fa-twitter"></span></a></div></div>'
+                                }
                                 class_count++;
                             }
                         }//end of loop for classes
@@ -59,7 +71,7 @@ $(document).ready(function(){
                     else{
                          var class_count=0;
                         if(j==4){
-                            txt2+="<div id ='"+week[j]+"' class='week-schedule col-md-2 col-md-offset-3'>";
+                            txt2+="<div id ='"+week[j]+"' class='week-schedule col-md-2 col-md-offset-2'>";
                         }
                         else{
                             txt2+="<div id ='"+week[j]+"' class='week-schedule col-md-2'>";
@@ -71,8 +83,19 @@ $(document).ready(function(){
                             var c = d.getDay();
                             var e = week[c];
                             if (e == week[j]){
-
+                               
                                 txt2+="<div class='class-list'><div class='class-name'><span class='info'>"+data[i]["class_type"]+"</span> </div><div class='location'><span class='info'>"+data[i]["location"]+"</span></div><div class='time'><span class='info'>"+data[i]["start_time"]+"</span></div><div class='instructor'><span class='info'>"+data[i]["instructor"]+"</span></div></div>";
+                                
+                                if (typeof session_check !== 'undefined') {
+                                     //admin view of links next to each class
+                                      txt2+="<div class='check-in'><a href='checkin/"+data[i]["id"]+"'>Sign in</a></div>";
+                                }
+                                else{
+                                    //regular user view of links/options next to each class
+                                       txt2+='<div id="share" class="social-media">'+
+                                                '<div class="social-buttons"><a class="sharer button" data-sharer="facebook" data-url=""><span class="fa fa-facebook fa-1x"></span></a></div>'; 
+                                      txt2+='<div class="social-buttons-twitter"><a class="sharer button" data-sharer="twitter" data-title="Checkout Sharer.js!" data-via="ellisonleao" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/"><span class="fa fa-twitter"></span></a></div></div>'
+                                }
                                 class_count++;
                             }
                         }//end of loop for classes
@@ -109,7 +132,7 @@ $(document).ready(function(){
 
          });
       }
-      
+   
     // format time XX:XX AM/PM
     function formatAMPM(date) {
         var hours = date.getHours();

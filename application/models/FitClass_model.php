@@ -56,5 +56,13 @@ class FitClass_model extends CI_Model{
           return $this->db->delete('fit_classes', array('id' => $id));
 
      }
-
+    function batchDelete($data){
+//        $temp=array();
+//        
+//        for($i=0;$i<sizeof($data);$i++){
+//           $temp[] = array('id'=>$data[$i]);
+//        }
+        $this->db->where_in('id',$data);
+        return $this->db->delete('fit_classes');
+    }
 }

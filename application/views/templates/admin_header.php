@@ -14,14 +14,16 @@
 
     <title>HawkFitness Admin Panel</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
-
     <!-- Jquery/UI JS/CSS-->
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" >
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" >
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+      <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+   <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--JQuery validate js-->
+    <script src="<?php echo base_url('assets/js/jquery-validate/jquery-validate.js')?>"></script>
     <!-- MetisMenu CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/metisMenu/dist/metisMenu.min.css') ?>" >
     
@@ -40,7 +42,8 @@
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/font-awesome/css/font-awesome.min.css') ?>" >
     
-    
+    <script src="<?php echo base_url('assets/js/sweetalert/dist/sweetalert2.min.js');?>"></script>
+    <link rel="stylesheet" href="<?php echo base_url('assets/js/sweetalert/dist/sweetalert2.css');?>" >
     <!-- Custom Static CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/admin.css') ?>" >
     <!-- Custom Dynamic CSS -->

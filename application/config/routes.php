@@ -67,10 +67,10 @@ $route['manage/classtypes/delete/(:num)'] = 'ClassTypeCtrl/deleteClassType/$1';
 
 // Fitness Class CRUD
 $route['manage/fitnessclasses'] = 'FitClassCtrl/index';
+$route['manage/multipleDelete'] = 'FitClassCtrl/multipleDelete';
 $route['manage/new_fitnessclass'] = 'FitClassCtrl/createFitClass';
 $route['manage/fitnessclasses/edit/(:num)'] = 'FitClassCtrl/editFitClass/$1';
 $route['manage/fitnessclasses/delete/(:num)'] = 'FitClassCtrl/deleteFitClass/$1';
-
 $route['manage/reports'] = 'ManageCtrl/reports';
 $route['manage'] = 'ManageCtrl/index';
 
@@ -80,6 +80,7 @@ $route['forgotPassword'] = 'LoginCtrl/forgotPassword';
 $route['/'] = 'HomeCtrl/index';
 $route['default_controller'] = 'HomeCtrl/index'; //
 
-
+// Check in
+$route['checkin/(:num)'] = 'ManageCtrl/checkin/$1';
 // $route['404_override'] = '';
 // $route['translate_uri_dashes'] = FALSE;

@@ -70,7 +70,8 @@
 }
 
 .week-schedule{
-  width:15%;
+/*width of each box*/
+  width:17%;
 }
 
 
@@ -92,7 +93,7 @@
     padding-top: 5px;
 }
 .details{
-
+    overflow: hidden;
     text-align: center;
     font-weight: 200;
     font-size:16px;
@@ -118,8 +119,21 @@
 .time{
 
 }
-.class-name{
+.class-list{
+    width:60%;
+    float:left;
     border-top:1px solid #B5B0A4;
+}
+.social-media{
+    width:40%;
+    float:right;
+    border-top:1px solid #B5B0A4;
+
+}
+.check-in{
+    width:40%;
+    float:right;
+    border-top:1px solid #b5b0a4;
 }
 .info{
     padding-top: 3px;
@@ -129,7 +143,7 @@
 /*
 *   mobile view for data in section 2
 */
-@media (max-width: 992px) {
+@media (max-width: 992px) AND (min-width:769px) {
    
 /*
     .schedule-container{
@@ -140,10 +154,10 @@
     .week-schedule{
         margin-left:auto;
         margin-right:auto;
-        width:70%;
+        width:40%;
     }
     .details{
-        font-size: 30px;
+        font-size: 20px;
 
     }
     .day h3{
@@ -159,5 +173,113 @@
     #section3{
         height: auto;
     }
+}
+@media (max-width: 768px) AND (min-width: 320px){
+/*
+    .schedule-container{
+        margin-left:auto;
+        margin-right: auto;
+    }
+*/
+    .week-schedule{
+        margin-left:auto;
+        margin-right:auto;
+        width:65%;
+    }
+    .details{
+        font-size: 20px;
+
+    }
+    .day h3{
+        font-size:40px;
+    }
+    #section2{
+        height:auto;
+    }
+    #section1 h4{
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+}
+/*iphone 4, 5 screens*/
+@media (max-width: 320px){
+/*
+    .schedule-container{
+        margin-left:auto;
+        margin-right: auto;
+    }
+*/
+    .week-schedule{
+        margin-left:auto;
+        margin-right:auto;
+        width:95%;
+    }
+    .details{
+        font-size: 20px;
+
+    }
+    .day h3{
+        font-size:40px;
+    }
+    #section2{
+        height:auto;
+    }
+    #section1 h4{
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+}
+
+/*Social Media css*/
+.social-buttons{
+    background: #155b9d;
+    height:29px;
+    width:29px;
+    cursor:pointer;
+    transition: transform .7s;
+    transform:rotate(45deg);
+    margin-top:10px;
+     float:right;
+    margin-right:25px;
+}
+.social-buttons a{
+    display:block;
+    padding-top:4px;
+    color:white;
+    width:25px;
+    -webkit-transform: rotate(-45deg);
+    transform:rotate(-45deg);
+   
+}
+.social-buttons:hover{
+    background-color:#2d4373;
+    color:white;
+    cursor:pointer
+}
+.social-buttons-twitter{
+    background: #00aced;
+    height:29px;
+    width:29px;
+    cursor:pointer;
+    transition: transform .7s;
+    transform:rotate(45deg);
+    margin-top:10px;
+    float:right;
+    margin-right:20px;
+}
+.social-buttons-twitter a{
+    display:block;
+    padding-top:4px;
+    color:white;
+    width:25px;
+    -webkit-transform: rotate(-45deg);
+    transform:rotate(-45deg);
+}
+.social-buttons-twitter:hover{
+    background-color:#0087ba;
+    color:white;
+    cursor:pointer
 }
 

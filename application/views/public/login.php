@@ -28,9 +28,7 @@
                 <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
             </div>
             <div class="login-container">
-                <div class="text-center" style="color:red;">
                
-                </div>
                  <?php echo form_open('login'); ?>
 
                          <table align="center">
@@ -42,14 +40,15 @@
                                  <tr>
                                      <td><p class="web-title">HawkFitness<span class="important-text">(admin login)</span></p></td>
                                  </tr>
-                                 
-                                <?php
-                                   echo '<tr><td><div class="errors">'.validation_errors().'</div></td></tr>'; 
-                                 ?>
+                                 <tr>
+                                   <td>
+                                       <div class="errors"><?php if(isset($invalid)) echo $invalid;?></div>
+                                     </td>
+                                 </tr>
                                  <tr>
                                      <td>
                                          <div class="form-group has-feedback">
-                                             <input id="username" name="uname" type="text" size="20"  class="form-control" placeholder="username" autofocus required/>
+                                             <input  name="uname" type="text" size="20"  class="form-control" placeholder="username" autofocus required/>
                                             <span title = "enter username" class="glyphicon glyphicon-user form-control-feedback"></span>
                                          </div>
                                      </td>
@@ -57,7 +56,7 @@
                                  <tr>
                                      <td>
                                          <div class="form-group has-feedback">
-                                             <input id="username" name="pword" type="password" size="20" class="form-control" placeholder="password" required />
+                                             <input  name="pword" type="password" size="20" class="form-control" placeholder="password" required />
                                             <span title ="enter password" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
 
                                          </div>
@@ -66,14 +65,12 @@
                                  <tr>
                                      <td>
                                          <div class="form-group ">
-                                             <input class="btn btn-defualt" type="submit" value="Login"/>
+                                             <input class="btn btn-defualt" type="submit" name ="submit" value="Login"/>
                                          </div>
                                      </td>
                                  </tr>
                                  <tr>
-                                    <td>
-                                        <a href="<?php echo site_url('forgotPassword')?>">Forgot Password?</a>
-                                    </td>
+                                    <td> <a href="<?php echo site_url('forgotPassword')?>">Forgot Password?</a></td>
                                  </tr>
                              </tbody>
 
