@@ -1,0 +1,122 @@
+/*content container styling*/
+.content-container{
+    height:100%;
+}
+.content{
+ padding-top:100px;
+    
+}
+.field-wrapper{
+    padding-top:150px;
+    width:800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.field {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+ 
+}
+
+.leg {
+        width:auto;
+        padding:0 10px;
+        border-bottom:none;
+        -moz-margin-right:auto;
+        -moz-margin-left:auto;
+        margin-right:auto;
+        margin-left:auto;
+    }
+
+/*back button styling*/
+.back-container{
+    margin-left:5px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+.btn.btn-back{
+    background-color:#f2f2f2;
+    color:black;
+    width:60px;
+    text-align: center;
+    border:1px solid #eeeeee;
+}
+.btn.btn-back:hover{
+    background-color:#eeeeee;
+    border: 1px solid #f2f2f2;
+    transition:all .2s ease-in-out;
+    transform:scale(0.9);
+}
+
+/*Class info container styling*/
+
+.class-info-container{
+    
+}
+.class-info{
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+.class-name{
+    font-size:30px;
+    font-weight:bold;
+}
+.class-instructor,.class-location,.class-date,.class-time{
+    font-size:20px;
+    margin-bottom{
+        5px;
+    }
+}
+
+/*Form container styling*/
+
+.form-container{
+    
+}
+.form,.form-center{
+    /* container max is 800px on large displays   */
+    width:300px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.form-control{
+/*    width:100%;*/
+}
+.fname, .lname, .age, .attendee, #academic-wrapper, #studentID-wrapper, .btn.btn-signin{
+    margin-bottom: 10px;
+}
+.btn-container{
+    height:40px
+}
+.btn.btn-signin{
+    padding:10px 20px;
+    width:100%;
+    background-color:#3b80ff;
+    color:white;
+    text-align: center;
+    -webkit-transition: all 100ms ease;
+}
+.btn.btn-signin:hover{
+    border: 1px solid #3b80ff;
+    background-color:#3b59ff;
+    transition:all .2s ease-in-out;
+    transform: scale(.9);
+}
+.btn.btn-signin:focus{
+    background-color:#3b80ff;
+
+}
+
+@media (max-width:992px){
+    .field-wrapper{
+        width:70%;
+    }
+    .form,.form-center{
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}

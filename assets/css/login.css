@@ -7,6 +7,7 @@
     color:red;
     text-align: center;
     font-size: 15px;
+    margin-bottom:6px;
 }
 .form-group,.btn {
     width:300px;

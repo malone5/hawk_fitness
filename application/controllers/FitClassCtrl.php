@@ -23,7 +23,6 @@ class FitClassCtrl extends CI_Controller {
 	public function index()
 	{
 			// load class type model
-			$this->load->model('FitClass_model');
 			// call the model function to get the data
 			$classes = $this->FitClass_model->get_fitclass_list();
 			$data['fitclasslist'] = $classes;
@@ -39,22 +38,54 @@ class FitClassCtrl extends CI_Controller {
 	function createFitClass() {
         // database insert code
         if($this->input->post('submit')=='Add Class'){
-                
+            
+            if($this->session->userdata('logged_in')['submit'] == 'true'){
+                //redirect user back to create class page if they hit refresh
+                //to prevent double submission
+                redirect('manage/new_fitnessclass');
+            }
+            
+            $sess = $this->session->userdata('logged_in');
+            $sess['submit'] ='true';
+            $this->session->set_userdata('logged_in', $sess);
+            
             $class_type=$this->input->post('class_type');
             $instructor=$this->input->post('instructor');
             $location=$this->input->post('location');
             $start_time=$this->input->post('start_time');
             $date=$this->input->post('date');
             
-           $add = $this->FitClass_model->insertClass($class_type,$instructor,$location,$start_time,$date);
+            $add = $this->FitClass_model->insertClass($class_type,$instructor,$location,$start_time,$date);
+            
             if($add){
-            	redirect('manage/fitnessclasses');
-            }
+          
+            	//redirect('manage/fitnessclasses');
+        
+                //$data['title'] = 'Add New Class to Schedule';
+                
+                # Genereate the dropdown data for the "Class Type" selection
+                $this->load->model('ClassType_model');
+                $data['success'] ="success";
+               
+                $data['title'] = 'Add New Class to Schedule';
+
+                # Genereate the dropdown data for the "Class Type" selection
+                $this->load->model('ClassType_model');
+                $data['classtype_options'] = $this->ClassType_model->get_classtype_names();
+				$this->load->view('templates/admin_header', $data);
+				$this->load->view('manage/create_class', $data);
+				$this->load->view('templates/admin_footer');
+           }
         }
+        
         else{
             
         	$this->load->helper('form');
-        
+            #create a _POST submit session variable to prevent double submissions
+            $sess = $this->session->userdata('logged_in');
+            $sess['submit'] ='false';
+            
+            $this->session->set_userdata('logged_in', $sess);
 			$data['title'] = 'Add New Class to Schedule';
 
 			# Genereate the dropdown data for the "Class Type" selection
@@ -127,6 +158,12 @@ class FitClassCtrl extends CI_Controller {
 			
 
 		} 
+    function multipleDelete(){
+        $entries = $this->input->post('selected');
+        $query = $this->FitClass_model->batchDelete($entries);
+        echo "yes";
+        
+    }
 
 }
 

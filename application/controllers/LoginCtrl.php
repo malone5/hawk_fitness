@@ -7,51 +7,60 @@
             if($this->session->userdata('logged_in')==true){
                 redirect('manage');
             }
-            $this->load->model('User_model', '', TRUE);
+            $this->load->model('User_model');
             $this->load->library('form_validation');
             $this->load->helper('form');
         }
 
         function index() {
-
             //cedentials validation
-
-            $this->form_validation->set_rules('uname', 'Username', 'trim');
-            $this->form_validation->set_rules('pword', 'Password', 'trim|callback_password_check');
-
-            if($this->form_validation->run() == FALSE) {
-                // Field validation failed. Redirct.
+            if($this->input->post('submit')=='Login'){
+                $username=$this->input->post('uname');
+                $password=$this->input->post('pword');
+                $check = $this->User_model->login($username,$password);
+                if($check){
+                    //username is valid
+                    $session = array('username'=>$username);
+                    $this->session->set_userdata('logged_in', $session);
+                    redirect('manage');
+                }
+                else{
+                    $data['title'] = "Hawkfitness Admin Login";
+                    $data['invalid']='Invalid username or password.';
+                    $data['extraRef'] = array('<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">');
+                    $this->load->view('public/login',$data);  
+                }
+            }
+         
+            else {
                 $data['title'] = "Hawkfitness Admin Login";
                 $data['extraRef'] = array('<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">');
-                $this->load->view('public/login',$data);
-            } else {
-                //Go to manage area
-                redirect('manage/');
+                $this->load->view('public/login',$data);  
             }
         }
 
-        function password_check($password) {
-            //Field validation succeeses. Validate against database
-            $username = $this->input->post('uname');
-
-            // Query the DB
-            $result = $this->User_model->login($username, $password);
-
-            if($result ==true) {
-                $sess_array = array();
-                foreach ($result as $row) {
-
-                    $sess_array =  array('id' => $row->id, 'username' => $row->uname);
-                    $this->session->set_userdata('logged_in', $sess_array);
-                }
-
-                return TRUE;
-
-            } else {
-                $this->form_validation->set_message('password_check', 'Invalid username or password.');
-                return FALSE;
-            }
-        }
+//        function password_check($password) {
+//            //Field validation succeeses. Validate against database
+//            $username = $this->input->post('uname');
+//
+//            // Query the DB
+//            $result = $this->User_model->login($username, $password);
+//
+//            if($result ==true) {
+//                $sess_array = array();
+//                foreach ($result as $row) {
+//
+//                    $sess_array =  array('id' => $row->id, 'username' => $row->uname,'logged_in'=>true);
+//                    $this->session->set_userdata('logged_in', $sess_array);
+//                }
+//
+//                return TRUE;
+//
+//            } else {
+//                $this->form_validation->set_message('password_check', 'Invalid username or password.');
+//                return FALSE;
+//            }
+//        }
 
         function forgotPassword(){
             if($this -> input ->post('reset')){

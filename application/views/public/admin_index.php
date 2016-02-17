@@ -1,11 +1,6 @@
-<!---
--   query for last five entries of the week
--   server check for date comparisons for weekly schedule query
--
--->
-
-
-
+<script>
+  var session_check =  '<?php if($this->session->userdata('logged_in'))echo json_encode($this->session->userdata('logged_in'));?>';
+</script>
 <section id="section1">
     <div class="dummy"></div>
 <!--
@@ -24,11 +19,12 @@
     </div>
 
     
-</section><!--Enc Section 1-->
+</section><!--End Section 1-->
 <div class="wrapper">
 <section id="section2">
     <div class="anchorDay text-center">
-        <a class="visible-xs-block" id="anchor-day" style="font-size:15px"><strong>Today's Schedule</strong></a>
+        <a class="visible-xs-block visible-sm" id="anchor-day" href="javascript:;" style="font-size:15px"><strong>Today's Schedule</strong></a>
+       
     </div>
          <!-- Beginning of class schedule -->
          <div class="schedule-wrapper">
@@ -38,7 +34,6 @@
                 </div>
             </div>
         </div>
-    <div id="shares"></div>
-</section><!--End opf Section2-->
+</section><!--End of Section2-->
 </div>
 
