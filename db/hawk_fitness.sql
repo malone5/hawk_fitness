@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2016 at 10:00 PM
+-- Generation Time: Feb 17, 2016 at 10:14 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -79,6 +79,96 @@ INSERT INTO `attendees` (`id`, `class_type`, `fname`, `lname`, `student_id`, `ac
 (51, 'Kickboxing', 'hoorah', 'murew2', 's12', '', 99, 'Alumni'),
 (52, 'Kickboxing', 'power', 'ranger', 's888888', 'Senior', 21, 'Student'),
 (53, 'Butt Buster', 'gdsgds', 'gdfgsdfg', 's4532534', 'Sophomore', 22, 'Student');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `class_type`
+--
+
+CREATE TABLE IF NOT EXISTS `class_type` (
+  `id` int(4) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `class_type`
+--
+
+INSERT INTO `class_type` (`id`, `name`, `description`) VALUES
+(0, '“Abs, Legs & Butt”', 'no'),
+(1, 'Yoga', 'This is the Yoga description'),
+(3, 'Butt Buster', 'This is ButtBuster description'),
+(4, 'Kickboxing', 'This is Kickboxing description'),
+(5, 'Zumba', 'This is Zumba description');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fit_classes`
+--
+
+CREATE TABLE IF NOT EXISTS `fit_classes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `class_type` varchar(20) NOT NULL,
+  `instructor` varchar(30) NOT NULL,
+  `location` varchar(20) NOT NULL,
+  `start_time` varchar(8) NOT NULL,
+  `date` date NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+
+--
+-- Dumping data for table `fit_classes`
+--
+
+INSERT INTO `fit_classes` (`id`, `class_type`, `instructor`, `location`, `start_time`, `date`) VALUES
+(1, 'Butt Buster', 'Nicki Minaj', 'The Mansion', '4:00PM', '2016-02-26'),
+(14, 'Butt Buster', 'Sean', 'Boylin Gym', '8:30 PM', '2015-10-14'),
+(15, 'Zumba', 'Miles Autsin', 'Boylin Gym', '9:30om', '2015-10-31'),
+(17, 'Kickboxing', 'Ken', 'MAC', '3:30pm', '2015-11-27'),
+(18, 'Yoga', 'Sir Mix-A-Lot', 'Hollywood', '9:00pm', '2016-02-02'),
+(19, 'Butt Buster', 'Guru Ghulab', 'Yoga Studio', '6:30', '2016-02-01'),
+(27, 'Kickboxing', 'test instruct changed to kickb', 'testt location updat', '8:00pm', '2016-02-18'),
+(28, 'Yoga', 'Sgt. Hell', 'Fire Hall', '6:66PM', '2016-02-20'),
+(29, 'Kickboxing', 'Ken', 'Mom''s House', '2:00PM', '2016-02-27'),
+(30, '“Abs, Legs & Butt”', 'Barbie', 'Ken''s Mansion', '9:00PM', '2016-02-28'),
+(31, 'Butt Buster', 'Romy', 'East Club', '1:30PM', '2016-02-20'),
+(41, '“Abs, Legs & Butt”', 'Burns', 'City Hall', '8:00PM', '2016-02-27'),
+(48, 'Kickboxing', 'Yogi', 'Walahala', '5:43AM', '2016-02-10'),
+(58, '“Abs, Legs & Butt”', 'Baxter', 'Burns', '06:56', '2016-02-13'),
+(63, 'Butt Buster', 'Check', 'Boo', '16:30', '2016-02-22'),
+(66, 'Kickboxing', 'Roman', 'Empire', '12:00', '2016-02-27'),
+(67, 'Kickboxing', 'spongebob', 'bikini bottom', '14:22', '2016-02-28'),
+(68, 'Butt Buster', 'Patrick Star', 'Under a Rock', '08:56', '2016-02-28'),
+(74, '“Abs, Legs & Butt”', 'Mr Squats', 'Low City', '16:53', '2016-02-26'),
+(75, 'Kickboxing', 'Bruce Lee', 'Local Town', '03:02', '2016-02-27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `pword` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `fname` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `lname` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `role` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `uname`, `pword`, `fname`, `lname`, `email`, `role`) VALUES
+(1, 'admin1', 'secrete', 'Jon', 'Cascone', 'nothing@nothing.com', 'admin');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
