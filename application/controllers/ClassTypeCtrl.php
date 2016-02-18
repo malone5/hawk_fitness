@@ -40,9 +40,6 @@ class ClassTypeCtrl extends CI_Controller {
 
 	}
 
-	function fetchAllClassTypes() {
-        // database fetch code
-    }
 
 	function createClassType() {
         // database insert code
@@ -77,20 +74,6 @@ class ClassTypeCtrl extends CI_Controller {
 		}
     }
 
-     function fetchClassType() {
-        // database fetch code
-
-        if($this->session->userdata('logged_in')) {
-
-
-
-			
-
-		} else {
-			// If no session, redirect to login
-			redirect('/login', 'refresh');
-		}
-    } 
 
     function editClassType($id) {
         // database update code

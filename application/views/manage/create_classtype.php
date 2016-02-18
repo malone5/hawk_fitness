@@ -7,7 +7,7 @@
 
       <?php echo validation_errors(); ?>
 
-      <?php echo form_open('manage/new_classtype'); //open a form in the 'create' controller ?> 
+      <?php echo form_open('manage/new_classtype'); ?> 
     
 
         <div class="input-group">

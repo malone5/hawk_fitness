@@ -24,7 +24,6 @@
 
     <!-- MetisMenu CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/metisMenu/dist/metisMenu.min.css') ?>" >
-    
 
     <!-- Timeline CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/css/sb-admin-2.css') ?>" >
@@ -49,8 +48,23 @@
 	<?php }?>
 
 
-    
-    
+    <!-- JAVASCRIPT -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- <script src="<?php echo base_url('assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script> -->
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="<?php echo base_url('assets/admin/bower_components/metisMenu/dist/metisMenu.min.js') ?>"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="<?php echo base_url('assets/admin/bower_components/raphael/raphael-min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/admin/bower_components/morrisjs/morris.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/admin/js/morris-data.js') ?>"></script>
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?php echo base_url('assets/admin/dist/js/sb-admin-2.js') ?>"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -103,17 +117,6 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <!-- NOT USED AT THE MOMMENT
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
                         </li>                       
                         <li>
                             <a href="<?php echo site_url('manage/'); ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
