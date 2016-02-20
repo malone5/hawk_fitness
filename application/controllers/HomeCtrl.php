@@ -24,6 +24,12 @@ class HomeCtrl extends CI_Controller {
                 '<script src="'.base_url('assets/js/grabSchedule.js').'"></script>'
         );
 
+        if($this->session->userdata('logged_in')) {
+        	$data['admin_btn'] = "Dashboard";
+        } else {
+        	$data['admin_btn'] = "Administration";
+        }
+
 		$this->load->view('templates/header', $data);
 		$this->load->view('public/index', $data);
 		$this->load->view('templates/footer');

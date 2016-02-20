@@ -49,7 +49,6 @@
                         <tr>
                             <td>
                                 <label>Email: </label> <input type ="email" id="email" name = "email" placeholder="email" autofocus required />
-<!--                                <input type="submit" class="btn btn-forgot" value="reset"/>-->
                             </td>
                         </tr>
                         <tr>

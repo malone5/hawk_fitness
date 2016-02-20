@@ -1,7 +1,8 @@
 <?php 
 Class User_model extends CI_Model {
 
-	function login ($username, $password) {
+	function login ($username, $password) 
+    {
 		$this->db->select('id, uname, pword');
 		$this->db->from('users');
 		$this->db->where('uname', $username);
@@ -10,7 +11,8 @@ Class User_model extends CI_Model {
 
 		$query = $this->db->get();
 
-		if($query->num_rows() == 1) {
+		if($query->num_rows() == 1) 
+        {
 
 			return $query->result();
 
@@ -20,7 +22,8 @@ Class User_model extends CI_Model {
 
 		}
 	}
-    function checkEmail($email){
+    function checkEmail($email)
+    {
         $this->db->select('id, uname');
         $this->db->from('users');
         $this->db->where('email',$email);
@@ -29,7 +32,9 @@ Class User_model extends CI_Model {
         return true;
         
     }
-    function updatePassword($email, $password){
+
+    function updatePassword($email, $password)
+    {
         $this->db->set('pword', $password);
         $this->db->where('email', $email);
         $this->db->update('users');

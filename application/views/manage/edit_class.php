@@ -19,7 +19,7 @@
                     foreach($classtype_options as $option) 
                     {
                         if ($class['class_type'] == $option['name']) {
-                            echo '<option selected="selected" value="'.$option['id'].'" >'.$option['name'].'</option>';
+                            echo '<option selected="selected" value="'.$option['name'].'" >'.$option['name'].'</option>';
                         } else {
                             echo '<option value="'.$option['name'].'" >'.$option['name'].'</option>';
                         }
