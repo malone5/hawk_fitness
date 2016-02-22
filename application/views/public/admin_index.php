@@ -3,14 +3,6 @@
 </script>
 <section id="section1">
     <div class="dummy"></div>
-<!--
-    <div class="container-fluid">
-        <div class="row text-center">
-            <h2>Welcome to HawkFitness</h2>
-            <h4>All classes are free to all students, employees and members.  No need to sign up in advance.  Just show up with a water bottle.  We have yoga mats if you need one. Fitness Center Demo Workouts also available.  Please contact jcascone@monmouth.edu</h4>
-        </div>
--->
-    </div>
         <div class="Logo  text-center">     
             <div class="drop">
                 <h3>HawkFitness</h3>      

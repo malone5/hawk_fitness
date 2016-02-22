@@ -15,10 +15,9 @@ class HomeCtrl extends CI_Controller {
 	public function index()
 	{
         if($this->session->userdata('logged_in')){
+            $data['admin_btn']="Manage";
             $data['classes'] = $this->Home_model->get_classes();
-            //$data['last_check']=date('m/d/y h:ia');
             $data['title'] = 'Hawk Fitness Classes';
-           // $data['week'] = array('Monday','Tuesday','Wednesday','Thursday','Friday');
             $data['extraRef']=array(
                     '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">',
                     '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
@@ -30,10 +29,9 @@ class HomeCtrl extends CI_Controller {
             $this->load->view('templates/footer');
         }
         else{
+            $data['admin_btn']="Administration";
             $data['classes'] = $this->Home_model->get_classes();
-            //$data['last_check']=date('m/d/y h:ia');
             $data['title'] = 'Hawk Fitness Classes';
-            //$data['week'] = array('Monday','Tuesday','Wednesday','Thursday','Friday');
             $data['extraRef']=array(
                     '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">',
                     '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
@@ -45,7 +43,7 @@ class HomeCtrl extends CI_Controller {
             $this->load->view('templates/footer');
         }
 	}
-    
+
     public function getSchedule()
     {
         $users = $this->Home_model->get_classes();

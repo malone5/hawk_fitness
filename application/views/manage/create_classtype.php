@@ -7,8 +7,8 @@
 
       <?php echo validation_errors(); ?>
 
-      <?php echo form_open('manage/new_classtype'); //open a form in the 'create' controller ?> 
-    
+      <?php echo form_open('manage/new_classtype'); //open a form in the 'create' controller ?>
+
 
         <div class="input-group">
             <input name="name" type="text" size="30" class="form-control" placeholder="Class Type" />
@@ -22,14 +22,7 @@
 
 
         <input class="btn" type="submit" name="submit" value="Add Class Type" />
-
+      </form>
     </div>
   </div>
 </div> <!-- .content-wrapper -->
-
-
-
-
-
-
-

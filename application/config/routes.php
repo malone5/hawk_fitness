@@ -82,5 +82,6 @@ $route['default_controller'] = 'HomeCtrl/index'; //
 
 // Check in
 $route['checkin/(:num)'] = 'ManageCtrl/checkin/$1';
+$route['manage/checkin'] = 'ManageCtrl/manage_checkin';
 // $route['404_override'] = '';
 // $route['translate_uri_dashes'] = FALSE;

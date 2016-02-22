@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2016 at 10:14 PM
+-- Generation Time: Feb 21, 2016 at 05:15 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `attendees` (
   `age` int(2) NOT NULL,
   `attendee` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
 
 --
 -- Dumping data for table `attendees`
@@ -78,7 +78,12 @@ INSERT INTO `attendees` (`id`, `class_type`, `fname`, `lname`, `student_id`, `ac
 (50, 'Kickboxing', 'super', 'man', 's45465', '', 78, 'Faculty'),
 (51, 'Kickboxing', 'hoorah', 'murew2', 's12', '', 99, 'Alumni'),
 (52, 'Kickboxing', 'power', 'ranger', 's888888', 'Senior', 21, 'Student'),
-(53, 'Butt Buster', 'gdsgds', 'gdfgsdfg', 's4532534', 'Sophomore', 22, 'Student');
+(53, 'Butt Buster', 'gdsgds', 'gdfgsdfg', 's4532534', 'Sophomore', 22, 'Student'),
+(54, 'Yoga', 'dsf', 'dfsg', 's3424', '', 43, 'Faculty'),
+(55, '“Abs, Legs & Butt”', 'dfgsdg', 'dsgsdfg', 's2314324', '', 34, 'Faculty'),
+(56, '“Abs, Legs & Butt”', 'fdfs', 'sdfsaf', 's4234214', '', 42, 'Alumni'),
+(57, '“Abs, Legs & Butt”', 'gdgsd', 'fdsgd', 's454324', '', 43, 'Faculty'),
+(58, '“Abs, Legs & Butt”', 'Yuka', 'Mull', 's3424325', '', 42, 'Alumni');
 
 -- --------------------------------------------------------
 
@@ -87,22 +92,22 @@ INSERT INTO `attendees` (`id`, `class_type`, `fname`, `lname`, `student_id`, `ac
 --
 
 CREATE TABLE IF NOT EXISTS `class_type` (
-  `id` int(4) NOT NULL,
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `description` varchar(500) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `class_type`
 --
 
 INSERT INTO `class_type` (`id`, `name`, `description`) VALUES
-(0, '“Abs, Legs & Butt”', 'no'),
-(1, 'Yoga', 'This is the Yoga description'),
+(1, '“Abs, Legs & Butt”', 'no'),
 (3, 'Butt Buster', 'This is ButtBuster description'),
-(4, 'Kickboxing', 'This is Kickboxing description'),
-(5, 'Zumba', 'This is Zumba description');
+(4, 'Kickboxing', 'This is Kickboxing description is stupid'),
+(5, 'Zumba', 'This is Zumba description'),
+(6, 'Yoga', 'YOGA! ');
 
 -- --------------------------------------------------------
 
@@ -118,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `fit_classes` (
   `start_time` varchar(8) NOT NULL,
   `date` date NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
 
 --
 -- Dumping data for table `fit_classes`
@@ -144,7 +149,9 @@ INSERT INTO `fit_classes` (`id`, `class_type`, `instructor`, `location`, `start_
 (67, 'Kickboxing', 'spongebob', 'bikini bottom', '14:22', '2016-02-28'),
 (68, 'Butt Buster', 'Patrick Star', 'Under a Rock', '08:56', '2016-02-28'),
 (74, '“Abs, Legs & Butt”', 'Mr Squats', 'Low City', '16:53', '2016-02-26'),
-(75, 'Kickboxing', 'Bruce Lee', 'Local Town', '03:02', '2016-02-27');
+(75, 'Kickboxing', 'Bruce Lee', 'Local Town', '03:02', '2016-02-27'),
+(76, 'Zumba', 'BobbY', 'basement', '21:40', '2016-02-21'),
+(77, 'Kickboxing', 'Tubbs', 'Men''s Room', '21:00', '2016-02-21');
 
 -- --------------------------------------------------------
 

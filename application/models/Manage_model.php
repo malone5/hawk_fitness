@@ -6,16 +6,10 @@ class Manage_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function get_classes($slug = FALSE)
+	public function get_classes()
 	{
-		if ($slug === FALSE)
-		{
 			$query = $this->db->get('fit_classes');
 			return $query->result_array();
-		}
-
-		$query = $this->db->get_where('fit_classes', array('slug' => $slug));
-		return $query->row_array();
 	}
 
 	public function set_classes()
@@ -23,7 +17,6 @@ class Manage_model extends CI_Model {
 
 	    $data = array(
 	        'class_type' => $this->input->post('class_type'),
-	        'slug' => $slug,
 	        'instructor' => $this->input->post('instructor'),
 			'location' => $this->input->post('location'),
 			'start_time' => $this->input->post('start_time'),
@@ -36,9 +29,9 @@ class Manage_model extends CI_Model {
          $query = $this->db->get_where('fit_classes', array('id' => $id));
           return $query->row_array();
     }
-    
+
     function insertAttendee($class_type, $fname, $lname, $age, $attendee, $academic, $student_id){
-        
+
         $data = array(
                     'class_type'=>$class_type,
                     'fname'=>$fname,
@@ -48,9 +41,12 @@ class Manage_model extends CI_Model {
                     'acad_level'=>$academic,
                     'student_id'=>$student_id,
                     );
-        
+
         return ($this ->db->insert('attendees',$data));
     }
+		function getTodaysClasses($date){
+			return $this->db->get_where('fit_classes',array('date'=>$date))->result_array();
+		}
 }
 
 

@@ -32,10 +32,6 @@
                  <?php echo form_open('login'); ?>
 
                          <table align="center">
-
-                             <thead>
-
-                             </thead>
                              <tbody>
                                  <tr>
                                      <td><p class="web-title">HawkFitness<span class="important-text">(admin login)</span></p></td>

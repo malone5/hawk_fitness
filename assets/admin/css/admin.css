@@ -1,11 +1,51 @@
-.navbar-static-top {
-	/* stops the nav bar from showing on top of datepicker */
-	z-index: 1;
-}
 
 /* fixes a bug where jqueryUI create a thin div at bottom of page */
 #ui-datepicker-div {display: none;}
 
+/*fix for user account dropdown not showing in mobile view*/
+@media (max-width:768px){
+    .navbar-top-links .dropdown-user{
+        right:auto;
+        left:0;
+    }
+    .sidebar .sidebar-nav.navbar-collapse{
+        display:none;
+        transition-duration:0.5s;
+        transition-timing-function: ease-in;
+    }
+    .sidebar-nav.navbar-collapse.in{
+        overflow-y: hidden;
+        transition-duration:2s;
+        transition-timing-function: ease-in;
+        display:inline;
+    }
+    .sidebar-nav.navbar-collapse.collapsing{
+        overflow-y: hidden;
+        transition-duration:2s;
+        transition-timing-function: ease-in;
+    }
+    .panel{
+        margin-right: auto;
+        margin-left:auto;
+        width:60%;
+    }
+
+}
+@media (min-width:768px){
+    .navbar-top-links .dropdown-user{
+        right:0;
+        left:auto;
+    }
+    .panel{
+        margin-right: auto;
+        margin-left:auto;
+        width:80%;
+    }
+}
+
+
+
+/*Create fitness class styling*/
 .success{
     color:green;
 }
@@ -42,4 +82,19 @@
     font-size: 13px;
     text-align: center;
     margin-bottom: 10px;
+}
+.batch-label{
+    margin-top: 5px;
+    margin-right:80px;
+    float:right;
+    font-size:16px;
+}
+#batch-delete-on,#batch-delete-off{
+    font-size:16px;
+}
+#batch-delete{
+    margin-bottom:10px;
+    margin-right:80px;
+    float:right;
+    font-size:16px;
 }
