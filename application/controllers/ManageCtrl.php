@@ -126,19 +126,20 @@ class ManageCtrl extends CI_Controller {
         }
     }
 
-		function getCheckinAmount(){
-				$amount = new DateTime();
-				$num = 0;
-				$amountQ = $this->Manage_model->getTodaysClasses($amount->format("y-m-d"));
-				if($amountQ){
-					$num=sizeof($amountQ);
-					return $num;
-				}
-				else{
-					show_404();
-				}
-
+	function getCheckinAmount(){
+		$amount = new DateTime();
+		$num = 0;
+		$amountQ = $this->Manage_model->getTodaysClasses($amount->format("y-m-d"));
+		if($amountQ){
+			$num=sizeof($amountQ);
+			return $num;
 		}
+		else{
+			$num = 0;
+			return $num;
+		}
+
+	}
 }
 
 ?>
