@@ -22,6 +22,8 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
+    
+
     <!-- MetisMenu CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/metisMenu/dist/metisMenu.min.css') ?>" >
 
@@ -48,10 +50,19 @@
 	<?php }?>
 
 
+    <!-- DataTables.net Bootstrap CSS + Javascript -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" >
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+
     <!-- JAVASCRIPT -->
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- <script src="<?php echo base_url('assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script> -->
+
+    <!-- datatables.net CDN-->
+    
+    
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo base_url('assets/admin/bower_components/metisMenu/dist/metisMenu.min.js') ?>"></script>
@@ -59,7 +70,7 @@
     <!-- Morris Charts JavaScript -->
     <script src="<?php echo base_url('assets/admin/bower_components/raphael/raphael-min.js') ?>"></script>
     <script src="<?php echo base_url('assets/admin/bower_components/morrisjs/morris.min.js') ?>"></script>
-    <script src="<?php echo base_url('assets/admin/js/morris-data.js') ?>"></script>
+    <script src="<?php //echo base_url('assets/admin/js/morris-data.js') ?>"></script>
 
 
     <!-- Custom Theme JavaScript -->
