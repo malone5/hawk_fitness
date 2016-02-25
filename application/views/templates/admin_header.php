@@ -28,23 +28,8 @@
     <!--JQuery validate js-->
     <script src="<?php echo base_url('assets/js/jquery-validate/jquery-validate.js');?>" ></script>
 
-    <!-- DataTables.net Bootstrap CSS + Javascript -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" >
-    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-
-    <!-- MetisMenu CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/metisMenu/dist/metisMenu.min.css'); ?>" >
-
-
-    <!-- Timeline CSS -->
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/css/sb-admin-2.css'); ?>" >
-
-
-    <!-- Morris Charts CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/admin/bower_components/morrisjs/morris.css'); ?>" >
 
 
     <!-- Custom Fonts -->
@@ -53,8 +38,11 @@
     <script src="<?php echo base_url('assets/js/sweetalert/dist/sweetalert2.min.js');?>"></script>
     <link rel="stylesheet" href="<?php echo base_url('assets/js/sweetalert/dist/sweetalert2.css');?>" >
 
-    <!-- Custom Static CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/admin.css') ?>" >
+
+    <!-- DataTables.net Bootstrap CSS + Javascript -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" >
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
 
     <!-- Custom Dynamic CSS -->
     <?php if (isset($css)){?>
