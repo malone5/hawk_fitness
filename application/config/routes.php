@@ -71,7 +71,7 @@ $route['manage/multipleDelete'] = 'FitClassCtrl/multipleDelete';
 $route['manage/new_fitnessclass'] = 'FitClassCtrl/createFitClass';
 $route['manage/fitnessclasses/edit/(:num)'] = 'FitClassCtrl/editFitClass/$1';
 $route['manage/fitnessclasses/delete/(:num)'] = 'FitClassCtrl/deleteFitClass/$1';
-$route['manage/reports'] = 'ManageCtrl/reports';
+$route['manage/reports'] = 'ReportCtrl/index';
 $route['manage'] = 'ManageCtrl/index';
 
 //Public routes
