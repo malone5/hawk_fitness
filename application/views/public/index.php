@@ -1,6 +1,9 @@
+
+
+
 <section id="section1">
     <div class="dummy"></div>
-    </div>
+
         <div class="Logo  text-center">     
             <div class="drop">
                 <h3>HawkFitness</h3>      
@@ -23,6 +26,7 @@
                 </div>
             </div>
         </div>
+    <div id="shares"></div>
 </section><!--End opf Section2-->
 </div>
 
