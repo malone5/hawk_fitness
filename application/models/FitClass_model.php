@@ -23,7 +23,7 @@ class FitClass_model extends CI_Model{
     function insertClass($data1,$data2,$data3,$data4,$data5){
             $data=array();
             for($i=0;$i<sizeof($data1);$i++){
-                
+
                 $data[]=array('class_type'=>$data1[$i],
                               'instructor'=>$data2[$i],
                               'location' =>$data3[$i],
@@ -33,7 +33,7 @@ class FitClass_model extends CI_Model{
             }
             return $this->db->insert_batch('fit_classes',$data);
         }
-    
+
      function updateFitClass($id) {
 
           $data = array(
@@ -51,10 +51,12 @@ class FitClass_model extends CI_Model{
      }
 
      function deleteFitClass($id) {
-
           // delete the provided FitClass
           return $this->db->delete('fit_classes', array('id' => $id));
 
      }
-
+    function batchDelete($data){
+        $this->db->where_in('id',$data);
+        return $this->db->delete('fit_classes');
+    }
 }

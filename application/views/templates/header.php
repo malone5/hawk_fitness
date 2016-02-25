@@ -16,11 +16,18 @@
         <!--Custom or extra css or js references-->
         
 		<?php 
-            if (isset($extraRef) and !empty($extraRef)){
-			foreach($extraRef as $link){
-                echo $link.PHP_EOL;
+            if($this->session->userdata('logged_in')!=true);
+            {
+                echo '<script src="https://cdn.jsdelivr.net/sharer.js/latest/sharer.min.js"></script>';
+                echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">';
             }
-		 }?>
+            if (isset($extraRef) and !empty($extraRef)){
+                foreach($extraRef as $link){
+                    echo $link.PHP_EOL;
+                }
+		    }
+        ?>
 	</head>
 	
 	<body>
+       

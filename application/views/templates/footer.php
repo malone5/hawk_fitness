@@ -4,15 +4,14 @@
 					<hr>
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
-						<strong><a href="http://www.monmouth.edu/" title="Monmouth University">Monmouth University</a></strong>
+                        <a href="http://www.monmouth.edu/" title="Monmouth University"><strong>Monmouth University</strong></a>
 						 / 
-						<strong><a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=714830" title="Monmouth University Fitness Center">Fitness Center</a></strong>
+                        <strong><a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=714830" title="Monmouth University Fitness Center"><strong>Fitness Center</strong></a>
 						 / 
-						<strong><a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=722884" title="Monmouth University Intramurals">Intramurals</a></strong>
+						<strong><a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=722884" title="Monmouth University Intramurals"><strong>Intramurals</strong></a>
 					</div>
-					
 					<div class="col-md-4">
-						<input type="button" class="btn btn-primary" value="<?php echo $admin_btn ?>" onclick="location.href='<?php echo base_url();?>login'"></input>
+						<input type="button" class="btn btn-primary" value="<?php echo $admin_btn;?>" onclick="location.href='<?php echo base_url();?>login'"></input>
 					</div>
 				</div>
 				<div class="row text-center">
@@ -20,5 +19,6 @@
 				</div>
 			</div>
 		</div>
+        
 	</body>
 </html>
