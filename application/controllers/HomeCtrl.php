@@ -14,10 +14,11 @@ class HomeCtrl extends CI_Controller {
 
 	public function index()
 	{
-		// 'Logged In' functions. Consider splitting the functions.
         if($this->session->userdata('logged_in'))
 		{
-            $data['admin_btn']="Manage"; // Admin Button
+			// Admin Button: Display 'Manage'
+            $data['admin_btn'] = "Manage";
+			$data['logout_btn'] = '<a class="btn btn-primary" href="'.site_url('manage/logout').'">Logout</a>';
             $data['classes'] = $this->Home_model->get_classes();
             $data['title'] = 'Hawk Fitness Classes';
             $data['extraRef']=array(
@@ -32,7 +33,10 @@ class HomeCtrl extends CI_Controller {
         }
         else
 		{
-            $data['admin_btn']="Administration";
+			// Admin Button: Display 'Administration'
+            $data['admin_btn'] = "Administration";
+			// Hides the Logout button when User is logged out.
+			$data['logout_btn'] = null;
             $data['classes'] = $this->Home_model->get_classes();
             $data['title'] = 'Hawk Fitness Classes';
             $data['extraRef']=array(
