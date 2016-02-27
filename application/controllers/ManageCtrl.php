@@ -21,7 +21,7 @@ class ManageCtrl extends CI_Controller {
 	public function index(){
 			$num = $this->getCheckinAmount();
 			$data['checkin_amount']=$num;
-      $data['classes'] = $this->Manage_model->get_classes();
+      		$data['classes'] = $this->Manage_model->get_classes();
 			$data['title'] = 'HawkFitness Admin Dashboard';
 			$this->load->view('templates/admin_header', $data);
 			$this->load->view('manage/dashboard', $data);
