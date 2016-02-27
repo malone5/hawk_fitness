@@ -18,7 +18,6 @@ class HomeCtrl extends CI_Controller {
         if($this->session->userdata('logged_in'))
 		{
             $data['admin_btn']="Manage"; // Admin Button
-			$data['logout_btn']="Logout"; // Logout Button
             $data['classes'] = $this->Home_model->get_classes();
             $data['title'] = 'Hawk Fitness Classes';
             $data['extraRef']=array(
@@ -34,7 +33,6 @@ class HomeCtrl extends CI_Controller {
         else
 		{
             $data['admin_btn']="Administration";
-			$data['logout_btn']=null;
             $data['classes'] = $this->Home_model->get_classes();
             $data['title'] = 'Hawk Fitness Classes';
             $data['extraRef']=array(
