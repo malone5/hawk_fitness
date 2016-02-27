@@ -16,8 +16,7 @@ class HomeCtrl extends CI_Controller {
 	{
         if($this->session->userdata('logged_in'))
 		{
-			// Admin Button: Display 'Manage'
-            $data['admin_btn'] = "Manage";
+            $data['admin_btn'] = "Manage"; // Admin Button: Display 'Manage'
 			$data['logout_btn'] = '<a class="btn btn-primary" href="'.site_url('manage/logout').'">Logout</a>';
             $data['classes'] = $this->Home_model->get_classes();
             $data['title'] = 'Hawk Fitness Classes';
@@ -33,10 +32,7 @@ class HomeCtrl extends CI_Controller {
         }
         else
 		{
-			// Admin Button: Display 'Administration'
-            $data['admin_btn'] = "Administration";
-			// Hides the Logout button when User is logged out.
-			$data['logout_btn'] = null;
+            $data['admin_btn'] = "Administration"; // Admin Button: Display 'Administration'
             $data['classes'] = $this->Home_model->get_classes();
             $data['title'] = 'Hawk Fitness Classes';
             $data['extraRef']=array(

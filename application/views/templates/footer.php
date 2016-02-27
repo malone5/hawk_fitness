@@ -14,7 +14,7 @@
 						<!--Admin / Manage Button-->
 						<input type="button" class="btn btn-primary" value="<?php echo $admin_btn;?>" onclick="location.href='<?php echo base_url();?>login'"></input>
 						<!--Logout Button-->
-						<?php echo $logout_btn;?>
+						<?php if(isset($logout_btn)) echo $logout_btn?>
 					</div>
 				</div>
 				<div class="row text-center">
