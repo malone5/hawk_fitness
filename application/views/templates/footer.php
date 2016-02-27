@@ -17,7 +17,7 @@
 					</div>
 					<div class="col-md-3">
 						<!--Logout button-->
-						<!-- <input type="button" class="btn btn-primary" value="<?php echo $logout_btn;?>" onclick="location.href='<?php echo site_url('manage/logout');?>'"></input> -->
+						<input type="button" class="btn btn-primary" value="<?php echo $logout_btn;?>" onclick="location.href='<?php echo site_url('manage/logout');?>'"></input>
 				</div>
 				<div class="row text-center">
 					<em>HawkFitness&copy; 2015</em>
