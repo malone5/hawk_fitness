@@ -1,58 +1,46 @@
 #section1{
 
     position:relative;
- 
+
 /*    background-color:#;*/
-    color:#0d1d41;
+    color:White;
     padding-bottom:40px;
-    height:500px;
-    background-color: rgba(255,255,255,0.5);
+    height:234px;
+    /*background-color: rgba(35, 35, 35, 0.77);*/
 
 }
-.dummy{
-    background: url("../images/mac.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size:cover;
+
+ body{
+    background:linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url("../images/mac.jpg") ;
+    background-positin:center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
     background-size:cover;
-    opacity:.4;
-    height:500px;
-    background-color: rgba(255,255,255,0.5);
+    background-color:#464646;
+
 }
+
 #section1 h4{
   margin-left:250px;
   margin-right:250px;
+
 }
 #section2{
     padding-top: 20px;
-    padding-bottom: 70px;
 }
-#section3{
-    background-color:#C7D6E9;
-    padding-top:20px;
-    color:#0D1D41;
-    padding-bottom:20px;
-    padding-top:65px;
-    height:auto;
+.week-date{
+  /*styling for the schedule week information*/
+  color:white;
 }
-#section3 h4{
-    margin-bottom: 0;
-    text-decoration: underline;
-    font-weight:600;
+.week-container{
+  /*container for week dates of the current schedule*/
+  margin-left: 12px;
 }
-#section3 h3{
-    font-weight:600;
-}
-#section3 p{
-    text-align: left;
-    font-size: 15px;
-}
-.class-description{
-    margin-left:15px;
-    margin-right:10px;
+.today-container{
+  /*container for today's schedule anchor*/
 }
 .Logo{
-    opacity: 1;
+
     position:absolute;
     bottom:-25px;
     width: 100%;
@@ -61,225 +49,111 @@
 .Logo h3{
     font-size: 40px;
     text-align: center;
-    color:#004bc3;
+    color:White;
 }
 .drop{
     margin:0 auto;
     width:250px;
 
 }
-
-.week-schedule{
-/*width of each box*/
-  width:17%;
+.wrapper{
+  /*background-color: rgba(35, 35, 35, 0.77);*/
 }
 
-
-.day{
 /*
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+*   Schedule boxes css
 */
-    border-bottom: 1px solid #C7D6E9;
-
-    background-color:#C7D6E9;
-    color:black;
-    box-shadow: 0 3px 7px 0 #777;
+.week-schedule{
+  /*Each box container*/
+  transition:.4s all;
+  box-shadow: 0px 0px 0px 0px rgba(250, 250, 250, 0.81);
 }
-.day h3{
-    text-align: center;
-    font-weight: 300;
-    font-size: 20px;
-    padding-top: 5px;
+.day{
+  /*day container*/
+  background-color: rgba(250, 250, 250, 0.81);
+  color:#515B98;
+  box-shadow: 0 3px 7px 0 #777;
+  padding: 1px;
+  text-align: center;
+  margin-top:15px;
+}
+.day-container{
+  margin-top:4px;
+}
+.day p{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 5px;
 }
 .details{
-    overflow: hidden;
-    text-align: center;
-    font-weight: 200;
-    font-size:16px;
-    background-color:#f1f1f1;
-    padding-bottom: 8px;
-    padding-right:2px;
-    border-top-style: none;
-/*
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-*/
-    box-shadow: 0 3px 7px 0 #777;
+  /*container for each class description */
+  overflow: auto; /* adds scrollbar if internal elements or text exceed height */
+  background-color: rgba(28, 65, 138, 0.69);
+  color:white;
+  height:236px;
+  padding-top:4px;
+  text-align: center;
 
-/*                font-family: 'Roboto', sans-serif;*/
-    color:black;
-}
-.location{
-
-}
-.date{
-    font-size: 14px;
-}
-.time{
 
 }
 .class-list{
-    width:60%;
-    float:left;
-    border-top:1px solid #B5B0A4;
+  /*each class listing*/
+  padding-top:6px;
+  color:White;
 }
-.social-media{
-    width:40%;
-    float:right;
-    border-top:1px solid #B5B0A4;
+.class-name{
+  /* styling for class name in each class listing*/
+  font-weight: bold;
+}
+.time{
+  font-weight: bold;
+}
+.bordered{
+  /*spacing for the first class listing*/
+  margin-top:10px;
+}
+.border-top{
+  /*padding for rest of the class listing*/
+  padding-top: 15px;
+  border-top:1px solid white;
+}
 
+/*Styling for scrollbars that appear on the page*/
+.details::-webkit-scrollbar {
+    width: 8px;
 }
-.check-in{
-    width:40%;
-    float:right;
-    border-top:1px solid #b5b0a4;
+
+.details::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
 }
-.info{
-    padding-top: 3px;
-    margin-left: 5px;
+
+.details::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    -webkit-box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.79);
+}
+.test{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*
-*   mobile view for data in section 2
+*styling for footer
 */
-@media (max-width: 992px) AND (min-width:769px) {
-   
-/*
-    .schedule-container{
-        margin-left:auto;
-        margin-right: auto;
-    }
-*/
-    .week-schedule{
-        margin-left:auto;
-        margin-right:auto;
-        width:40%;
-    }
-    .details{
-        font-size: 20px;
-
-    }
-    .day h3{
-        font-size:40px;
-    }
-    #section2{
-        height:auto;
-    }
-    #section1 h4{
-      margin-left:auto;
-      margin-right:auto;
-    }
-    #section3{
-        height: auto;
-    }
+.footer{
+   clear: both;
+  /*background-color: rgba(35, 35, 35, 0.77);*/
 }
-@media (max-width: 768px) AND (min-width: 320px){
-/*
-    .schedule-container{
-        margin-left:auto;
-        margin-right: auto;
-    }
-*/
-    .week-schedule{
-        margin-left:auto;
-        margin-right:auto;
-        width:65%;
-    }
-    .details{
-        font-size: 20px;
-
-    }
-    .day h3{
-        font-size:40px;
-    }
-    #section2{
-        height:auto;
-    }
-    #section1 h4{
-      margin-left:auto;
-      margin-right:auto;
-    }
-
+.links{
+  /*styling for external links container or items not independently styled*/
+  color:white;
 }
-/*iphone 4, 5 screens*/
-@media (max-width: 320px){
-/*
-    .schedule-container{
-        margin-left:auto;
-        margin-right: auto;
-    }
-*/
-    .week-schedule{
-        margin-left:auto;
-        margin-right:auto;
-        width:95%;
-    }
-    .details{
-        font-size: 20px;
-
-    }
-    .day h3{
-        font-size:40px;
-    }
-    #section2{
-        height:auto;
-    }
-    #section1 h4{
-      margin-left:auto;
-      margin-right:auto;
-    }
-
+.links a{
+  /*styling for the external links provided in the footer*/
+  color:rgba(113, 190, 255, 0.85);
 }
-
-/*Social Media css*/
-.social-buttons{
-    background: #155b9d;
-    height:29px;
-    width:29px;
-    cursor:pointer;
-    transition: transform .7s;
-    transform:rotate(45deg);
-    margin-top:10px;
-     float:right;
-    margin-right:25px;
+.copy{
+  font-size:14px;
+  color:white;
+  font-weight: bold;
 }
-.social-buttons a{
-    display:block;
-    padding-top:4px;
-    color:white;
-    width:25px;
-    -webkit-transform: rotate(-45deg);
-    transform:rotate(-45deg);
-   
-}
-.social-buttons:hover{
-    background-color:#2d4373;
-    color:white;
-    cursor:pointer
-}
-.social-buttons-twitter{
-    background: #00aced;
-    height:29px;
-    width:29px;
-    cursor:pointer;
-    transition: transform .7s;
-    transform:rotate(45deg);
-    margin-top:10px;
-    float:right;
-    margin-right:20px;
-}
-.social-buttons-twitter a{
-    display:block;
-    padding-top:4px;
-    color:white;
-    width:25px;
-    -webkit-transform: rotate(-45deg);
-    transform:rotate(-45deg);
-}
-.social-buttons-twitter:hover{
-    background-color:#0087ba;
-    color:white;
-    cursor:pointer
-}
-

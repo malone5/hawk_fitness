@@ -47,19 +47,18 @@
                 <div class="form-container">
                     <div class="form">
                         <div class="form-center">
-                             <?//php echo form_open('checkin/'.$seg); ?>
                             <form id="check-form" action="<?php echo site_url('checkin/'.$seg);?>" method="post" accept-charset="utf-8">
 
                                 <div hidden><input type="text" name ="class_type" value="<?php echo $class['class_type']?>"/></div>
 
-                                <div class="fname"><input type="text" class="form-control" data-toggle="tooltip" data-placement="left" title="First Name is important" name="fname" placeholder="First Name" data-required autofocus/></div>
+                                <div class="fname"><input type="text" class="form-control" autocomplete="off" data-toggle="popover" data-placement="left" data-content="First Name is important" name="fname" placeholder="First Name" data-required autofocus/></div>
 
-                                <div class="lname"><input type="text" class="form-control" data-toggle="tooltip" data-placement="left" title="Last Name is important" name="lname"  placeholder="Last Name" data-required></div>
+                                <div class="lname"><input type="text" class="form-control" autocomplete="off" data-toggle="popover" data-placement="left"  data-content="Last Name is important" name="lname"  placeholder="Last Name" data-required></div>
 
-                                <div class="age"><input type="text" class="form-control" name="age"data-pattern="[0-9][0-9]" data-toggle="tooltip" data-placement="left" title="age must be numbers only" placeholder="age" maxlength="2" data-required></div>
+                                <div class="age"><input type="text" class="form-control" autocomplete="off" name="age" data-pattern="[0-9][0-9]" data-toggle="popover" data-placement="left" data-content="age must be numbers only" placeholder="age" maxlength="2" data-required></div>
 
                                 <div class="attendee">
-                                    <select id="attendee" class="form-control" data-toggle="tooltip" data-placement="left" title ="Must select an option" name="attendee" data-required>
+                                    <select id="attendee" class="form-control" data-toggle="popover" data-placement="left" data-content ="Must select an option" name="attendee" data-required>
                                         <option value="" selected disabled >select one</option>
                                         <option value="Student">Student</option>
                                         <option value="Faculty">Faculty</option>
@@ -68,7 +67,7 @@
                                 </div>
 
                                 <div id="academic-wrapper" hidden>
-                                    <select class="form-control" id="academic" data-toggle="tooltip" data-placement="left" title="please select academic year" name="academic">
+                                    <select class="form-control" id="academic" data-toggle="popover" data-placement="left" data-content="please select academic year" name="academic">
                                         <option value="" selected disabled >select one</option>
                                         <option value="Freshman">Freshman</option>
                                         <option value="Sophomore">Sophomore</option>
@@ -78,7 +77,7 @@
                                 </div>
 
                                 <div id="studentID-wrapper" >
-                                    <input id="studentID" class="form-control" type ="text" data-toggle="tooltip" data-placement="left" title="ID is required" data-pattern="\b[0-9]+\b" name="studentID" placeholder="Student ID(without the s)" data-required/>
+                                    <input id="studentID" class="form-control" autocomplete="off" type ="text" data-toggle="popover" data-placement="left" data-content="ID is required. Do not enter the S." data-pattern="\b[0-9]+\b" name="studentID" placeholder="Student ID(without the s)" data-required/>
                                 </div>
 
                                 <div class="button-container"><input type="submit" class="btn btn-signin" name ="submit" value ="sign in"/></div>
@@ -92,7 +91,7 @@
         <script>
             $(document).ready(function(){
 
-                $('[data-toggle="tooltip"]').tooltip();
+                $('[data-toggle="popover"]').popover();
 
                 $("#success").ready(function(){
                      if($("#success").html()!=""){
@@ -114,35 +113,31 @@
                         $("#academic").attr('data-required', true);
                         $("#academic").val('');
                         $("#academic").attr('autofocus',true);
-
-
-                        // $("#studentID-wrapper").removeAttr('hidden');
-                        // $("#studentID").attr('data-required',true);
+                        $("#academic").popover('show');
                         $("#studentID").attr('placeholder','Student ID(without the s)');
                     }
                     else{
                         $("#academic-wrapper").attr('hidden', true);
                          $("#academic").removeAttr('data-required');
                         $("#academic").val('');
-
-                        // $("#studentID-wrapper").removeAttr('hidden');
                         $("#studentID").attr('placeholder','ID number(without the S)');
-                        // $("#studentID").attr('data-required','true');
+
                     }
                 });
                 $("#check-form").validate({
                     onSubmit:true,
                     eachInvalidField:function(){
-                        $(this).closest('div').effect("bounce",{time:1, direction:"right"});
+
                         $(this).closest('input').css("border","1px solid red");
                         $(this).closest('select').css("border","1px solid red");
-                        $(this).closest('[data-toggle="tooltip"]').tooltip();
+                        $(this).closest('input').popover('show');
+                        $(this).closest('select').popover('show');
                     },
                     eachValidField:function(){
                          $(this).closest('input').css("border","1px solid green");
                         $(this).closest('select').css("border","1px solid green");
-                        $(this).closest('[data-toggle="tooltip"]').tooltip('destroy');
-
+                        $(this).closest('input').popover('hide');
+                        $(this).closest('select').popover('hide');
                     }
 
                 });
