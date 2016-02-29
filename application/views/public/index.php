@@ -7,8 +7,8 @@
     /*
     * Show the schedule without the classes
     */
-    $('#section2').delay(600).slideDown({
-      duration:700,
+    $('#section2').delay(400).slideDown({
+      easing:"swing",
       complete:bottom()
     });
 
@@ -16,29 +16,31 @@
     * Show the classes and then the footer
     */
     function bottom(){
-      $('.details').delay(1800).slideDown("slow");
-      $('.footer').delay(1500).fadeIn("slow");
+      $('.details').delay(1000).slideDown({easing:"swing"});
+      $('.footer').delay(1500).fadeIn({easing:"swing"});
     }
 
   });
 </script>
 
     <section id="section1">
-        <div class="dummy">
-
+        <div class="logo-picture">
+          <div class="picture">
+            <p>{Insert logo image here}</p>
           </div>
+        </div>
 
-          <div class="Logo  text-center">
-            <div class="drop">
-              <h3>HawkFitness</h3>
-            </div>
+        <div class="Logo  text-center">
+          <div class="drop">
+            <h3>HawkFitness</h3>
           </div>
+        </div>
     </section> <!--Enc Section 1-->
     <div class="wrapper">
     <section id="section2">
         <div class="anchorDay text-center">
             <div class="week-container">
-              <p class="week-date"> Week of: <?php echo $week_date[0]." - ".$week_date[1];?></p>
+              <p class="week-date"> *Week of: <?php echo $week_date[0]." - ".$week_date[1];?></p>
             </div>
             <div class="today-container">
               <a class="visible-xs-block" id="anchor-day" style="font-size:15px"><strong>Today's Schedule</strong></a>

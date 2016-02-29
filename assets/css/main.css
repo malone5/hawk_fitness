@@ -5,14 +5,14 @@
 /*    background-color:#;*/
     color:White;
     padding-bottom:40px;
-    height:234px;
+    height:auto;
     /*background-color: rgba(35, 35, 35, 0.77);*/
 
 }
 
  body{
-    background:linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url("../images/mac.jpg") ;
-    background-positin:center center;
+    background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/mac.jpg") ;
+    background-position:center center;
     background-repeat: no-repeat;
     background-attachment:fixed;
     background-size:cover;
@@ -30,6 +30,7 @@
 }
 .week-date{
   /*styling for the schedule week information*/
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:white;
 }
 .week-container{
@@ -47,6 +48,7 @@
     padding-top:12px;
 }
 .Logo h3{
+    font-family:Verdana, Geneva, sans-serif;
     font-size: 40px;
     text-align: center;
     color:White;
@@ -55,6 +57,12 @@
     margin:0 auto;
     width:250px;
 
+}
+.picture{
+  /*styling for logo image*/
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
 }
 .wrapper{
   /*background-color: rgba(35, 35, 35, 0.77);*/
