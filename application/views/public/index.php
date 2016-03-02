@@ -1,5 +1,6 @@
 <script>
   $(document).ready(function(){
+    $('li').addClass('hvr-bob');
     $('.details').hide();
     $('.footer').hide();
     $('#section2').hide();
@@ -23,6 +24,7 @@
   });
 </script>
 
+
     <section id="section1">
         <div class="logo-picture">
           <div class="picture">
@@ -38,13 +40,67 @@
     </section> <!--Enc Section 1-->
     <div class="wrapper">
     <section id="section2">
-        <div class="anchorDay text-center">
-            <div class="week-container">
-              <p class="week-date"> *Week of: <?php echo $week_date[0]." - ".$week_date[1];?></p>
+        <div class=" container anchorDay text-center">
+            <!-- <div class="row week-container">
+            </div> -->
+            <div class="row today-container">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <a class="visible-xs-block" id="anchor-day" style="font-size:15px"><strong>Today's Schedule</strong></a>
+              </div>
+              <div class="col-md-4"></div>
             </div>
-            <div class="today-container">
-              <a class="visible-xs-block" id="anchor-day" style="font-size:15px"><strong>Today's Schedule</strong></a>
-            </div>
+            <!-- SOCIAL MEDIA  -->
+            <div class="row mobile-social-share">
+            		<div class="col-md-9 ">
+                  <p class="week-date"> *Week of: <?php echo $week_date[0]." - ".$week_date[1];?></p>
+                    </div>
+                    <div id="socialHolder" class="col-md-3">
+                		<div id="socialShare" class="btn-group share-group">
+                            <a data-toggle="dropdown" class="btn btn-info ">
+                                 <span class="fa fa-share-alt fa-inverse"></span>
+                                 <span class="fa fa-caret-down fa-inverse"></span>
+                               </a>
+            				<!-- <button href="#" data-toggle="dropdown" class="btn btn-info dropdown-toggle share">
+            					<span class="caret"></span>
+            				</button> -->
+            				<ul class="dropdown-menu">
+                				<li>
+            					    <a data-original-title="Twitter" rel="tooltip"  href="#" class="btn btn-twitter" data-placement="left">
+        								<i class="fa fa-twitter"></i>
+        							</a>
+            					</li>
+            					<li>
+            						<a data-original-title="Facebook" rel="tooltip"  href="#" class="btn btn-facebook" data-placement="left">
+        								<i class="fa fa-facebook"></i>
+        							</a>
+            					</li>
+            					<li>
+            						<a data-original-title="Google+" rel="tooltip"  href="#" class="btn btn-google" data-placement="left">
+        								<i class="fa fa-google-plus"></i>
+        							</a>
+            					</li>
+            				    <li>
+            						<a data-original-title="LinkedIn" rel="tooltip"  href="#" class="btn btn-linkedin" data-placement="left">
+        								<i class="fa fa-linkedin"></i>
+        							</a>
+            					</li>
+            					<li>
+            						<a data-original-title="Pinterest" rel="tooltip"  class="btn btn-pinterest" data-placement="left">
+        								<i class="fa fa-pinterest"></i>
+        							</a>
+            					</li>
+                                <li>
+            						<a  data-original-title="Email" rel="tooltip" class="btn btn-mail" data-placement="left">
+        								<i class="fa fa-envelope"></i>
+        							</a>
+            					</li>
+                            </ul>
+            			</div>
+                    </div>
+                    </div>
+            	</div>
+                    <!-- END OF SOCIAL MEDIA -->
         </div>
         <!-- Beginning of class schedule -->
         <div id="fit-schedule" class="container">
