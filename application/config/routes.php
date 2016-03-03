@@ -73,6 +73,7 @@ $route['manage/fitnessclasses/edit/(:num)'] = 'FitClassCtrl/editFitClass/$1';
 $route['manage/fitnessclasses/delete/(:num)'] = 'FitClassCtrl/deleteFitClass/$1';
 $route['manage/reports'] = 'ReportCtrl/index';
 $route['manage'] = 'ManageCtrl/index';
+$route['manage/fitnessclasses/update/(:num)']='FitClassCtrl/editClass';
 
 //Public routes
 $route['login'] = 'LoginCtrl/index';

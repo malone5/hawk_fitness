@@ -38,7 +38,7 @@
                                   <span class="glyphicon glyphicon-map-marker form-control-feedback"></span>
                           </div>
                           <div class="form-group has-feedback">
-                              <input name="start_time[]" type="time" size="30" class="form-control" placeholder="Start Time" data-toggle="tooltip" data-placement="left" title="start time is important" data-required />
+                              <input name="start_time[]" id="time" type="text" size="30" class="form-control" placeholder="Start Time" data-toggle="tooltip" data-placement="left" title="start time is important" data-required />
                                 <span class="glyphicon glyphicon-time form-control-feedback"></span>
                           </div>
 
@@ -58,11 +58,15 @@
 
 <script>
     $(document).ready(function(){
-          $( "#datepicker" ).datepicker({
+            $( "#datepicker" ).datepicker({
                   showButtonPanel: true,
-                  dateFormat: "yy-mm-dd"
+                  dateFormat: "yy-mm-dd",
+                  minDate:0
             });
-
+            $("#time").timepicker({
+              'minTime': '6:00AM',
+              'maxTime': '11:00PM',
+            });
             if($("#success-class").html()!=""){
                 swal({
                     title: 'classes created',
@@ -74,20 +78,17 @@
                 },1000);
             }
 
-        $('[data-toggle="tooltip"]').tooltip();
         $("#class-form").validate({
                 onChange:true,
                 onkeyup:true,
                 eachValidField:function(){
                     $(this).closest('input').css('border','2px solid green');
                     $(this).closest('select').css('border','2px solid green');
-                    $(this).closest('[data-toggle="tooltip"]').tooltip('hide');
                 },
                 eachInvalidField: function(){
                     $(this).closest('div').effect("bounce","slow");
                     $(this).closest('input').css("border","1px solid red");
                     $(this).closest('select').css("border","1px solid red");
-                    $(this).closest('[data-toggle="tooltip"]').tooltip('show');
                 }
 
         });

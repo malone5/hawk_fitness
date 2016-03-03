@@ -24,8 +24,10 @@ class FitClassCtrl extends CI_Controller {
 	{
 			// load class type model
 			// call the model function to get the data
+			$this->load->model('ClassType_model');
 			$classes = $this->FitClass_model->get_fitclass_list();
 			$data['fitclasslist'] = $classes;
+			$data['classtypes'] = $this->ClassType_model->get_classtype_names();
 			$data['title'] = 'Fitness Classes';
 
 			$this->load->view('templates/admin_header', $data);
@@ -72,9 +74,9 @@ class FitClassCtrl extends CI_Controller {
                 # Genereate the dropdown data for the "Class Type" selection
                 $this->load->model('ClassType_model');
                 $data['classtype_options'] = $this->ClassType_model->get_classtype_names();
-				$this->load->view('templates/admin_header', $data);
-				$this->load->view('manage/create_class', $data);
-				$this->load->view('templates/admin_footer');
+								$this->load->view('templates/admin_header', $data);
+								$this->load->view('manage/create_class', $data);
+								$this->load->view('templates/admin_footer');
            }
         }
 
@@ -98,7 +100,21 @@ class FitClassCtrl extends CI_Controller {
 
 
     }
-
+		function editClass(){
+			$id= $this->uri->segment(4);
+			// $class_type = $this->input->post('class_type');
+			// $instructor = $this->input->post('instructor');
+			// $location = $this->input->post('location');
+			// $date = $this->input->post('date');
+			// $start_time = $this->input->post('start_time');
+			$query= $this->FitClass_model-> updateFitClass($id);
+			if($query){
+				redirect('manage/fitnessclasses');
+			}
+			else{
+				show_404();
+			}
+		}
     function editFitClass($id) {
 	    // database update code
 

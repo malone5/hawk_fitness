@@ -11,7 +11,7 @@ class Home_model extends CI_Model {
         $this ->db->select('*');
         $this ->db-> from('fit_classes');
         $query=$this->db->get();
-        return $query->result();
+        return $query->result_array();
 	}
 
 }

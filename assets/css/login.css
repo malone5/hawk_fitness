@@ -1,7 +1,11 @@
 #section1{
     background-color:white;
-    height:100vh;
-
+    height:5%;
+}
+#section2{
+  padding-top:100px;
+  height:100%;
+  transition: 0.4s all;
 }
 .errors{
     color:red;
@@ -17,18 +21,25 @@
     border-color: #DDDDDD;
     color:black;
 }
+.visibility{
+  height:40px;
+}
 .btn-defualt:hover, .btn-defualt:focus{
    background-color: #EEEEEE;
     border-color: #EEEEEE;
     color:black;
+}
+.move{
+  margin-left:auto;
+  margin-right:auto;
 }
 .home{
     width:110px;
 }
 .home-link span{
     background-color:#7c7c7c;
-    font-size:20px; 
-    color:white; 
+    font-size:20px;
+    color:white;
     width:92px;
     height:25px;
     text-decoration:none;
@@ -52,6 +63,7 @@ body{
 }
 .web-title{
     text-align: center;
+    font-weight: bold;
     font-size: 25px;
 }
 .important-text{

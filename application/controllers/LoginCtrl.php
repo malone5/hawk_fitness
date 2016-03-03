@@ -48,6 +48,26 @@
                     $updatePassword = $this->User_model->updatePassword($email,$newPassword);
                     if($updatePassword ==true){
                         //enter reset password  mail code here
+                        //enter reset password  mail code here
+                       			$to =$email;
+                       			$subject = 'Password Reset Request';
+                                               $message='<html>
+                       				<body>
+                       				   <div>
+                       					<p>As requested, your password has been reset.</p></br>
+                       					<p>Your new password is: '.$newPassword.'</p></br>
+                       					<p>You can change your password in your account setting once you login with the temporary password</p>
+                       				   </div>
+                       				</body
+                       				</html>';
+                       			 $headers = 'From: admin@'.site_url(). "\r\n" .
+                                      			    'X-Mailer: PHP/' . phpversion();
+                           			$headers .= "MIME-Version: 1.0\r\n";
+                           			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                       			$sent = mail($to, $subject, $message, $headers);
+                            if($sent) echo "sent";
+                            else echo "error";
+
                         $data['title'] = "Forgot Password";
                         $data['info'] ='1';
                         $data['extraRef'] = array('<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">');
