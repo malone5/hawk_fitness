@@ -14,8 +14,10 @@ class HomeCtrl extends CI_Controller {
 
 	public function index()
 	{
-        if($this->session->userdata('logged_in')){
-            $data['admin_btn']="Manage";
+        if($this->session->userdata('logged_in'))
+		{
+            $data['admin_btn'] = "Manage"; // Admin Button: Display 'Manage'
+			$data['logout_btn'] = '<a class="btn btn-primary" href="'.site_url('manage/logout').'">Logout</a>';
             $data['classes'] = $this->Home_model->get_classes();
             $data['title'] = 'Hawk Fitness Classes';
             $data['extraRef']=array(
@@ -28,8 +30,9 @@ class HomeCtrl extends CI_Controller {
             $this->load->view('public/admin_index', $data);
             $this->load->view('templates/footer');
         }
-        else{
-            $data['admin_btn']="Administration";
+        else
+		{
+            $data['admin_btn'] = "Administration"; // Admin Button: Display 'Administration'
             $data['classes'] = $this->Home_model->get_classes();
             $data['title'] = 'Hawk Fitness Classes';
             $data['extraRef']=array(

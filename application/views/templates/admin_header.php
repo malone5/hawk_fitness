@@ -28,7 +28,6 @@
     <!--JQuery validate js-->
     <script src="<?php echo base_url('assets/js/jquery-validate/jquery-validate.js');?>" ></script>
 
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/css/sb-admin-2.css'); ?>" >
 

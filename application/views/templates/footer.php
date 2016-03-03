@@ -5,13 +5,16 @@
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
                         <a href="http://www.monmouth.edu/" title="Monmouth University"><strong>Monmouth University</strong></a>
-						 / 
-                        <strong><a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=714830" title="Monmouth University Fitness Center"><strong>Fitness Center</strong></a>
-						 / 
-						<strong><a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=722884" title="Monmouth University Intramurals"><strong>Intramurals</strong></a>
+						 /
+                        <a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=714830" title="Monmouth University Fitness Center"><strong>Fitness Center</strong></a>
+						 /
+						<a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=722884" title="Monmouth University Intramurals"><strong>Intramurals</strong></a>
 					</div>
 					<div class="col-md-4">
+						<!--Admin / Manage Button-->
 						<input type="button" class="btn btn-primary" value="<?php echo $admin_btn;?>" onclick="location.href='<?php echo base_url();?>login'"></input>
+						<!--Logout Button-->
+						<?php if(isset($logout_btn)) echo $logout_btn?>
 					</div>
 				</div>
 				<div class="row text-center">
@@ -19,6 +22,6 @@
 				</div>
 			</div>
 		</div>
-        
+
 	</body>
 </html>

@@ -96,7 +96,11 @@ CREATE TABLE IF NOT EXISTS `class_type` (
   `name` varchar(20) NOT NULL,
   `description` varchar(500) NOT NULL,
   UNIQUE KEY `id` (`id`)
+<<<<<<< HEAD
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+>>>>>>> 973bd8b80d388746ea91a52395bb8b403a8c9801
 
 --
 -- Dumping data for table `class_type`
@@ -123,7 +127,11 @@ CREATE TABLE IF NOT EXISTS `fit_classes` (
   `start_time` varchar(8) NOT NULL,
   `date` date NOT NULL,
   UNIQUE KEY `id` (`id`)
+<<<<<<< HEAD
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
+>>>>>>> 973bd8b80d388746ea91a52395bb8b403a8c9801
 
 --
 -- Dumping data for table `fit_classes`
