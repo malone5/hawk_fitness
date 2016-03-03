@@ -8,15 +8,17 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />    <meta name="description" content="">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />    <meta name="description" content="">
     <meta name="author" content="">
 
     <title>HawkFitness Admin Panel</title>
 
     <!-- Jquery/UI JS/CSS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" >
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="<?php echo base_url('assets/js/jquery-timepicker/jquery.timepicker.js');?>"></script>
+    <link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-timepicker/jquery.timepicker.css');?>" />
 
 
       <!-- Bootstrap Core CSS -->
@@ -43,7 +45,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" >
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-
+    <link  rel="stylesheet" href="<?php echo base_url('assets/admin/css/admin.css');?>" />
     <!-- Custom Dynamic CSS -->
     <?php if (isset($css)){?>
 			<link rel="stylesheet" href="<?php echo base_url('assets/admin/css').'/'.$css; ?>" >

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-   
+
     var q =new Date();
     //array to retrieve current day
     var weekToDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday",
@@ -13,7 +13,6 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: "HomeCtrl/getSchedule",
-            async: false,
             dataType:"json",
             success: function (data ,event) {
 
@@ -40,12 +39,12 @@ $(document).ready(function(){
                         for (var i=0; i<data.length;i++)
                         {
                             var class_date = new Date(data[i]["date"]);
-                            var class_day = class_date.getDay(); //integer value of the day 
+                            var class_day = class_date.getDay(); //integer value of the day
                             var string_day = week[class_day]; // string value of the day
                             if (string_day == week[j]){
 
                                 txt+="<div class='class-list'><div class='class-name'><span class='info'>"+data[i]["class_type"]+"</span> </div><div class='location'><span class='info'>"+data[i]["location"]+"</span></div><div class='time'><span class='info'>"+data[i]["start_time"]+"</span></div><div class='instructor'><span class='info'>"+data[i]["instructor"]+"</span></div></div>";
-                                
+
                                  if (typeof session_check !== 'undefined') {
                                      //admin view of links next to each class
                                       txt+="<div class='check-in'><a href='checkin/"+data[i]["id"]+"'>Sign in</a></div>";
@@ -53,7 +52,7 @@ $(document).ready(function(){
                                 else{
                                     //regular user view of links/options next to each class
                                       txt+='<div id="share" class="social-media">'+
-                                                '<div class="social-buttons"><a class="sharer button" data-sharer="facebook" data-url=""><span class="fa fa-facebook fa-1x"></span></a></div>'; 
+                                                '<div class="social-buttons"><a class="sharer button" data-sharer="facebook" data-url=""><span class="fa fa-facebook fa-1x"></span></a></div>';
                                       txt+='<div class="social-buttons-twitter"><a class="sharer button" data-sharer="twitter" data-title="Checkout Sharer.js!" data-via="ellisonleao" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/"><span class="fa fa-twitter"></span></a></div></div>'
                                 }
                                 class_count++;
@@ -61,7 +60,7 @@ $(document).ready(function(){
                         }//end of loop for classes
 
                       if(class_count ==0){
-                            txt+="<p class=info>No sheduled classes. Check back later for updates.</p>" ;   
+                            txt+="<p class=info>No sheduled classes. Check back later for updates.</p>" ;
                         }
                         class_count=0;
                         counter++;
@@ -83,9 +82,9 @@ $(document).ready(function(){
                             var c = d.getDay();
                             var e = week[c];
                             if (e == week[j]){
-                               
+
                                 txt2+="<div class='class-list'><div class='class-name'><span class='info'>"+data[i]["class_type"]+"</span> </div><div class='location'><span class='info'>"+data[i]["location"]+"</span></div><div class='time'><span class='info'>"+data[i]["start_time"]+"</span></div><div class='instructor'><span class='info'>"+data[i]["instructor"]+"</span></div></div>";
-                                
+
                                 if (typeof session_check !== 'undefined') {
                                      //admin view of links next to each class
                                       txt2+="<div class='check-in'><a href='checkin/"+data[i]["id"]+"'>Sign in</a></div>";
@@ -93,7 +92,7 @@ $(document).ready(function(){
                                 else{
                                     //regular user view of links/options next to each class
                                        txt2+='<div id="share" class="social-media">'+
-                                                '<div class="social-buttons"><a class="sharer button" data-sharer="facebook" data-url=""><span class="fa fa-facebook fa-1x"></span></a></div>'; 
+                                                '<div class="social-buttons"><a class="sharer button" data-sharer="facebook" data-url=""><span class="fa fa-facebook fa-1x"></span></a></div>';
                                       txt2+='<div class="social-buttons-twitter"><a class="sharer button" data-sharer="twitter" data-title="Checkout Sharer.js!" data-via="ellisonleao" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/"><span class="fa fa-twitter"></span></a></div></div>'
                                 }
                                 class_count++;
@@ -101,7 +100,7 @@ $(document).ready(function(){
                         }//end of loop for classes
 
                       if(class_count ==0){
-                            txt2+="<p class=info>No sheduled classes. Check back later for updates.</p>" ;   
+                            txt2+="<p class=info>No sheduled classes. Check back later for updates.</p>" ;
                         }
                         class_count=0;
                         counter++;
@@ -124,7 +123,7 @@ $(document).ready(function(){
 //              $("."+todayDay+"1").css("border-bottom-left-radius","25px");
 //              $("."+todayDay+"1").css("border-bottom-right-radius","25px");
                 $("#"+todayDay).css("padding-top","15px");
-               
+
 //                            var check = monthNames[q.getMonth()]+"/"+q.getDate()+"/"+q.getFullYear()+" "+formatAMPM(q);
 //                            $("#last-check p").html(check);
             }
@@ -132,7 +131,7 @@ $(document).ready(function(){
 
          });
       }
-   
+
     // format time XX:XX AM/PM
     function formatAMPM(date) {
         var hours = date.getHours();
@@ -144,11 +143,11 @@ $(document).ready(function(){
         var strTime = hours + ':' + minutes + ' ' + ampm;
         return strTime;
     }
-     
+
 $("#schedule").ready(function(){
          display();
      });
-        
+
     $('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
 

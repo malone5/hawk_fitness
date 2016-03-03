@@ -19,8 +19,8 @@ class ReportCtrl extends CI_Controller {
 
 	public function index(){
 
-    	// And now, you can show a list of the elements you want to show from the page:       
-    	$data['attendees'] = $this->Report_model->getAttendees();
+    	// And now, you can show a list of the elements you want to show from the page:
+    $data['attendees'] = $this->Report_model->getAttendees();
 		$data['title'] = 'Reports';
 
 		$this->load->view('templates/admin_header', $data);
