@@ -21,6 +21,17 @@
       $('.footer').delay(1500).fadeIn({easing:"swing"});
     }
 
+    /*
+    *  Social media handling
+    */
+    $('.sharing').ShareLink({
+      title: 'HawkFitness Weekly Schedule',
+      text: 'Checkout this week\'s schedule for Monmouth fitness classes',
+      url: location.href,
+      class_prefix: 'btn-',
+      width:480,
+      height:480
+    });
   });
 </script>
 
@@ -56,7 +67,7 @@
                   <p class="week-date"> *Week of: <?php echo $week_date[0]." - ".$week_date[1];?></p>
                 </div>
                 <div id="socialHolder" class="col-xs-2 col-md-3 col-lg-3">
-                  <div><span>Share: </span></div>
+                  <div class="share-text"><span>Share: </span></div>
                 		<div id="socialShare" class="btn-group share-group">
                         <a data-toggle="dropdown" class="btn btn-info ">
                              <span class="fa fa-share-alt fa-inverse"></span>
@@ -65,22 +76,22 @@
 
   			               <ul class="dropdown-menu">
                   				<li>
-          					         <a data-original-title="Twitter" rel="tooltip"  href="#" class="btn btn-twitter" data-placement="left">
+          					         <a data-original-title="Twitter" rel="tooltip"  href="#" class="btn sharing btn-twitter" data-placement="left">
           								<i class="fa fa-twitter"></i>
           							     </a>
                 					</li>
                 					<li>
-                						<a data-original-title="Facebook" rel="tooltip"  href="#" class="btn btn-facebook" data-placement="left">
+                						<a data-original-title="Facebook" rel="tooltip"  href="#" class="btn sharing btn-facebook" data-placement="left">
             								<i class="fa fa-facebook"></i>
             							</a>
                 					</li>
                 					<li>
-                						<a data-original-title="Google+" rel="tooltip"  href="#" class="btn btn-google" data-placement="left">
+                						<a data-original-title="Google+" rel="tooltip"  href="#" class="btn sharing btn-plus" data-placement="left">
             								<i class="fa fa-google-plus"></i>
             							</a>
                 					</li>
                 					<li>
-                						<a data-original-title="Pinterest" rel="tooltip"  class="btn btn-pinterest" data-placement="left">
+                						<a data-original-title="Pinterest" rel="tooltip"  class="btn sharing btn-pinterest" data-placement="left">
             								<i class="fa fa-pinterest"></i>
             							</a>
                 					</li>

@@ -86,10 +86,13 @@
     line-height: 20px;
     margin: 25px 25px 0 25px;
 }
-
+.share-text{
+  /*styling for share text*/
+  color:white;
+  text-align:right;
+}
 .share-group {
     float: right;
-    margin: 18px 25px 0 0;
 }
 
 .btn-group {
@@ -104,7 +107,7 @@
     float: right;
     list-style: none outside none;
     margin: 0;
-    min-width: 61px;
+    min-width: 50px;
     padding: 0;
 }
 
@@ -130,37 +133,31 @@
 
 .btn-twitter {
     background-color: #3399CC !important;
-    width: 51px;
+    width: 40px;
     color:#FFFFFF!important;
 }
 
 .btn-facebook {
     background-color: #3D5B96 !important;
-    width: 51px;
+    width: 40px;
     color:#FFFFFF!important;
 }
 
 .btn-facebook {
     background-color: #3D5B96 !important;
-    width: 51px;
+    width: 40px;
     color:#FFFFFF!important;
 }
 
-.btn-google {
+.btn-plus {
     background-color: #DD3F34 !important;
-    width: 51px;
-    color:#FFFFFF!important;
-}
-
-.btn-linkedin {
-    background-color: #1884BB !important;
-    width: 51px;
+    width: 40px;
     color:#FFFFFF!important;
 }
 
 .btn-pinterest {
     background-color: #CC1E2D !important;
-    width: 51px;
+    width: 40px;
     color:#FFFFFF!important;
 }
 
@@ -180,7 +177,9 @@
     vertical-align: middle;
     width: 0;
 }
-
+.dropdown-menu>li>a{
+  padding:3px 14px;
+}
 #socialShare {
     max-width:59px;
     margin-bottom:18px;
