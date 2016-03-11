@@ -5,15 +5,20 @@
         <!--Bootstrap CSS and JS-->
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
 
 
         <!--jQuery validation plugin-->
          <script src="<?php echo base_url('assets/js/jquery-validate/jquery-validate.min.js')?>"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+         <script src="<?php echo base_url('assets/js/validator.js')?>"></script>
+         <!--jBox CSS and JS-->
+         <script src="<?php echo base_url('assets/js/jBox/Source/jBox.min.js');?>" ></script>
+         <link rel="stylesheet" href="<?php echo base_url('assets/js/jBox/Source/jBox.css');?>" />
 
         <!--Sweetalert modal plugin css and js-->
         <script src="<?php echo base_url('assets/js/sweetalert/dist/sweetalert2.min.js');?>"></script>
         <link rel="stylesheet" href="<?php echo base_url('assets/js/sweetalert/dist/sweetalert2.css');?>" >
+
         <!--Custom CSS checkin page-->
         <link rel="stylesheet" href="<?php echo base_url('assets/css/checkin.css');?>">
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -45,104 +50,118 @@
 
                 <!--Class sign-in form container-->
                 <div class="form-container">
-                    <div class="form">
                         <div class="form-center">
                             <form id="check-form" action="<?php echo site_url('checkin/'.$seg);?>" method="post" accept-charset="utf-8">
 
                                 <div hidden><input type="text" name ="class_type" value="<?php echo $class['class_type']?>"/></div>
 
-                                <div class="fname"><input type="text" class="form-control" autocomplete="off" data-toggle="popover" data-placement="left" data-content="First Name is important" name="fname" placeholder="First Name" data-required autofocus/></div>
-
-                                <div class="lname"><input type="text" class="form-control" autocomplete="off" data-toggle="popover" data-placement="left"  data-content="Last Name is important" name="lname"  placeholder="Last Name" data-required></div>
-
-                                <div class="age"><input type="text" class="form-control" autocomplete="off" name="age" data-pattern="[0-9][0-9]" data-toggle="popover" data-placement="left" data-content="age must be numbers only" placeholder="age" maxlength="2" data-required></div>
-
-                                <div class="attendee">
-                                    <select id="attendee" class="form-control" data-toggle="popover" data-placement="left" data-content ="Must select an option" name="attendee" data-required>
-                                        <option value="" selected disabled >select one</option>
-                                        <option value="Student">Student</option>
-                                        <option value="Faculty">Faculty</option>
-                                        <option value="Alumni">Alumni</option>
-                                    </select>
+                                <div class="name form-group">
+                                  <input type="text" id="fname" class="form-control" autocomplete="off"  name="fname" placeholder="Full Name" data-required autofocus/>
+                                  <div class="hints">Full name is required</div>
                                 </div>
 
-                                <div id="academic-wrapper" hidden>
-                                    <select class="form-control" id="academic" data-toggle="popover" data-placement="left" data-content="please select academic year" name="academic">
-                                        <option value="" selected disabled >select one</option>
-                                        <option value="Freshman">Freshman</option>
-                                        <option value="Sophomore">Sophomore</option>
-                                        <option value="Junior">Junior</option>
-                                        <option value="Senior">Senior</option>
-                                    </select>
+                                <div class="email form-group">
+                                  <input type="email" id="email" class="form-control" autocomplete="off" name="email"  placeholder="Email"/>
+                                  <span class="addon">(optional)</span>
                                 </div>
 
-                                <div id="studentID-wrapper" >
-                                    <input id="studentID" class="form-control" autocomplete="off" type ="text" data-toggle="popover" data-placement="left" data-content="ID is required. Do not enter the S." data-pattern="\b[0-9]+\b" name="studentID" placeholder="Student ID(without the s)" data-required/>
+                                <div id="studentID-wrapper" class="form-group">
+                                  <label>S</label>
+                                  <input id="studentID" class="form-control sID" autocomplete="off" type ="text" data-pattern="\b[0-9]+\b" name="studentID" placeholder="Student ID(without the s)" data-required/>
+                                <div class="hintss" style="display:none; color:red;">ID is required. Please enter numbers only.</div>
+                                </div>
+                                <hr></hr>
+                                <div class="attendee form-group">
+                                  <label class="radio-label">Select One:</label>
+                                  <span class="radio-options"><input type="radio" name="attendee" value="Student"/>Student</span>
+                                  <span class="radio-options"><input type="radio" name="attendee" required value="Alumni"/>Alumni</span>
+                                  <span class="radio-options"><input type="radio" name="attendee" value="Faculty"/>Faculty</span>
+                                  <div style="display:none;">Must select an option</div>
                                 </div>
 
-                                <div class="button-container"><input type="submit" class="btn btn-signin" name ="submit" value ="sign in"/></div>
+                                <div class="academic form-group">
+                                  <label class="radio-label">Student Type:</label>
+                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Freshman"/>Freshman</span>
+                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Sophmore"/>Sophmore</span>
+                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Junior"/>Junior</span></br>
+                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Senior"/>Senior</span>
+                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Graduate"/>Graduate</span>
+                                </div>
+                                <div class="button-container"><input id="submit" type="submit" class="btn btn-signin" name ="submit" value ="sign in"/></div>
                             </form>
                         </div>
-                    </div>
                 </div>
             </fieldset>
             </div><!--field wrapper end-->
         </div><!--content-container-->
         <script>
             $(document).ready(function(){
+              //diables academic radio inputs until student is selected as an attendee option.
+              $('.academic-select').attr('disabled','true');
 
-                $('[data-toggle="popover"]').popover();
+              /*
+              * Enables the academic radio options if the attendee option selected is student
+              * else disables the academic options.
+              */
+              $('#check-form').on("change",function(){
+                  var attendeeVal = $('input[type="radio"]:checked', '#check-form').val();
+                  if(attendeeVal=="Student"){
+                    $('.academic-select').removeAttr('disabled');
+                  }
+                  else{
+                      $('.academic-select').attr('disabled','true');
+                  }
+              });
 
+              /*
+              *  this is executed if Sign-in is successful
+              */
                 $("#success").ready(function(){
-                     if($("#success").html()!=""){
-                        swal({
-                            title: 'Sign in Successful',
-                            type: 'success',
-                            timer: 1200
-                        });
+                    if($("#success").html()!=""){
+                       show_checkin_message();
                        setTimeout(function(){
                             window.location.reload();
                         },1000);
                     }
                 });
 
-                  $("#attendee").on('change',function(){
-                    if($(this).val() == "Student"){
 
-                        $("#academic-wrapper").removeAttr('hidden');
-                        $("#academic").attr('data-required', true);
-                        $("#academic").val('');
-                        $("#academic").attr('autofocus',true);
-                        $("#academic").popover('show');
-                        $("#studentID").attr('placeholder','Student ID(without the s)');
-                    }
-                    else{
-                        $("#academic-wrapper").attr('hidden', true);
-                         $("#academic").removeAttr('data-required');
-                        $("#academic").val('');
-                        $("#studentID").attr('placeholder','ID number(without the S)');
-
-                    }
-                });
+                /*
+                * Form validation function
+                */
                 $("#check-form").validate({
                     onSubmit:true,
+                    onChange:true,
                     eachInvalidField:function(){
-
-                        $(this).closest('input').css("border","1px solid red");
-                        $(this).closest('select').css("border","1px solid red");
-                        $(this).closest('input').popover('show');
-                        $(this).closest('select').popover('show');
+                        $(this).addClass("error");
+                        $(this).closest('.form-group').delay(100).effect("bounce", { times: 2 }, "slow" );
+                        $(this).next('div').show();
                     },
                     eachValidField:function(){
-                         $(this).closest('input').css("border","1px solid green");
-                        $(this).closest('select').css("border","1px solid green");
-                        $(this).closest('input').popover('hide');
-                        $(this).closest('select').popover('hide');
+                       $(this).closest('input').css("border","1px solid green");
+                       $(this).closest('select').css("border","1px solid green");
+                        $(this).next('div').hide();
                     }
 
                 });
 
+                /*
+                * Creates a small message on the bottom left to indicate successful
+                * sign-in
+                */
+                function show_checkin_message(){
+                  new jBox('Notice', {
+                      animation:{open:'tada',close:'flip'},
+                      content: 'Check-in Successful',
+                      attributes: {
+                          x: 'left',
+                          y: 'bottom'
+                      },
+                      autoClose:3000,
+                      color:'green'
 
+                  });
+                }
             });
         </script>
     </body>

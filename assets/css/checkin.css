@@ -4,7 +4,7 @@
 }
 .content{
  padding-top:100px;
-    
+
 }
 .field-wrapper{
     padding-top:150px;
@@ -16,17 +16,17 @@
     border: 1px groove #ddd !important;
     padding: 0 1.4em 1.4em 1.4em !important;
     margin: 0 0 1.5em 0 !important;
- 
+
 }
 
 .leg {
-        width:auto;
-        padding:0 10px;
-        border-bottom:none;
-        -moz-margin-right:auto;
-        -moz-margin-left:auto;
-        margin-right:auto;
-        margin-left:auto;
+      width:auto;
+      padding:0 10px;
+      border-bottom:none;
+      -moz-margin-right:auto;
+      -moz-margin-left:auto;
+      margin-right:auto;
+      margin-left:auto;
     }
 
 /*back button styling*/
@@ -36,11 +36,11 @@
     overflow:hidden;
 }
 .btn.btn-back{
-    background-color:#f2f2f2;
+    background-color:#e5e5e5;
     color:black;
     width:60px;
     text-align: center;
-    border:1px solid #eeeeee;
+    border:1px solid #e5e5e5;
 }
 .btn.btn-back:hover{
     background-color:#eeeeee;
@@ -52,7 +52,7 @@
 /*Class info container styling*/
 
 .class-info-container{
-    
+
 }
 .class-info{
     margin-left:auto;
@@ -72,20 +72,42 @@
 
 /*Form container styling*/
 
-.form-container{
-    
+.hints{
+  /*this class is for hint messages that appear on invalid form submission*/
+  display:none;
+  color:red;
 }
-.form,.form-center{
+
+.form-container{
+
+}
+.form-center{
     /* container max is 800px on large displays   */
-    width:300px;
+    width:70%;
     margin-left:auto;
     margin-right:auto;
+    overflow-x: visible;
 }
 
 .form-control{
-/*    width:100%;*/
+    width:99%;
 }
-.fname, .lname, .age, .attendee, #academic-wrapper, #studentID-wrapper, .btn.btn-signin{
+.radio-label{
+  margin-right:4px;
+}
+.radio-options{
+  /*-webkit-appearance:checkbox;*/
+  margin-left:7px;
+}
+#studentID-wrapper{
+  margin-bottom:25px;
+}
+.sID{
+    width:96%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.fname, .lname, .age, .attendee, #academic-wrapper, .btn.btn-signin{
     margin-bottom: 10px;
 }
 .btn-container{
@@ -109,7 +131,9 @@
     background-color:#3b80ff;
 
 }
-
+.error{
+  border:1px solid red;
+}
 @media (max-width:992px){
     .field-wrapper{
         width:70%;

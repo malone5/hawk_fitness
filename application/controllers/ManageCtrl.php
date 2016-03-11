@@ -4,39 +4,8 @@
 	Manage Controller - This controller provides functions for users logged in as a Manager.
 */
 
-//session_start(); // Call PHP's session object to access it through CI
 class ManageCtrl extends CI_Controller {
 
-<<<<<<< HEAD
-	function __construct()
-	{
-		parent::__construct();
-        if($this->session->userdata('logged_in')!=true){
-            redirect('login');
-        }
-		$this->load->model('Manage_model');
-		$this->load->helper('url');
-		$this->load->helper('form');
-	}
-
-	public function index(){
-			$num = $this->getCheckinAmount();
-			$data['checkin_amount']=$num;
-      		$data['classes'] = $this->Manage_model->get_classes();
-			$data['title'] = 'HawkFitness Admin Dashboard';
-			$this->load->view('templates/admin_header', $data);
-			$this->load->view('manage/dashboard', $data);
-			$this->load->view('templates/admin_footer');
-	}
-
-	function logout()
-	{
-		$this->session->unset_userdata('logged_in');
-	    session_destroy();
-	    redirect('/');
-	}
-
-=======
 		function __construct()
 		{
 			parent::__construct();
@@ -47,7 +16,6 @@ class ManageCtrl extends CI_Controller {
 			$this->load->helper('url');
 			$this->load->helper('form');
 		}
->>>>>>> 598965e96a8d3a2848432b6df45ffefe00a26419
 
 		public function index(){
 				$num = $this->getCheckinAmount();//Get the number of classes for the day
@@ -103,7 +71,10 @@ class ManageCtrl extends CI_Controller {
 			$this->load->view('manage/checkin',$data);
 			$this->load->view("templates/admin_footer");
 		}
-
+		/*
+		*	This method adds the information entered at checkin page for each fitness class to
+		*	the database for reports.
+		*/
     public function checkin(){
        if($this->input->post('submit')=='sign in'){
 
@@ -117,13 +88,15 @@ class ManageCtrl extends CI_Controller {
             $id =$this->uri->segment(2);
             $data['class'] = $this->Manage_model->getClass($id);
             $data['seg']=$id;
+						$data['title']='Check in';
 
+						//post data
             $class_type = $this->input->post('class_type');
-            $fname = $this->input->post('fname');
-            $lname = $this->input->post('lname');
-            $age = $this->input->post('age');
+            $fname = $this->input->post('fname');	//full name
+            $email = $this->input->post('email');
             $attendee = $this->input->post('attendee');
 
+						//checks if an academic option was selected
             if($this->input->post('academic')==null){
                 $academic = '';
             }
@@ -132,8 +105,11 @@ class ManageCtrl extends CI_Controller {
             }
 
             $student_id = 's'.$this->input->post('studentID');
-
-            $add = $this->Manage_model->insertAttendee($class_type, $fname, $lname, $age, $attendee, $academic, $student_id);
+						//array of attendee information
+						$attendeeInfo = array('class_type'=>$class_type, 'fname'=>$fname,'email'=>$email,'attendee'=>$attendee,
+															'acad_level'=>$academic,'student_id'=>$student_id
+														);
+            $add = $this->Manage_model->insertAttendee($attendeeInfo);
 
             if($add){
                 # insertion successful
