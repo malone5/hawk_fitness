@@ -46,6 +46,17 @@
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
     <link  rel="stylesheet" href="<?php echo base_url('assets/admin/css/admin.css');?>" />
+    
+    <!-- Datatables Export -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css" >
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js"></script>
+
     <!-- Custom Dynamic CSS -->
     <?php if (isset($css)){?>
 			<link rel="stylesheet" href="<?php echo base_url('assets/admin/css').'/'.$css; ?>" >
