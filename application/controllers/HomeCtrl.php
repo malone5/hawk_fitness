@@ -15,6 +15,7 @@ class HomeCtrl extends CI_Controller {
 	public function index()
 	{
 		$date = new DateTime(); //today's date
+		$day= $date->format('l'); //today's day
 		$start_date_holder = $this->start_of_week($date->format('W'), $date->format('Y'));//retrieves the date for the monday of the week
 		$start_date = new DateTimeImmutable($start_date_holder);//unformatted start of the week date
 		$end_date = $start_date->modify('+6 day'); //unformatted end of the week date
@@ -28,10 +29,11 @@ class HomeCtrl extends CI_Controller {
 					$data['week']=array('Monday','Tuesday','Wednesday','Thursday');
 					$data['week2']=array('Friday','Saturday','Sunday');
 					$data['week_date']=array($start_date->format('m/d/y'),$end_date->format('m/d/y'));
+					$data['day'] = $day;
+					$data['user'] = 'admin';//user check
           $data['extraRef']=array(
                   '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">',
                   '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
-                  //'<script src="'.base_url('assets/js/grabSchedule.js').'"></script>'
           );
 
           $this->load->view('templates/header', $data);
@@ -46,10 +48,10 @@ class HomeCtrl extends CI_Controller {
 					$data['week']=array('Monday','Tuesday','Wednesday','Thursday');
 					$data['week2']=array('Friday','Saturday','Sunday');
 					$data['week_date']=array($start_date->format('m/d/y'),$end_date->format('m/d/y'));
+					$data['user']='public';//user check
           $data['extraRef']=array(
                   '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">',
                   '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
-                  //'<script src="'.base_url('assets/js/grabSchedule.js').'"></script>'
           );
 
           $this->load->view('templates/header', $data);
