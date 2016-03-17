@@ -144,3 +144,17 @@
         margin-right:auto;
     }
 }
+
+
+/* radio */
+
+.btn span.glyphicon {               
+    opacity: 0;             
+}
+.btn.active span.glyphicon {                
+    opacity: 1;             
+}
+
+
+/*Custom Radio Buttons and Checkboxes using Font Awesome*/
+
