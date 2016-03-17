@@ -11,7 +11,11 @@
 			<!-- Latest compiled and minified CSS -->
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+					<!-- Font Awesome  -->
+			<link rel='stylesheet' href='<?php echo base_url("assets/admin/bower_components/font-awesome/css/font-awesome.css");?>' />
 
+			<!-- Social Share jquery plugin  -->
+			<script src="<?php echo base_url('assets/js/socialshare/SocialShare.js')?>"></script>
       <!--disable zoom function for mobile devices-->
       <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />
 			<!-- Font Awesome  -->
