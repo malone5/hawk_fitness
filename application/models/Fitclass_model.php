@@ -10,7 +10,9 @@ class FitClass_model extends CI_Model{
      function get_fitclass_list()
      {
 
-          $query = $this->db->get('fit_classes');
+          $this->db->from('fit_classes');
+          $this->db->order_by("date", "desc");
+          $query = $this->db->get(); 
 
           return $query->result_array();
      }

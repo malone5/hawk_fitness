@@ -74,11 +74,11 @@
                 <thead>
                     <tr>
                         <th hidden>#</th>
+                        <th>Date</th>
                         <th>Class Type</th>
                         <th>Instructor</th>
                         <th>Location</th>
                         <th>Start Time</th>
-                        <th>Date</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -88,11 +88,12 @@
                         <?php foreach ($fitclasslist as $fitclass_item): ?>
                             <tr>
                                 <td hidden><?php echo  $fitclass_item['id']; ?></td>
+                                <td class="date-class"><?php echo  $fitclass_item['date']; ?></td>
                                 <td class="class-name"><?php echo  $fitclass_item['class_type']; ?></td>
                                 <td class="instructor-class"><?php echo  $fitclass_item['instructor']; ?></td>
                                 <td><?php echo  $fitclass_item['location']; ?></td>
                                 <td><?php echo  $fitclass_item['start_time']; ?></td>
-                                <td class="date-class"><?php echo  $fitclass_item['date']; ?></td>
+                                
                                 <td class="edit-class">
 
                                         <a class="btn btn-primary btn-xs edit-classes" href="javascript:;" data-title="Edit" data-time = "<?php echo $fitclass_item['start_time'];?>" data-location="<?php echo $fitclass_item['location'];?>" data-id="<?php echo $fitclass_item['id'];?>" data-name="<?php echo $fitclass_item['class_type'];?>"

@@ -71,22 +71,46 @@
                                 <div class="hintss" style="display:none; color:red;">ID is required. Please enter numbers only.</div>
                                 </div>
                                 <hr></hr>
-                                <div class="attendee form-group">
-                                  <label class="radio-label">Select One:</label>
-                                  <span class="radio-options"><input type="radio" name="attendee" value="Student"/>Student</span>
-                                  <span class="radio-options"><input type="radio" name="attendee" required value="Alumni"/>Alumni</span>
-                                  <span class="radio-options"><input type="radio" name="attendee" value="Faculty"/>Faculty</span>
-                                  <div style="display:none;">Must select an option</div>
+
+                                <!-- Member type -->
+                                <div class="well well-sm text-center">
+
+                                  <h3>Member Type<span>(select one)</span></h3>
+                                  
+                              
+                                  <div class="btn-group attendee form-group" data-toggle="buttons">
+                                    <label class="btn btn-default">
+                                      <input type="radio" name="attendee" value="Student" autocomplete="off" >
+                                      <span>Student </span><span class="glyphicon glyphicon-ok"></span>
+                                    </label>
+
+                                    <label class="btn btn-default">
+                                      <input type="radio" name="attendee" required value="Alumni" autocomplete="off">
+                                      <span>Alumni </span><span class="glyphicon glyphicon-ok"></span>
+                                    </label>
+                                    <label class="btn btn-default">
+                                      <input type="radio" name="attendee" value="Faculty" autocomplete="off">
+                                      <span>Faculty </span><span class="glyphicon glyphicon-ok"></span>
+                                      
+                                    </label>
+                                  
+                                  </div>
+
+                                  <h3>Acedemic level</h3>
+                                  <div class="academic form-group">
+                                    
+                                    <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Freshman"/>Freshman</span>
+                                    <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Sophmore"/>Sophmore</span>
+                                    <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Junior"/>Junior</span></br>
+                                    <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Senior"/>Senior</span>
+                                    <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Graduate"/>Graduate</span>
+                                  </div>
+
                                 </div>
 
-                                <div class="academic form-group">
-                                  <label class="radio-label">Student Type:</label>
-                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Freshman"/>Freshman</span>
-                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Sophmore"/>Sophmore</span>
-                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Junior"/>Junior</span></br>
-                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Senior"/>Senior</span>
-                                  <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Graduate"/>Graduate</span>
-                                </div>
+
+                                
+
                                 <div class="button-container"><input id="submit" type="submit" class="btn btn-signin" name ="submit" value ="sign in"/></div>
                             </form>
                         </div>
@@ -97,7 +121,7 @@
         <script>
             $(document).ready(function(){
               //diables academic radio inputs until student is selected as an attendee option.
-              $('.academic-select').attr('disabled','true');
+              $('.academic-select').attr('disabled','disabled');
 
               /*
               * Enables the academic radio options if the attendee option selected is student
@@ -109,7 +133,7 @@
                     $('.academic-select').removeAttr('disabled');
                   }
                   else{
-                      $('.academic-select').attr('disabled','true');
+                      $('.academic-select').attr('disabled','disabled');
                   }
               });
 

@@ -1,23 +1,22 @@
 #section1{
-
     position:relative;
-
-/*    background-color:#;*/
     color:White;
     padding-bottom:40px;
     height:auto;
-    /*background-color: rgba(35, 35, 35, 0.77);*/
-
 }
 
  body{
-    background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/mac.jpg") ;
+    background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/barbell.jpg") ;
     background-position:center center;
     background-repeat: no-repeat;
     background-attachment:fixed;
-    background-size:cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-color:#464646;
-
+    -webkit-transform: translate3d(0, 0, 0);
+    box-sizing: content-box;
 }
 
 #section1 h4{
@@ -27,7 +26,80 @@
 }
 #section2{
     padding-top: 20px;
+    visibility: hidden;
 }
+#fit-schedule{
+  visibility: hidden;
+  transition: .4s ease-in;
+}
+.show-visibility{
+  /*shows the hidden item with a slide down animation*/
+  visibility:visible !important;
+  animation-name: slideDown;
+	-webkit-animation-name: slideDown;
+
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+
+}
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(8%);
+	}
+	65%{
+		transform: translateY(-4%);
+	}
+	80%{
+		transform: translateY(4%);
+	}
+	95%{
+		transform: translateY(-2%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+.show-visibilitys{
+  /*shows the hidden item with a slide down animation*/
+  visibility:visible !important;
+  animation-name: slideDowns;
+	-webkit-animation-name: slideDowns;
+
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease-in;
+	-webkit-animation-timing-function: ease-in;
+
+}
+@keyframes slideDowns {
+	0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(0%);
+	}
+	65%{
+		transform: translateY(0%);
+	}
+	80%{
+		transform: translateY(0%);
+	}
+	95%{
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+
 .week-date{
   /*styling for the schedule week information*/
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -67,6 +139,7 @@
 }
 .wrapper{
   /*background-color: rgba(35, 35, 35, 0.77);*/
+
 }
 
 /*
@@ -125,37 +198,37 @@
     transition: all .4 ease-in-out;
 }
 
-.btn-share {
+.s_share {
     background-color: #BEBEBE;
     border-color: #CCCCCC;
     color: #333333;
 }
 
-.btn-twitter {
+.s_twitter {
     background-color: #3399CC !important;
     width: 40px;
     color:#FFFFFF!important;
 }
 
-.btn-facebook {
+.s_facebook {
     background-color: #3D5B96 !important;
     width: 40px;
     color:#FFFFFF!important;
 }
 
-.btn-facebook {
+.s_facebook {
     background-color: #3D5B96 !important;
     width: 40px;
     color:#FFFFFF!important;
 }
 
-.btn-plus {
+.s_plus {
     background-color: #DD3F34 !important;
     width: 40px;
     color:#FFFFFF!important;
 }
 
-.btn-pinterest {
+.s_pinterest {
     background-color: #CC1E2D !important;
     width: 40px;
     color:#FFFFFF!important;
@@ -222,36 +295,64 @@
 */
 .week-schedule{
   /*Each box container*/
-  transition:.4s all;
+  transition:.45s ease-in;
   box-shadow: 0px 0px 0px 0px rgba(250, 250, 250, 0.81);
+
 }
 .day{
-  /*day container*/
+  /*day box */
   background-color: rgba(250, 250, 250, 0.81);
   color:#515B98;
   box-shadow: 0 3px 7px 0 #777;
   padding: 1px;
   text-align: center;
   margin-top:15px;
+  overflow:hidden;
 }
 .day-container{
+  /*container for items within day box*/
   margin-top:4px;
 }
-.day p{
+.day-text{
+  /*text for day */
   font-size: 20px;
   font-weight: bold;
   margin: 0 0 5px;
+  display: inline-block;
 }
+.checkin-day{
+  /*styling for checkin option/selection*/
+  float:right;
+  animation-delay: 10s;
+  animation: 2s color-change ease-in-out infinite;
+}
+
+@keyframes color-change {
+    /*Color change function for checkin option*/
+    0% { color: black; }
+    50% { color: red;}
+    100% { color: black; }
+}
+/*.checkin-day-container{
+  float:right;
+  width:30%;
+  height:100%;
+}*/
 .details{
   /*container for each class description */
-  overflow: auto; /* adds scrollbar if internal elements or text exceed height */
+  overflow: auto;   /* adds scrollbar if internal elements or text exceed height */
   background-color: rgba(28, 65, 138, 0.69);
   color:white;
-  height:236px;
+  height:0; /*236px*/
   padding-top:4px;
   text-align: center;
 
 
+}
+.show {
+  height:236px;
+  transition-duration: .8s;
+  transition: height .4s ease-in;
 }
 .class-list{
   /*each class listing*/
@@ -299,7 +400,16 @@
 */
 .footer{
    clear: both;
+   height:0;
   /*background-color: rgba(35, 35, 35, 0.77);*/
+}
+.wrap{
+  opacity:0;
+}
+.show-section{
+  opacity:1;
+  transition-duration: .8s;
+  transition: opacity .4s ease-in;
 }
 .links{
   /*styling for external links container or items not independently styled*/

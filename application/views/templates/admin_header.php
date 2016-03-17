@@ -79,7 +79,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo site_url('/'); ?>">HawkFitness Admin</a>
+                <a class="navbar-brand" href="<?php echo site_url('/'); ?>">Monmouth Fitness</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -112,13 +112,13 @@
                         <a href="<?php echo site_url('manage/'); ?>"><span class="fa fa-dashboard fa-fw"></span> Dashboard</a>
                       </li>
                       <li>
-                        <a href="<?php echo site_url('manage/checkin'); ?>"><span class="fa fa-sign-in fa-fw"></span> Check in </a>
+                        <a href="<?php echo site_url('manage/checkin'); ?>"><span class="fa fa-check-square-o fa-fw"></span> Check-ins' </a>
                       </li>
                       <li>
-                          <a href="<?php echo site_url('manage/fitnessclasses'); ?>"><span class="fa fa-list fa-fw"></span> Fitness Classes</a>
+                          <a href="<?php echo site_url('manage/fitnessclasses'); ?>"><span class="fa fa-calendar-o fa-fw"></span> Fitness Classes</a>
                       </li>
                       <li>
-                          <a href="<?php echo site_url('manage/classtypes'); ?>"><span class="fa fa-edit fa-fw"></span>Class Types</a>
+                          <a href="<?php echo site_url('manage/classtypes'); ?>"><span class="fa fa-tags fa-fw"></span>Class Types</a>
                       </li>
                       <li>
                           <a href="<?php echo site_url('manage/reports'); ?>"><span class="fa fa-table fa-fw"></span> Reports</a>

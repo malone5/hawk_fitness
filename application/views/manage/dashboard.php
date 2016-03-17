@@ -7,11 +7,11 @@
 <!-- /.row -->
 <div class="row">
   <div class="col-md-3">
-      <div class="panel panel-red">
+      <div class="panel panel-green">
           <div class="panel-heading">
               <div class="row">
                   <div class="col-xs-6 text-center">
-                      <span class="fa fa-sign-in fa-5x"></span>
+                      <span class="fa fa-check-square-o fa-5x"></span>
                   </div>
                   <div class="col-xs-6 text-center">
                       <span class="check-in" style="font-size:40px;"><?php if(isset($checkin_amount)){ echo $checkin_amount;?></span>
@@ -33,7 +33,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <span class="fa fa-list fa-5x"></span>
+                        <span class="fa fa-calendar-o fa-5x"></span>
                     </div>
                 </div>
             </div>
@@ -47,11 +47,11 @@
         </div>
     </div>
     <div class="col-md-3 ">
-        <div class="panel panel-green">
+        <div class="panel panel-yellow">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <span class="fa fa-edit fa-5x"></span>
+                        <span class="fa fa-tags fa-5x"></span>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="panel panel-yellow">
+        <div class="panel panel-red">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-12 text-center">

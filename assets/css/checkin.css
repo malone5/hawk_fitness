@@ -7,7 +7,7 @@
 
 }
 .field-wrapper{
-    padding-top:150px;
+    padding-top:0px;
     width:800px;
     margin-left:auto;
     margin-right:auto;
@@ -144,3 +144,17 @@
         margin-right:auto;
     }
 }
+
+
+/* radio */
+
+.btn span.glyphicon {               
+    opacity: 0;             
+}
+.btn.active span.glyphicon {                
+    opacity: 1;             
+}
+
+
+/*Custom Radio Buttons and Checkboxes using Font Awesome*/
+

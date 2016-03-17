@@ -1,25 +1,18 @@
 <script>
   $(document).ready(function(){
-    $('li').addClass('hvr-bob');
-    $('.details').hide();
-    $('.footer').hide();
-    $('#section2').hide();
 
-    /*
-    * Show the schedule without the classes
-    */
-    $('#section2').delay(400).slideDown({
-      easing:"swing",
-      complete:bottom()
-    });
-
-    /*
-    * Show the classes and then the footer
-    */
-    function bottom(){
-      $('.details').delay(1000).slideDown({easing:"swing"});
-      $('.footer').delay(1500).fadeIn({easing:"swing"});
-    }
+    setTimeout(function(){
+      $('.details').addClass('show');
+    },800);
+    setTimeout(function(){
+      $('.wrap').addClass('show-section');
+    },1000);
+    setTimeout(function(){
+      $('#section2').addClass('show-visibilitys');
+    },400);
+    setTimeout(function(){
+      $('#fit-schedule').addClass('show-visibility');
+    },500);
 
     /*
     *  Social media handling
@@ -27,8 +20,8 @@
     $('.sharing').ShareLink({
       title: 'HawkFitness Weekly Schedule',
       text: 'Checkout this week\'s schedule for Monmouth fitness classes',
+      image: '<?php echo base_url("assets/images/hawkimage.jpg");?>',
       url: location.href,
-      class_prefix: 'btn-',
       width:480,
       height:480
     });
@@ -61,12 +54,16 @@
               </div>
               <div class="col-md-4"></div>
             </div>
-            <!-- SOCIAL MEDIA  -->
             <div class="row mobile-social-share">
             		<div class="col-md-9 col-xs-10 col-lg-9">
                   <p class="week-date"> *Week of: <?php echo $week_date[0]." - ".$week_date[1];?></p>
                 </div>
+
+                <?php if($user =='public'){?>
+                <!-- SOCIAL MEDIA  -->
+
                 <div id="socialHolder" class="col-xs-2 col-md-3 col-lg-3">
+
                   <div class="share-text"><span>Share: </span></div>
                 		<div id="socialShare" class="btn-group share-group">
                         <a data-toggle="dropdown" class="btn btn-info ">
@@ -76,22 +73,22 @@
 
   			               <ul class="dropdown-menu">
                   				<li>
-          					         <a data-original-title="Twitter" rel="tooltip"  href="#" class="btn sharing btn-twitter" data-placement="left">
+          					         <a data-original-title="Twitter" rel="tooltip" href="#" class="btn sharing s_twitter" data-placement="left">
           								<i class="fa fa-twitter"></i>
           							     </a>
                 					</li>
                 					<li>
-                						<a data-original-title="Facebook" rel="tooltip"  href="#" class="btn sharing btn-facebook" data-placement="left">
+                						<a data-original-title="Facebook" rel="tooltip" href="#" class="btn sharing s_facebook" data-placement="left">
             								<i class="fa fa-facebook"></i>
             							</a>
                 					</li>
                 					<li>
-                						<a data-original-title="Google+" rel="tooltip"  href="#" class="btn sharing btn-plus" data-placement="left">
+                						<a data-original-title="Google+" rel="tooltip"  href="#" class="btn sharing s_plus" data-placement="left">
             								<i class="fa fa-google-plus"></i>
             							</a>
                 					</li>
                 					<li>
-                						<a data-original-title="Pinterest" rel="tooltip"  class="btn sharing btn-pinterest" data-placement="left">
+                						<a data-original-title="Pinterest" rel="tooltip"  class="btn sharing s_pinterest" data-placement="left">
             								<i class="fa fa-pinterest"></i>
             							</a>
                 					</li>
@@ -100,6 +97,7 @@
                     </div>
                 </div>
                     <!-- END OF SOCIAL MEDIA -->
+                <?php } //end tag for public user check?>
             	</div>
         </div>
         <!-- Beginning of class schedule -->
@@ -110,17 +108,20 @@
                          //foreach loop for days array
                          foreach($week as $w){
                              $class_count = 0;// counter for how many classes are in each day
-                                 //echo '<div class="week-schedule col-lg-3 col-md-3 col-sm-3  ">';
-                                 if($counter<1){
-                                     echo'<div class = "week-schedule col-lg-3 col-md-3 col-sm-3  ">';
-                                 }
-                                 else{
-                                     echo '<div class = "week-schedule col-lg-3 col-md-3 col-sm-3 ">';
-                                 }
+                             echo '<div class="week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6 ">';
                              echo '<div class="day">
-                                       <div class="day-container"> <p>'.$w.'</p></div>
-                                     </div>
-                                     <div class="details">';
+                                       <div class="day-container">
+                                            <p class="day-text">'.$w.'</p>';
+                                            //check for if admin is in session
+                                            if($user=="admin"){
+                                              if($w==$day){
+                                                echo'<a href="manage/checkin"><span title="check-in" class="checkin-day fa fa-pencil "></span></a>';
+                                              }
+                                            }
+                                      echo'</div>
+                                   </div>';
+                                   #bottom half of schedule box
+                               echo  '<div class="details">';
                              //for each loop for classes begins
                              foreach ($classes as $class_item){
 
@@ -151,7 +152,7 @@
 
                                  //check if there are no scheduled classes for a partcular day
                              if($class_count==0){
-                                 echo '<p class="info"> No scheduled classes.Check back later for updates.</p>';
+                                 echo '<div class="class-list bordered"><p class="info"> No scheduled classes.Check back later for updates.</p></div>';
                              }
                              $class_count=0;//reset class count to 0
                              $counter++;
@@ -169,17 +170,28 @@
                  //foreach loop for days array
                  foreach($week2 as $w){
                      $class_count = 0;// counter for how many classes are in each day
-                         //echo '<div class="week-schedule col-lg-4 col-md-4 col-sm-3  ">';
                          if($counter<1){
-                             echo'<div class = "week-schedule col-lg-3 col-md-3 col-sm-3 col-lg-offset-1 ">';
+                             echo'<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6 col-md-offset-1">';
+                         }
+                         elseif($w=='Sunday'){
+                           echo '<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xs-push-3 col-md-push-0 col-lg-push-0">';
                          }
                          else{
-                             echo '<div class = "week-schedule col-lg-3 col-md-3 col-sm-3 ">';
+                             echo '<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6">';
                          }
                      echo '<div class="day">
-                               <div class="day-container"> <p>'.$w.'</p></div>
-                             </div>
-                             <div class="details">';
+                             <div class="day-container">
+                                  <p class="day-text">'.$w.'</p>';
+                                  //check for if admin is in session
+                                  if($user=="admin"){
+                                    if($w==$day){
+                                      echo'<a href="manage/checkin"><span title="check-in" class="checkin-day fa fa-pencil "></span></a>';
+                                    }
+                                  }
+                              echo '</div>
+                            </div>';
+                              #bottom half of schedule box
+                          echo  '<div class="details">';
                      //for each loop for classes begins
                      foreach ($classes as $class_item){
 
@@ -211,7 +223,7 @@
 
                          //check if there are no scheduled classes for a partcular day
                      if($class_count==0){
-                         echo '<p class="info"> No scheduled classes.Check back later for updates.</p>';
+                         echo '<div class="class-list bordered"><p class="info"> No scheduled classes.Check back later for updates.</p></div>';
                      }
                      $class_count=0;//reset class count to 0
                      $counter++;
