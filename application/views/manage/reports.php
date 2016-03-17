@@ -21,17 +21,18 @@
 <table id="myTable" class="table table-striped table-bordered display nowrap" cellspacing="0" width="100%" >
   <thead>
         <tr>
+          <th>Date(Year-Month-Day)</th>
           <th>Class</th>
           <th>Name</th>
           <th>Email</th>
           <th>Student ID</th>
           <th>Academic Level</th>
           <th>Type</th>
-
         </tr>
     </thead>
     <tfoot>
         <tr>
+            <th>Date</th>
             <th>Class</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -50,8 +51,9 @@
   <?php if ( !empty( $attendees )) : ?>
       <?php foreach ( $attendees as $attendee ) : ?> 
       <tr>
+        <td><?php echo  $attendee['date']; ?></td> 
         <td><?php echo  $attendee['class_type']; ?></td> 
-        <td><?php echo  $attendee['fname'] . ' ' . $attendee['lname'];?></td> 
+        <td><?php echo  $attendee['fname'];?></td> 
         <td><?php echo  $attendee['email']; ?></td> 
         <td><?php echo  $attendee['student_id']; ?></td> 
         <td><?php echo  $attendee['acad_level']; ?></td>
@@ -80,8 +82,8 @@ $.fn.dataTableExt.afnFiltering.push(
     function( oSettings, aData, iDataIndex ) {
         var iFini = document.getElementById('min').value;
         var iFfin = document.getElementById('max').value;
-        var iStartDateCol = 1;
-        var iEndDateCol = 1;
+        var iStartDateCol = 0;
+        var iEndDateCol = 0;
  
         iFini=iFini.substring(6,10) + iFini.substring(3,5)+ iFini.substring(0,2);
         iFfin=iFfin.substring(6,10) + iFfin.substring(3,5)+ iFfin.substring(0,2);
@@ -119,7 +121,7 @@ $.fn.dataTableExt.afnFiltering.push(
 
 $(document).ready(function() {
     var table = $('#myTable').DataTable({
-      "order": [[ 1, "desc"]], // Most recent at top
+      "order": [[ 0, "desc"]], // Most recent at top
       dom: 'Blfrtip',
       buttons: [
         'copy', 'csv', 'excel', 'pdf', 'print'
@@ -129,9 +131,9 @@ $(document).ready(function() {
     // Event listener to the two range filtering inputs to redraw on input
     $('#min').change( function() { table.draw(); } );
     $('#max').change( function() { table.draw(); } );
+
 } );
 
-onClick ="$('#myTable').tableExport({type:'pdf',escape:'false'});";
 
 </script>
 
