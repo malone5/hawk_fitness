@@ -18,6 +18,7 @@
 
 
 <div class="row">
+<div class="table-responsive">
 <table id="myTable" class="table table-striped display" cellspacing="0" width="100%" >
   <thead>
         <tr>
@@ -64,6 +65,7 @@
   <?php endif; ?>
   </tbody>
 </table>
+</div>
 </div>
 
 
