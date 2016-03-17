@@ -115,3 +115,12 @@
 .batch-delete-button a{
     font-size:16px;
 }
+
+/*                  */
+/*      side nav     */
+/*                  */
+
+
+.nav > li > a {
+    color: black;
+}

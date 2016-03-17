@@ -18,7 +18,7 @@
 
 
 <div class="row">
-<table id="myTable" class="table table-striped table-bordered display nowrap" cellspacing="0" width="100%" >
+<table id="myTable" class="table table-striped display" cellspacing="0" width="100%" >
   <thead>
         <tr>
           <th>Date(Year-Month-Day)</th>

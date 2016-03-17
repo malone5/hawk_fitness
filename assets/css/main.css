@@ -6,7 +6,7 @@
 }
 
  body{
-    background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/mac.jpg") ;
+    background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/barbell.jpg") ;
     background-position:center center;
     background-repeat: no-repeat;
     background-attachment:fixed;
