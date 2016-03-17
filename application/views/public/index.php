@@ -1,6 +1,5 @@
 <script>
   $(document).ready(function(){
-    $('li').addClass('hvr-bob');
 
     setTimeout(function(){
       $('.details').addClass('show');
