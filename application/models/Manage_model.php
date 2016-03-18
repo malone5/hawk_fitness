@@ -41,6 +41,22 @@ class Manage_model extends CI_Model {
 	function getTodaysClasses($date){
 		return $this->db->get_where('fit_classes',array('date'=>$date))->result_array();
 	}
+	
+
+	function getEmails(){
+		$start = $this->input->post('min');
+		$end = $this->input->post('max');
+		$this->db->select('email');
+		$this->db->distinct();
+		$this->db->from('attendees');
+		$this->db->where('date >=', $start);
+		$this->db->where('date <=', $end);
+		$this->db->where('email IS NOT NULL');
+
+		$query = $this->db->get()->result_array();
+
+		return $query;
+	}
 }
 
 

@@ -123,6 +123,9 @@
                       <li>
                           <a href="<?php echo site_url('manage/reports'); ?>"><span class="fa fa-table fa-fw"></span> Reports</a>
                       </li>
+                      <li>
+                          <a href="<?php echo site_url('manage/email_list'); ?>"><span class="fa fa-envelope-o fa-fw"></span> Email List</a>
+                      </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
