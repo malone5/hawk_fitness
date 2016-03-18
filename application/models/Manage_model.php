@@ -43,7 +43,7 @@ class Manage_model extends CI_Model {
 	}
 	
 
-	function getEmails(){
+	function get_emails(){
 		$start = $this->input->post('min');
 		$end = $this->input->post('max');
 		$this->db->select('email');

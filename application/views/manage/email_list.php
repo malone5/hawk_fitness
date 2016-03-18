@@ -1,3 +1,14 @@
+<style type="text/css">
+.table-nonfluid {
+   width: auto !important;
+   padding: 3px;
+}
+td {
+  padding: 5px !important;
+}
+
+</style>
+
 <div class="container-fluid">
     <div class="row text-center">
         <h1>Email List</h1>
@@ -22,28 +33,58 @@
         </div>
     <!-- </form>
  -->
-
-	<div class="row">
-        <div class="col-lg-12 col-sm-12">
+  <hr>
+	<div class="row clearfix">
+        <div class="">
+          <div class="well">
 
 
                     <?php if( !empty( $emails )): ?>
                         <p>
                         <?php foreach ($emails as $email): ?>
                             <?php 
+
                             if( $email != ''){
                                 echo $email['email']; 
                             }
 
-                            ?>; 
+                            ?> 
+                            ; 
                         <?php endforeach; ?>
                         </p>
+                    <?php else: ?>
+                        <p>Submit a date range to produce a list of emails for class attendees</p>
                     <?php endif; ?>
-
-
-            
+          </div>  
         </div>
 	</div>
+  <div class="row">
+    <table class="table table-nonfluid table-responsive table-striped table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Class Type</th>
+                <th>Instructor</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                <?php foreach ($scheduale as $class): ?>
+                    <tr>
+                        <td><?php echo  $class['date']; ?></td>
+                        <td><?php echo  $class['start_time']; ?></td>
+                        <td><?php echo  $class['location']; ?></td>
+                        <td><?php echo  $class['class_type']; ?></td>
+                        <td><?php echo  $class['instructor']; ?></td>
+
+                    </tr>
+                <?php endforeach; ?>
+
+        </tbody>
+    </table>
+  </div>
 </div>
 
  <script type="text/javascript">

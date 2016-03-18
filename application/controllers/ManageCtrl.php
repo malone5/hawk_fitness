@@ -162,7 +162,7 @@ class ManageCtrl extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
 		{
-
+			$data['scheduale'] = $this->Manage_model->get_classes();
 			$this->load->view('templates/admin_header', $data);
 			$this->load->view('manage/email_list', $data);
 			$this->load->view('templates/admin_footer');
@@ -170,7 +170,8 @@ class ManageCtrl extends CI_Controller {
 		else
 		{
 
-			$data['emails'] = $this->Manage_model->getEmails();
+			$data['emails'] = $this->Manage_model->get_emails();
+			$data['scheduale'] = $this->Manage_model->get_classes();
 			$this->load->view('templates/admin_header', $data);
 			$this->load->view('manage/email_list', $data);
 			$this->load->view('templates/admin_footer');
