@@ -1,18 +1,35 @@
 <script>
   $(document).ready(function(){
 
+    /*
+    *  Row with week information and social sharing button
+    */
     setTimeout(function(){
-      $('.details').addClass('show');
-    },800);
-    setTimeout(function(){
-      $('.wrap').addClass('show-section');
-    },1000);
-    setTimeout(function(){
-      $('#section2').addClass('show-visibilitys');
+      $('.anchorDay').addClass('show-visibilitys');
     },400);
+
+    /*
+    *   Container for the schedule boxes
+    */
     setTimeout(function(){
       $('#fit-schedule').addClass('show-visibility');
-    },500);
+    },1000);
+
+    /*
+    *  class details slide down
+    */
+    setTimeout(function(){
+      $('.details').addClass('show');
+    },1800);
+
+    /*
+    *   Container for the schedule boxes
+    */
+    setTimeout(function(){
+      $('.foot').addClass('show-section');
+    },2100);
+
+
 
     /*
     *  Social media handling
@@ -30,30 +47,13 @@
 
 
     <section id="section1">
-        <div class="logo-picture">
-          <div class="picture">
-            <p>{Insert logo image here}</p>
-          </div>
-        </div>
-
-        <div class="Logo  text-center">
-          <div class="drop">
+          <div class="logo text-center">
             <h3>HawkFitness</h3>
           </div>
         </div>
-    </section> <!--Enc Section 1-->
-    <div class="wrapper">
+    </section> <!--End Section 1-->
     <section id="section2">
         <div class=" container anchorDay text-center">
-            <!-- <div class="row week-container">
-            </div> -->
-            <div class="row today-container">
-              <div class="col-md-4"></div>
-              <div class="col-md-4">
-                <a class="visible-xs-block" id="anchor-day" style="font-size:15px"><strong>Today's Schedule</strong></a>
-              </div>
-              <div class="col-md-4"></div>
-            </div>
             <div class="row mobile-social-share">
             		<div class="col-md-9 col-xs-10 col-lg-9">
                   <p class="week-date"> *Week of: <?php echo $week_date[0]." - ".$week_date[1];?></p>
@@ -98,8 +98,7 @@
                 </div>
                     <!-- END OF SOCIAL MEDIA -->
                 <?php } //end tag for public user check?>
-            	</div>
-        </div>
+          	</div>
         <!-- Beginning of class schedule -->
         <div id="fit-schedule" class="container">
                  <div id="schedule" class ="row">
@@ -171,13 +170,13 @@
                  foreach($week2 as $w){
                      $class_count = 0;// counter for how many classes are in each day
                          if($counter<1){
-                             echo'<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6 col-md-offset-1">';
+                             echo'<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6 col-lg-push-2 ">';
                          }
                          elseif($w=='Sunday'){
-                           echo '<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xs-push-3 col-md-push-0 col-lg-push-0">';
+                           echo '<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xs-push-3 col-lg-push-2 col-md-push-0 ">';
                          }
                          else{
-                             echo '<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6">';
+                             echo '<div class = "week-schedule col-lg-3 col-md-3 col-sm-6 col-xs-6 col-lg-push-2 ">';
                          }
                      echo '<div class="day">
                              <div class="day-container">

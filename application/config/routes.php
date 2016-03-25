@@ -75,6 +75,9 @@ $route['manage/reports'] = 'ReportCtrl/index';
 $route['manage'] = 'ManageCtrl/index';
 $route['manage/fitnessclasses/update/(:num)']='FitClassCtrl/editClass';
 
+// Email get
+$route['manage/email_list']='ManageCtrl/emailList';
+
 //Public routes
 $route['login'] = 'LoginCtrl/index';
 $route['forgotPassword'] = 'LoginCtrl/forgotPassword';

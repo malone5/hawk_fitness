@@ -1,5 +1,5 @@
 				<div class="footer">
-					<div class="container-fluid">
+					<div class="container-fluid foot">
 						<div class="row text-center">
 							<hr>
 							<div class="col-lg-4"></div>

@@ -18,13 +18,13 @@ class ManageCtrl extends CI_Controller {
 		}
 
 		public function index(){
-				$num = $this->getCheckinAmount();//Get the number of classes for the day
-				$data['checkin_amount']=$num;
-	      $data['classes'] = $this->Manage_model->get_classes();
-				$data['title'] = 'HawkFitness Admin Dashboard';
-				$this->load->view('templates/admin_header', $data);
-				$this->load->view('manage/dashboard', $data);
-				$this->load->view('templates/admin_footer');
+			$num = $this->getCheckinAmount();//Get the number of classes for the day
+			$data['checkin_amount']=$num;
+      		$data['classes'] = $this->Manage_model->get_classes();
+			$data['title'] = 'HawkFitness Admin Dashboard';
+			$this->load->view('templates/admin_header', $data);
+			$this->load->view('manage/dashboard', $data);
+			$this->load->view('templates/admin_footer');
 		}
 
 		function logout()
@@ -107,7 +107,7 @@ class ManageCtrl extends CI_Controller {
             $student_id = 's'.$this->input->post('studentID');
 						//array of attendee information
 						$attendeeInfo = array('class_type'=>$class_type, 'fname'=>$fname,'email'=>$email,'attendee'=>$attendee,
-															'acad_level'=>$academic,'student_id'=>$student_id
+															'acad_level'=>$academic,'student_id'=>$student_id, 'date'=>date("Y-m-d")
 														);
             $add = $this->Manage_model->insertAttendee($attendeeInfo);
 
@@ -133,20 +133,51 @@ class ManageCtrl extends CI_Controller {
 						$this->load->view('manage/check_in',$data);
         }
     }
-		// Queries the database for classes matching today's date and return an array
-		function getCheckinAmount(){
-				$amount = new DateTime();
-				$num = 0;
-				$amountQ = $this->Manage_model->getTodaysClasses($amount->format("y-m-d"));
-				if($amountQ){
-					$num=sizeof($amountQ);
-					return $num;
-				}
-				else{
-					return $num;
-				}
 
+	// Queries the database for classes matching today's date and return an array
+	function getCheckinAmount(){
+			$amount = new DateTime();
+			$num = 0;
+			$amountQ = $this->Manage_model->getTodaysClasses($amount->format("y-m-d"));
+			if($amountQ){
+				$num=sizeof($amountQ);
+				return $num;
+			}
+			else{
+				return $num;
+			}
+
+	}
+
+
+	function emailList(){
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+    	$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
+
+		$data['title'] = 'Email List';
+		
+		$this->form_validation->set_rules('min', 'min');
+		$this->form_validation->set_rules('max', 'max', 'required');
+
+		if ($this->form_validation->run() === FALSE)
+		{
+			$data['scheduale'] = $this->Manage_model->get_classes();
+			$this->load->view('templates/admin_header', $data);
+			$this->load->view('manage/email_list', $data);
+			$this->load->view('templates/admin_footer');
 		}
+		else
+		{
+
+			$data['emails'] = $this->Manage_model->get_emails();
+			$data['scheduale'] = $this->Manage_model->get_classes();
+			$this->load->view('templates/admin_header', $data);
+			$this->load->view('manage/email_list', $data);
+			$this->load->view('templates/admin_footer');
+		}
+
+	}
 }
 
 ?>

@@ -8,10 +8,11 @@ class Home_model extends CI_Model {
 
 	public function get_classes()
 	{
-        $this ->db->select('*');
-        $this ->db-> from('fit_classes');
-        $query=$this->db->get();
-        return $query->result_array();
+			$this ->db->select('*');
+     	$this ->db-> from('fit_classes');
+     	$this ->db-> where("YEARWEEK(`date`, 1) = YEARWEEK(CURDATE(), 1)");
+     	$query=$this->db->get();
+     	return $query->result_array();
 	}
 
 }
