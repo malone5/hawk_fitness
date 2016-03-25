@@ -1,22 +1,25 @@
+body{
+  background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/mac.jpg") ;
+  background-position:center center;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:#464646;
+  -webkit-transform: translate3d(0, 0, 0);
+  box-sizing: content-box;
+}
+
 #section1{
     position:relative;
     color:White;
-    padding-bottom:40px;
     height:auto;
 }
-
- body{
-    background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/barbell.jpg") ;
-    background-position:center center;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color:#464646;
-    -webkit-transform: translate3d(0, 0, 0);
-    box-sizing: content-box;
+.logo h3{
+  font-family:Verdana, Geneva, sans-serif;
+  font-size: 40px;
 }
 
 #section1 h4{
@@ -25,7 +28,6 @@
 
 }
 #section2{
-    padding-top: 20px;
     visibility: hidden;
 }
 #fit-schedule{
@@ -42,25 +44,23 @@
 	-webkit-animation-duration: 1s;
 
 	animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
+	-webkit-animation-timing-function: ease
 
 }
 @keyframes slideDown {
 	0% {
 		transform: translateY(-100%);
 	}
-	50%{
-		transform: translateY(8%);
-	}
-	65%{
-		transform: translateY(-4%);
-	}
-	80%{
-		transform: translateY(4%);
-	}
-	95%{
-		transform: translateY(-2%);
-	}
+  60%{
+
+    transform: translateY(10%);
+  }
+  75%{
+    transform: translateY(-4%);
+  }
+  80%{
+    transform: translateY(10%);
+  }
 	100% {
 		transform: translateY(0%);
 	}
@@ -109,38 +109,7 @@
   /*container for week dates of the current schedule*/
   margin-left: 12px;
 }
-.today-container{
-  /*container for today's schedule anchor*/
-  margin:10px 0;
-}
-.Logo{
 
-    position:absolute;
-    bottom:-25px;
-    width: 100%;
-    padding-top:12px;
-}
-.Logo h3{
-    font-family:Verdana, Geneva, sans-serif;
-    font-size: 40px;
-    text-align: center;
-    color:White;
-}
-.drop{
-    margin:0 auto;
-    width:250px;
-
-}
-.picture{
-  /*styling for logo image*/
-  margin-left:auto;
-  margin-right:auto;
-  text-align: center;
-}
-.wrapper{
-  /*background-color: rgba(35, 35, 35, 0.77);*/
-
-}
 
 /*
 *   Social media bar CSS
@@ -403,7 +372,7 @@
    height:0;
   /*background-color: rgba(35, 35, 35, 0.77);*/
 }
-.wrap{
+.foot{
   opacity:0;
 }
 .show-section{
