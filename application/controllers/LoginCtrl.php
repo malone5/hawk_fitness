@@ -17,7 +17,7 @@
             if($this->input->post('submit')=='Login'){
                 $username=$this->input->post('uname');
                 $password=$this->input->post('pword');
-                $check = $this->User_model->login($username,$password);
+                $check = $this->User_model->login($username,MD5($password));
                 if($check){
                     //username is valid
                     $session = array('username'=>$username);

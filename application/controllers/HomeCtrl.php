@@ -60,6 +60,43 @@ class HomeCtrl extends CI_Controller {
       }
 	}
 
+
+  public function classTypes()
+  {
+    $data['title']="Class Types";
+
+    if($this->session->userdata('logged_in')){
+
+      $data['admin_btn']="Manage";
+      $data['logout_btn'] = '<a class="btn btn-primary" href="'.site_url('manage/logout').'">Logout</a>';
+      $data['extraRef']=array(
+        '<link rel="stylesheet" href="'.base_url('assets/css/classtypes.css').'">',
+        '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
+      );
+      $data['user'] = 'admin';//user check
+      $classtypes = $this->Home_model->get_class_types();
+      $data['classtypes'] = $classtypes;
+      $this->load->view('templates/header', $data);
+      $this->load->view('public/class_types', $data);
+      $this->load->view('templates/footer');
+    } 
+    else
+    {
+      $data['admin_btn']="Administration";
+      $classtypes = $this->Home_model->get_class_types();
+      $data['classtypes'] = $classtypes;
+      $data['extraRef']=array(
+        '<link rel="stylesheet" href="'.base_url('assets/css/classtypes.css').'">',
+        '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
+      );
+      $data['user']='public';//user check
+      $this->load->view('templates/header', $data);
+      $this->load->view('public/class_types', $data);
+      $this->load->view('templates/footer');
+
+    }
+  }
+
     public function getSchedule()
     {
         $users = $this->Home_model->get_classes();
@@ -80,6 +117,8 @@ class HomeCtrl extends CI_Controller {
         $desiredMonday = date($format, strtotime("$year-W$week-1"));
         return $desiredMonday;
 		}
+
+
 }
 
 ?>
