@@ -1,5 +1,8 @@
 body{
-  background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/mac.jpg") ;
+  background-image: url("../images/fjg-mac2.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  /*background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/mac.jpg") ;
   background-position:center center;
   background-repeat: no-repeat;
   background-attachment:fixed;
@@ -9,7 +12,7 @@ body{
   background-size: cover;
   background-color:#464646;
   -webkit-transform: translate3d(0, 0, 0);
-  box-sizing: content-box;
+  box-sizing: content-box;*/
 }
 
 #section1{
@@ -291,6 +294,7 @@ body{
 }
 .checkin-day{
   /*styling for checkin option/selection*/
+  font-size: 30px;
   float:right;
   animation-delay: 10s;
   animation: 2s color-change ease-in-out infinite;
@@ -310,7 +314,7 @@ body{
 .details{
   /*container for each class description */
   overflow: auto;   /* adds scrollbar if internal elements or text exceed height */
-  background-color: rgba(28, 65, 138, 0.69);
+  background-color: rgba(28, 65, 138, 0.80);
   color:white;
   height:0; /*236px*/
   padding-top:4px;
@@ -364,13 +368,18 @@ body{
   margin-right: auto;
 }
 
+.check-in-icon {
+  font-size: 30px;
+}
+
 /*
 *styling for footer
 */
 .footer{
    clear: both;
-   height:0;
-  /*background-color: rgba(35, 35, 35, 0.77);*/
+   /*height:0;*/
+   margin-top: 20px;
+  background-color: rgba(35, 35, 35, 0.77);
 }
 .foot{
   opacity:0;

@@ -15,6 +15,14 @@ class Home_model extends CI_Model {
      	return $query->result_array();
 	}
 
+	public function get_class_types()
+	{
+		$this ->db->select('*');
+     	$this ->db-> from('class_type');
+     	$query=$this->db->get();
+     	return $query->result_array();
+	}
+
 }
 
 

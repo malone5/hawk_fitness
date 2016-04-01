@@ -81,6 +81,7 @@ $route['manage/email_list']='ManageCtrl/emailList';
 //Public routes
 $route['login'] = 'LoginCtrl/index';
 $route['forgotPassword'] = 'LoginCtrl/forgotPassword';
+$route['class_types'] = 'HomeCtrl/classTypes';
 $route['/'] = 'HomeCtrl/index';
 $route['default_controller'] = 'HomeCtrl/index'; //
 

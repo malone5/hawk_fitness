@@ -1,0 +1,47 @@
+body {
+	 /*background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/fjg-mac2.png") ;*/
+	background-image: url("../images/fjg-mac2.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.type-container{
+	color: white;
+	background-color: rgba(28, 65, 138, 0.69);
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+
+
+/*
+*styling for footer
+*/
+.footer{
+   clear: both;
+   /*height:0;*/
+   margin-top: 20px;
+  background-color: rgba(35, 35, 35, 0.77);
+}
+
+.show-section{
+  opacity:1;
+  transition-duration: .8s;
+  transition: opacity .4s ease-in;
+}
+.links{
+  /*styling for external links container or items not independently styled*/
+  color:white;
+}
+.links a{
+  /*styling for the external links provided in the footer*/
+  color:rgba(113, 190, 255, 0.85);
+}
+.copy-right{
+  margin-top:10px;
+}
+.copy{
+  font-size:14px;
+  color:white;
+  font-weight: bold;
+}
