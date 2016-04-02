@@ -102,10 +102,20 @@
 #studentID-wrapper{
   margin-bottom:25px;
 }
+.sID-label{
+  width:2%;
+}
 .sID{
     width:96%;
     display: inline-block;
     vertical-align: middle;
+}
+.attendee-selection{
+  width: 32%;
+  margin-right: 3px;
+}
+.select-label{
+  margin-left:-7px;
 }
 .fname, .lname, .age, .attendee, #academic-wrapper, .btn.btn-signin{
     margin-bottom: 10px;
@@ -136,10 +146,10 @@
 }
 @media (max-width:992px){
     .field-wrapper{
-        width:70%;
+        width:97%;
     }
     .form,.form-center{
-        width:80%;
+        width:97%;
         margin-left:auto;
         margin-right:auto;
     }
@@ -148,13 +158,13 @@
 
 /* radio */
 
-.btn span.glyphicon {               
-    opacity: 0;             
+.btn span.glyphicon {
+    opacity: 0;
 }
-.btn.active span.glyphicon {                
-    opacity: 1;             
+.btn.active span.glyphicon {
+    opacity: 1;
+    color:green;
 }
 
 
 /*Custom Radio Buttons and Checkboxes using Font Awesome*/
-

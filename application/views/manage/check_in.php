@@ -10,14 +10,9 @@
 
         <!--jQuery validation plugin-->
          <script src="<?php echo base_url('assets/js/jquery-validate/jquery-validate.min.js')?>"></script>
-         <script src="<?php echo base_url('assets/js/validator.js')?>"></script>
          <!--jBox CSS and JS-->
          <script src="<?php echo base_url('assets/js/jBox/Source/jBox.min.js');?>" ></script>
          <link rel="stylesheet" href="<?php echo base_url('assets/js/jBox/Source/jBox.css');?>" />
-
-        <!--Sweetalert modal plugin css and js-->
-        <script src="<?php echo base_url('assets/js/sweetalert/dist/sweetalert2.min.js');?>"></script>
-        <link rel="stylesheet" href="<?php echo base_url('assets/js/sweetalert/dist/sweetalert2.css');?>" >
 
         <!--Custom CSS checkin page-->
         <link rel="stylesheet" href="<?php echo base_url('assets/css/checkin.css');?>">
@@ -61,14 +56,15 @@
                                 </div>
 
                                 <div class="email form-group">
-                                  <input type="email" id="email" class="form-control" autocomplete="off" name="email"  placeholder="Email"/>
-                                  <span class="addon">(optional)</span>
+                                  <input type="email" id="email" class="form-control" autocomplete="off" name="email" data-pattern="[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})"  placeholder="Email" data-required/>
+                                  <div class="hints">Email is required</div>
                                 </div>
 
                                 <div id="studentID-wrapper" class="form-group">
-                                  <label>S</label>
-                                  <input id="studentID" class="form-control sID" autocomplete="off" type ="text" data-pattern="\b[0-9]+\b" name="studentID" placeholder="Student ID(without the s)" data-required/>
-                                <div class="hintss" style="display:none; color:red;">ID is required. Please enter numbers only.</div>
+                                  <label class="sID-label">S</label>
+                                  <input id="studentID" class="form-control sID" autocomplete="off" type ="text" data-pattern="\b[0-9]+\b" name="studentID" placeholder="Student ID(without the s)"/>
+                                  <div class="hints">numbers only!</div>
+                                  <span class="addon">(optional)</span>
                                 </div>
                                 <hr></hr>
 
@@ -76,29 +72,29 @@
                                 <div class="well well-sm text-center">
 
                                   <h3>Member Type<span>(select one)</span></h3>
-                                  
-                              
+
+
                                   <div class="btn-group attendee form-group" data-toggle="buttons">
-                                    <label class="btn btn-default">
+                                    <label class="btn attendee-selection btn-default">
                                       <input type="radio" name="attendee" value="Student" autocomplete="off" >
-                                      <span>Student </span><span class="glyphicon glyphicon-ok"></span>
+                                      <span class="select-label">Student </span><span class="glyphicon glyphicon-ok"></span>
                                     </label>
 
-                                    <label class="btn btn-default">
+                                    <label class="btn attendee-selection btn-default">
                                       <input type="radio" name="attendee" required value="Alumni" autocomplete="off">
-                                      <span>Alumni </span><span class="glyphicon glyphicon-ok"></span>
+                                      <span class="select-label">Alumni </span><span class="glyphicon glyphicon-ok"></span>
                                     </label>
-                                    <label class="btn btn-default">
+                                    <label class="btn attendee-selection btn-default">
                                       <input type="radio" name="attendee" value="Faculty" autocomplete="off">
-                                      <span>Faculty </span><span class="glyphicon glyphicon-ok"></span>
-                                      
+                                      <span class="select-label">Faculty </span><span class="glyphicon glyphicon-ok"></span>
+
                                     </label>
-                                  
+
                                   </div>
 
                                   <h3>Acedemic level</h3>
                                   <div class="academic form-group">
-                                    
+
                                     <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Freshman"/>Freshman</span>
                                     <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Sophmore"/>Sophmore</span>
                                     <span class="radio-options"><input type="radio" class="academic-select" name="academic" value="Junior"/>Junior</span></br>
@@ -107,10 +103,6 @@
                                   </div>
 
                                 </div>
-
-
-                                
-
                                 <div class="button-container"><input id="submit" type="submit" class="btn btn-signin" name ="submit" value ="sign in"/></div>
                             </form>
                         </div>
@@ -134,6 +126,7 @@
                   }
                   else{
                       $('.academic-select').attr('disabled','disabled');
+                      $('input[name=academic]').attr('checked',false);
                   }
               });
 

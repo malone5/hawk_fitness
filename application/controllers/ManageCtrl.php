@@ -96,6 +96,10 @@ class ManageCtrl extends CI_Controller {
             $email = $this->input->post('email');
             $attendee = $this->input->post('attendee');
 
+						//checks if attendee type is not student and sets academinc type to empty
+						if($this->input->post('academic')!='Student'){
+                $academic = '';
+            }
 						//checks if an academic option was selected
             if($this->input->post('academic')==null){
                 $academic = '';
@@ -156,7 +160,7 @@ class ManageCtrl extends CI_Controller {
     	$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
 
 		$data['title'] = 'Email List';
-		
+
 		$this->form_validation->set_rules('min', 'min');
 		$this->form_validation->set_rules('max', 'max', 'required');
 
