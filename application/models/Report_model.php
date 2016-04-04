@@ -12,6 +12,10 @@ class Report_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function clearAttendeeTable() {
+    	$this->db->empty_table('attendees'); 
+    }
+
 }
 
 

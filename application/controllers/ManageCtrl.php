@@ -182,6 +182,7 @@ class ManageCtrl extends CI_Controller {
 		}
 
 	}
+
 }
 
 ?>

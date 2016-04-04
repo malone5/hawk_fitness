@@ -123,35 +123,35 @@ class FitClassCtrl extends CI_Controller {
 
 	    	$data['title'] = 'Edit Fitness Class';
 	    	# get the specified class to edit
-				$data['class'] = $this->FitClass_model->get_fitclass($id);
+			$data['class'] = $this->FitClass_model->get_fitclass($id);
 
-				# Genereate the dropdown data for the "Class Type" selection
-				$this->load->model('ClassType_model');
-				$data['classtype_options'] = $this->ClassType_model->get_classtype_names();
+			# Genereate the dropdown data for the "Class Type" selection
+			$this->load->model('ClassType_model');
+			$data['classtype_options'] = $this->ClassType_model->get_classtype_names();
 
-				if (empty($data['class']))
-				{
-					show_404();
-				}
+			if (empty($data['class']))
+			{
+				show_404();
+			}
 
-				$this->form_validation->set_rules('class_type', 'ClassType', 'required');
-			    $this->form_validation->set_rules('instructor', 'Instructor', 'required');
-		      	$this->form_validation->set_rules('location', 'Location', 'required');
-		      	$this->form_validation->set_rules('start_time', 'StartTime', 'required');
-		      	$this->form_validation->set_rules('date', 'Date');
+			$this->form_validation->set_rules('class_type', 'ClassType', 'required');
+		    $this->form_validation->set_rules('instructor', 'Instructor', 'required');
+	      	$this->form_validation->set_rules('location', 'Location', 'required');
+	      	$this->form_validation->set_rules('start_time', 'StartTime', 'required');
+	      	$this->form_validation->set_rules('date', 'Date');
 
 
-				if ($this->form_validation->run() === FALSE)
-				{
-					$this->load->view('templates/admin_header', $data);
-					$this->load->view('manage/edit_class', $data);
-					$this->load->view('templates/admin_footer');
-				}
-				else
-				{
-					$this->FitClass_model->updateFitClass($id);
-					redirect('manage/fitnessclasses');
-				}
+			if ($this->form_validation->run() === FALSE)
+			{
+				$this->load->view('templates/admin_header', $data);
+				$this->load->view('manage/edit_class', $data);
+				$this->load->view('templates/admin_footer');
+			}
+			else
+			{
+				$this->FitClass_model->updateFitClass($id);
+				redirect('manage/fitnessclasses');
+			}
 
 
 		}
