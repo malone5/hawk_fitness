@@ -5,7 +5,7 @@
     <div class="dummy"></div>
         <div class="Logo  text-center">     
             <div class="drop">
-                <h3>HawkFitness</h3>      
+                <h3><?php echo $title; ?></h3>      
             </div>
         </div>
     </div>

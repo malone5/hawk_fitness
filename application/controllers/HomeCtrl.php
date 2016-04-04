@@ -19,13 +19,13 @@ class HomeCtrl extends CI_Controller {
 		$start_date_holder = $this->start_of_week($date->format('W'), $date->format('Y'));//retrieves the date for the monday of the week
 		$start_date = new DateTimeImmutable($start_date_holder);//unformatted start of the week date
 		$end_date = $start_date->modify('+6 day'); //unformatted end of the week date
+    $data['title'] = 'Monmouth University Fitness';
 
   		if($this->session->userdata('logged_in')){
 				//admin view
           $data['admin_btn']="Manage";
 					$data['logout_btn'] = '<a class="btn btn-primary" href="'.site_url('manage/logout').'">Logout</a>';
           $data['classes'] = $this->Home_model->get_classes();
-          $data['title'] = 'Hawk Fitness Classes';
 					$data['week']=array('Monday','Tuesday','Wednesday','Thursday');
 					$data['week2']=array('Friday','Saturday','Sunday');
 					$data['week_date']=array($start_date->format('m/d/y'),$end_date->format('m/d/y'));
@@ -35,7 +35,6 @@ class HomeCtrl extends CI_Controller {
                   '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">',
                   '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
           );
-
           $this->load->view('templates/header', $data);
           $this->load->view('public/index', $data);
           $this->load->view('templates/footer');
@@ -44,7 +43,6 @@ class HomeCtrl extends CI_Controller {
 				//public view
           $data['admin_btn']="Administration";
           $data['classes'] = $this->Home_model->get_classes();
-          $data['title'] = 'Hawk Fitness Classes';
 					$data['week']=array('Monday','Tuesday','Wednesday','Thursday');
 					$data['week2']=array('Friday','Saturday','Sunday');
 					$data['week_date']=array($start_date->format('m/d/y'),$end_date->format('m/d/y'));
