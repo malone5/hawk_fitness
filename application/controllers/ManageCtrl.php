@@ -182,7 +182,94 @@ class ManageCtrl extends CI_Controller {
 		}
 
 	}
+	/*
+	*	Creates the view for admin account settings page
+	*/
+	function account(){
+			$this->load->model('User_model');
+			$user_account = $this->User_model->getUser($this->session->userdata('logged_in')['id']);
+			$data['user'] = $user_account['uname'];
+
+			$this->load->view('templates/admin_header');
+			$this->load->view('manage/account',$data);
+			$this->load->view('templates/admin_footer');
+	}
+
+	function username(){
+		// $curr_uname = $this->session->userdata('logged_in')['username'];
+		$this->load->model('User_model');
+		$id = $this->session->userdata('logged_in')['id'];
+		$uname = trim($this->input->post('uname'));
+
+		if($uname == ''){
+			//if username input is empty
+			$this->session->set_flashdata('error', '*username is blank');
+			redirect('manage/account');
+		}
+		else{
+			//If username input value is not empty
+			$query = $this->User_model->updateUsername($uname,$id);
+			if($query){
+				$this->session->set_flashdata('user_update','Username Updated!');
+				redirect('manage/account');
+			}
+			else{
+				$this->session->set_flashdata('user_update','username not updated.');
+				redirect('manage/account');
+			}
+		}
+	}
+	function password(){
+		$this->load->model('User_model');
+		$id = $this->session->userdata('logged_in')['id'];
+
+		$current_password = trim($this->input->post('current_password'));
+		$new_password = trim($this->input->post('new_password'));
+		$new_password2 = trim($this->input->post('new_password2'));
+
+		if($current_password == '' or $new_password == '' or $new_password2 == ''){
+			//if any pf the passowrd inputs are empty
+			$this->session->set_flashdata('password_update','*all password fields must be completed.');
+			redirect('manage/account');
+		}
+		else if($new_password != $new_password2){
+			//if the new_password fields do not match
+			$this->session->set_flashdata('password_match','*new password fields must match!');
+			redirect('manage/account');
+		}
+		elseif((strlen(utf8_decode($new_password)) < 6)){
+			//if the new password length is less than 6
+			$this->session->set_flashdata('password_length','*new password must be atleast 6 chracters.');
+			redirect('manage/account');
+		}
+		else{
+			//if all validation is correct
+			$password_check = $this->User_model->checkPassword($id); //get current user records
+			if($password_check){
+				//if current password input matches database password
+				if(MD5($current_password) == $password_check['pword']){
+					$query = $this->User_model->updatePassword(MD5($new_password),$id);
+					if($query){
+						$this->session->set_flashdata('success_password','Password Updated!');
+						redirect('manage/account');
+					}
+					else{
+						$this->session->set_flashdata('success_password','Something went wrong during update. Try again.');
+						redirect('manage/account');
+					}
+				}
+				else{
+					$this->session->set_flashdata('error_password','Current password does not match our records!');
+					redirect('manage/account');
+				}
+			}
+			else{
+				$this->session->set_flashdata('error_password','Something went wrong during the update process, try again');
+				redirect('manage/account');
+			}
+		}
+
+	}
 
 }
-
 ?>

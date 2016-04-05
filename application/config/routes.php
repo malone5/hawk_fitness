@@ -57,7 +57,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // Manager (logout, profile, other possible additions)
 $route['manage/logout'] = 'ManageCtrl/logout';
-$route['manage/profile'] = 'ManageCtrl/profile';
+$route['manage/account'] = 'ManageCtrl/account';
+$route['manage/username'] = 'ManageCtrl/username';
+$route['manage/password'] = 'ManageCtrl/password';
 
 // Class Type CRUD
 $route['manage/classtypes'] = 'ClassTypeCtrl/index';

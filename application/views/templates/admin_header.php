@@ -46,7 +46,7 @@
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
     <link  rel="stylesheet" href="<?php echo base_url('assets/admin/css/admin.css');?>" />
-    
+
     <!-- Datatables Export -->
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css" >
     <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
@@ -90,7 +90,7 @@
                         <span class="fa fa-user fa-fw"></span>  <span class="fa fa-caret-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><span class="fa fa-user fa-fw"></span> User Profile</a>
+                        <li><a href="<?php echo site_url('manage/account'); ?>"><span class="fa fa-user fa-fw"></span> User Profile</a>
                         </li>
                         <li><a href="#"><span class="fa fa-gear fa-fw"></span> Settings</a>
                         </li>

@@ -19,8 +19,9 @@
                 $password=$this->input->post('pword');
                 $check = $this->User_model->login($username,MD5($password));
                 if($check){
+                    $user_info = $this->User_model->getUserID($username);
                     //username is valid
-                    $session = array('username'=>$username);
+                    $session['id']=$user_info['id'];
                     $this->session->set_userdata('logged_in', $session);
                     redirect('manage');
                 }
