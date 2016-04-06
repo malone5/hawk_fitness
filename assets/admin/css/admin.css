@@ -149,6 +149,8 @@
 }
 .account-input{
   margin-bottom:5px;
+  height:40px;
+  font-size:16px;
 }
 .page-messages{
   color:green;
@@ -158,7 +160,12 @@
   font-size:12px;
   margin-bottom:5px;
 }
-.btn-change,.btn-change:hover{
+.btn-change, .btn-change:hover{
   background-color:rgba(255, 59, 0, 0.74);
   color:white;
+}
+.unmask, .unmask:hover{
+  pointer-events:auto;
+  cursor:pointer !important;
+  top:10px;
 }

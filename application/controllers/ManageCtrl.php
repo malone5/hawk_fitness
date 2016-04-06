@@ -239,7 +239,7 @@ class ManageCtrl extends CI_Controller {
 		}
 		elseif((strlen(utf8_decode($new_password)) < 6)){
 			//if the new password length is less than 6
-			$this->session->set_flashdata('password_length','*new password must be atleast 6 chracters.');
+			$this->session->set_flashdata('password_length','*new password must be atleast 6 characters.');
 			redirect('manage/account');
 		}
 		else{
