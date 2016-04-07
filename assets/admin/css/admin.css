@@ -125,6 +125,29 @@
     color: black;
 }
 
+/* Fitness class schedule view css*/
+.edit-group{
+  width:100%;
+}
+.edit-label{
+  min-width:20%;
+}
+@media (max-width:767px){
+  .edit-label{
+    min-width:30%;
+  }
+}
+.edit-input{
+  display:inline-block !important;
+  margin-bottom:10px;
+  height:40px;
+  border:1px solid #BFBFBF !important;
+  box-shadow: 0 1px 1px 0px #ccc;
+  width:65%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 /* User account settings CSS*/
 .username-form{
   margin-top: 25px;
@@ -168,4 +191,10 @@
   pointer-events:auto;
   cursor:pointer !important;
   top:10px;
+}
+/*checkin (admin view) styling*/
+.checkin-box{
+  height:309px;
+  box-shadow: 2px 2px 2px 0px #ccc;
+  background-color:#FAFAFA;
 }

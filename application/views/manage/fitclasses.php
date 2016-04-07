@@ -30,17 +30,17 @@
             </div>
           <div class="modal-body">
             <form id = "edit-form" action="" method="post" accept-charset="utf-8">
-              <div> <select id="class-type" name = "class_type" class="form-control">
+              <div><label class="edit-label">Class Type:</label><select id="class-type" name = "class_type" class="form-control edit-input">
                       <!-- <option id="current-name" selected value="" > </option> -->
                       <?php foreach($classtypes as $fitClass){?>
                       <option value="<?php echo $fitClass['name']?>"> <?php echo $fitClass['name']?> </option>
                       <?php }?>
                     </select>
               </div>
-              <div> <input type="text" class="form-control" id="edit-instructor" name="instructor" value="" placeholder="instructor" required /></div>
-              <div> <input type="text" class="form-control" id="edit-location" name="location" value="" placeholder="location" required /></div>
-              <div> <input type="text" class="form-control" id="edit-time" name="start_time" value="" placeholder="start time" required /></div>
-              <div> <input type="text" class="form-control" id="edit-date" name="date" value="" placeholder="date" required /></div>
+              <div><label class="edit-label">Instructor:</label> <input type="text" class="form-control edit-input" id="edit-instructor" name="instructor" value="" placeholder="instructor" required /></div>
+              <div><label class="edit-label">Location:</label> <input type="text" class="form-control edit-input" id="edit-location" name="location" value="" placeholder="location" required /></div>
+              <div><label class="edit-label">Start Time:</label> <input type="text" class="form-control edit-input" id="edit-time" name="start_time" value="" placeholder="start time" required /></div>
+              <div><label class="edit-label">Date:</label> <input type="text" class="form-control edit-input" id="edit-date" name="date" value="" placeholder="date" required /></div>
           </div>
           <div class="modal-footer">
               <div style="width:50%;"> <input type="submit" class="btn btn-primary" value="update" /></div>
@@ -93,7 +93,7 @@
                                 <td class="instructor-class"><?php echo  $fitclass_item['instructor']; ?></td>
                                 <td><?php echo  $fitclass_item['location']; ?></td>
                                 <td><?php echo  $fitclass_item['start_time']; ?></td>
-                                
+
                                 <td class="edit-class">
 
                                         <a class="btn btn-primary btn-xs edit-classes" href="javascript:;" data-title="Edit" data-time = "<?php echo $fitclass_item['start_time'];?>" data-location="<?php echo $fitclass_item['location'];?>" data-id="<?php echo $fitclass_item['id'];?>" data-name="<?php echo $fitclass_item['class_type'];?>"
