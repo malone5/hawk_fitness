@@ -5,6 +5,10 @@
   margin-left: auto;
   margin-right:auto;
 }
+.panel-orange{
+  background-color:#34E0C2;
+  color:white;
+}
 @media(min-width:1200px){
   .panel{
     width:70%;

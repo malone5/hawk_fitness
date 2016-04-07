@@ -7,7 +7,20 @@
 <!-- /.row -->
 <div class="row">
   <div class="col-md-3">
+      <?php
+        if(isset($checkin_amount)){
+          if($checkin_amount > 0){
+      ?>
       <div class="panel panel-green">
+      <?php
+          }
+          else{
+      ?>
+      <div class="panel panel-red">
+      <?php
+          }
+        }
+      ?>
           <div class="panel-heading">
               <div class="row">
                   <div class="col-xs-6 text-center">
@@ -65,7 +78,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="panel panel-red">
+        <div class="panel panel-orange">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-12 text-center">
