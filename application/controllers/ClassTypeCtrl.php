@@ -53,6 +53,29 @@ class ClassTypeCtrl extends CI_Controller {
 				redirect('manage/classtypes', 'refresh');
 			}
 		}
+		function createClassType2() {
+			// database insert code
+
+				$this->load->helper('form');
+				$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
+
+			$data['title'] = 'Add New Class Type';
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			$this->form_validation->set_rules('description', 'Description', 'required');
+
+				if ($this->form_validation->run() === FALSE)
+				{
+					$this->load->view('templates/admin_header', $data);
+					$this->load->view('manage/create_classtype_2', $data);
+					$this->load->view('templates/admin_footer');
+				}
+				else
+				{
+
+					$this->ClassType_model->insertClasstype();
+					redirect('manage/fitnessclasses');
+				}
+			}
 
     function editClassType($id) {
         // database update code

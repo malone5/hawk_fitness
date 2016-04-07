@@ -27,10 +27,6 @@
                 </div>
               </div>
             </div>
-
-
-
-
         <?php
           if($count==2){
             $count==0;

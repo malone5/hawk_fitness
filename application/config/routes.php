@@ -64,6 +64,7 @@ $route['manage/password'] = 'ManageCtrl/password';
 // Class Type CRUD
 $route['manage/classtypes'] = 'ClassTypeCtrl/index';
 $route['manage/new_classtype'] = 'ClassTypeCtrl/createClassType';
+$route['manage/new_classtype_2'] = 'ClassTypeCtrl/createClassType2';
 $route['manage/classtypes/edit/(:num)'] = 'ClassTypeCtrl/editClassType/$1';
 $route['manage/classtypes/delete/(:num)'] = 'ClassTypeCtrl/deleteClassType/$1';
 

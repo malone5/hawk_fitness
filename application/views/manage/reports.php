@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <h3 class="text-center">Reports</h3>
 
 <div class="row">
@@ -19,7 +20,7 @@
 <div class="alert alert-info" role="alert"><?php echo $data_cleared_msg; ?></div>
 <?php endif; ?>
 <div class="text-center">
-  
+
     <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#clear-attendees" >
       <span class="glyphicon glyphicon-trash"></span><span> Clear Attendee Data</span>
     </button>
@@ -42,7 +43,7 @@
             <div class="modal-body">
                 <div class="alert alert-danger">
                   Are you sure you want to delete all attendee data? You will not be able retrieve this data after confirming.
-                  Consider exporting the 'reports' table before deleting all records. 
+                  Consider exporting the 'reports' table before deleting all records.
                 </div>
             </div>
             <div class="modal-footer ">
@@ -51,7 +52,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal"> Cancel</button>
               <form id = "edit-form" action="" method="post" accept-charset="utf-8">
           </div>
-        </div> <!-- /.modal-content --> 
+        </div> <!-- /.modal-content -->
     </div> <!-- /.modal-dialog -->
 </div>
 
@@ -91,24 +92,24 @@
 
 
   <?php if ( !empty( $attendees )) : ?>
-      <?php foreach ( $attendees as $attendee ) : ?> 
+      <?php foreach ( $attendees as $attendee ) : ?>
       <tr>
-        <td><?php echo  $attendee['date']; ?></td> 
-        <td><?php echo  $attendee['class_type']; ?></td> 
-        <td><?php echo  $attendee['fname'];?></td> 
-        <td><?php echo  $attendee['email']; ?></td> 
-        <td><?php echo  $attendee['student_id']; ?></td> 
+        <td><?php echo  $attendee['date']; ?></td>
+        <td><?php echo  $attendee['class_type']; ?></td>
+        <td><?php echo  $attendee['fname'];?></td>
+        <td><?php echo  $attendee['email']; ?></td>
+        <td><?php echo  $attendee['student_id']; ?></td>
         <td><?php echo  $attendee['acad_level']; ?></td>
         <td><?php echo  $attendee['attendee']; ?></td>
 
       </tr>
-      <?php endforeach; ?> 
+      <?php endforeach; ?>
   <?php endif; ?>
   </tbody>
 </table>
 </div>
 </div>
-
+</div>
 
 <script type="text/javascript">
 
@@ -127,13 +128,13 @@ $.fn.dataTableExt.afnFiltering.push(
         var iFfin = document.getElementById('max').value;
         var iStartDateCol = 0;
         var iEndDateCol = 0;
- 
+
         iFini=iFini.substring(6,10) + iFini.substring(3,5)+ iFini.substring(0,2);
         iFfin=iFfin.substring(6,10) + iFfin.substring(3,5)+ iFfin.substring(0,2);
- 
+
         var datofini=aData[iStartDateCol].substring(6,10) + aData[iStartDateCol].substring(3,5)+ aData[iStartDateCol].substring(0,2);
         var datoffin=aData[iEndDateCol].substring(6,10) + aData[iEndDateCol].substring(3,5)+ aData[iEndDateCol].substring(0,2);
- 
+
         if ( iFini === "" && iFfin === "" )
         {
             return true;
@@ -192,14 +193,14 @@ $(document).ready(function() {
         var title = $(this).text();
         $(this).html( '<input class="col-search" type="text" placeholder="Filter" />' );
     } );
- 
+
     // DataTable
     var table = $('#myTable').DataTable();
- 
+
     // Apply the search
     table.columns().every( function () {
         var that = this;
- 
+
         $( 'input', this.footer() ).on( 'keyup change', function () {
             if ( that.search() !== this.value ) {
                 that
@@ -210,9 +211,3 @@ $(document).ready(function() {
     } );
 } );
 </script>
-
-
-
-
-
-

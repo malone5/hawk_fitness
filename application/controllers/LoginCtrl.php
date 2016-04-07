@@ -15,21 +15,20 @@
         function index() {
             //cedentials validation
             if($this->input->post('submit')=='Login'){
-                $username=$this->input->post('uname');
-                $password=$this->input->post('pword');
+                $username = trim($this->input->post('uname'));
+                $password = trim($this->input->post('pword'));
+
                 $check = $this->User_model->login($username,MD5($password));
                 if($check){
-                    $user_info = $this->User_model->getUserID($username);
                     //username is valid
+                    $user_info = $this->User_model->getUserID($username); //user information
                     $session['id']=$user_info['id'];
                     $this->session->set_userdata('logged_in', $session);
                     redirect('manage');
                 }
                 else{
-                    $data['title'] = "Hawkfitness Admin Login";
-                    $data['invalid']='Invalid username or password.';
-                    $data['extraRef'] = array('<link rel="stylesheet" href="'.base_url('assets/css/login.css').'">');
-                    $this->load->view('public/login',$data);
+                    $this->session->set_flashdata('login_error','Invalid username or password.');
+                    redirect('login');
                 }
             }
 

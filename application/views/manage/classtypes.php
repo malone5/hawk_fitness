@@ -1,7 +1,10 @@
+<div class="classtype-title-container">
+  <h1><?php echo  $title; ?></h1>
+</div>
+<div class="newclasstype-container">
+  <a class="btn btn-success" href="<?php echo site_url('manage/new_classtype'); ?>">Create New Class Type</a>
+</div>
 <div class="container-fluid">
-    <div class="row">
-        <h1><?php echo  $title; ?></h1>
-    </div>
 	<div class="row">
         <div class="col-lg-12 col-sm-12">
             <table class="table table-striped table-hover">
@@ -15,7 +18,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                        
+
                         <?php foreach ($classtypelist as $classtype_item): ?>
                             <tr>
                                 <td><?php echo  $classtype_item['id']; ?></td>
@@ -51,7 +54,7 @@
                                                 <a href="<?php echo base_url(); ?>manage/classtypes/delete/<?php echo $classtype_item['id'] ?>" type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</a>
                                                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                                           </div>
-                                        </div> <!-- /.modal-content --> 
+                                        </div> <!-- /.modal-content -->
                                     </div> <!-- /.modal-dialog -->
                                 </div>
                             </tr>
@@ -60,9 +63,6 @@
                 </tbody>
             </table>
 
-            <a class="btn btn-success" href="<?php echo site_url('manage/new_classtype'); ?>">Create New Class Type</a>
         </div>
 	</div>
 </div>
-
-

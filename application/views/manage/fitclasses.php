@@ -58,7 +58,10 @@
 
         <!--Page action buttons-->
          <div class="action-buttons" >
+           <div>
              <a class="btn btn-success" href="<?php echo site_url('manage/new_fitnessclass'); ?>">Create New Fitness Class</a>
+             <a class="btn btn-primary" href="<?php echo site_url('manage/new_classtype_2'); ?>">Create New Class Type</a>
+           </div>
              <div class="batch-label">Batch Delete:
                  <span class="btn-group btn-toggle delete-buttons-group">
                         <button id="batch-delete-on" class="btn btn-xs btn-default">ON</button>
