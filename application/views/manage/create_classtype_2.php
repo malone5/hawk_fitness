@@ -5,23 +5,22 @@
 
       <h2><?php echo $title; ?> </h2>
 
-      <?php echo validation_errors(); ?>
-
+      <div class="errors-classtypes">  <?php echo validation_errors(); ?></div>
       <?php echo form_open('manage/new_classtype_2'); //open a form in the 'create' controller ?>
 
 
         <div class="input-group">
-            <input name="name" type="text" size="30" class="form-control" placeholder="Class Type" />
+            <input name="name" type="text" size="30" class="form-control classtype-input" placeholder="Class Type" />
         </div>
 
 
 
         <div class="input-group">
-            <textarea name="description" cols="40" rows="5" class="form-control" placeholder="Write description here..." ></textarea>
+            <textarea name="description" cols="40" rows="5" class="form-control classtype-input" placeholder="Write description here..." ></textarea>
         </div>
 
 
-        <input class="btn" type="submit" name="submit" value="Add Class Type" />
+        <input class="btn space" type="submit" name="submit" value="Add Class Type" />
       </form>
     </div>
   </div>

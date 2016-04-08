@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
     <!--Modal for batch-delete-->
         <div class="modal fade" id="delete-batch-modal"  tabindex="-1" role="dialog">
       <div class="modal-dialog">
@@ -10,8 +9,8 @@
             </div>
           <div class="modal-body">
             <div class="selects">
-
-              </div>
+                <!--selected classes will display here for approval of deletion-->
+            </div>
           </div>
           <div class="modal-footer">
               <a id="multipleDelete" class ="btn btn-danger" data-dismiss="modal" href="javascript:;" >Delete</a>
@@ -50,6 +49,19 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <?php if($this->session->flashdata('newclasstype')!=null){?>
+      <!-- success message for newly added classtype-->
+      <span id="classtype-message" class="alert alert-success">
+        <?php echo $this->session->flashdata('newclasstype');?>
+      </span>
+      <?php } ?>
+      <script type="text/javascript">
+      // timer to display new classtype sucess message for 2 seconds
+      setTimeout(function(){
+        document.getElementById('classtype-message').style.display = 'none';
+      }, 2000);
+      </script>
+
     <div class="row">
         <h1><?php echo  $title; ?></h1>
     </div>
@@ -69,9 +81,7 @@
                  </span>
                  <div class="batch-delete-button"><a type="button" class="deleteM btn btn-sm btn-danger" style="" id="batch-delete" >Delete Selected</a></div>
              </div>
-             <!-- <a type="button" class="deleteM btn btn-sm btn-danger" style="" id="batch-delete" >Delete Selected</a> -->
        </div>
-        <!-- <a  class="deleteM btn btn-sm btn-danger" id="batch-delete" href="javascript:;" >Delete Selected</a> -->
           <div class="table-responsive">
             <table align="center" class="table table-bordered table-striped table-hover">
                 <thead>

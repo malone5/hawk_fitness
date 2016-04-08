@@ -129,6 +129,19 @@
     color: black;
 }
 
+/* create a class type view */
+.classtype-input{
+  margin-bottom:10px !important;
+}
+.errors-classtypes{
+  width:250px;
+  margin-top:5px;
+  margin-bottom:10px;
+}
+.space{
+
+}
+
 /* Fitness class schedule view css*/
 .edit-group{
   width:100%;
