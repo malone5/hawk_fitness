@@ -50,6 +50,7 @@ class ClassTypeCtrl extends CI_Controller {
 			{
 
 				$this->ClassType_model->insertClasstype();
+				$this->session->set_flashdata('newclasstype','Class type added!');
 				redirect('manage/classtypes', 'refresh');
 			}
 		}

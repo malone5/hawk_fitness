@@ -1,3 +1,16 @@
+<?php if($this->session->flashdata('newclasstype')!=null){?>
+  <!-- success message for newly added classtype-->
+  <span id="classtype-message" class="alert alert-success">
+    <?php echo $this->session->flashdata('newclasstype');?>
+  </span>
+  <?php } ?>
+  <script type="text/javascript">
+  // timer to display new classtype sucess message for 2 seconds
+  setTimeout(function(){
+    document.getElementById('classtype-message').style.display = 'none';
+  }, 2000);
+  </script>
+
 <div class="classtype-title-container">
   <h1><?php echo  $title; ?></h1>
 </div>
