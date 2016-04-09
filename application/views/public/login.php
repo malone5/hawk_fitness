@@ -61,15 +61,6 @@
                            <input class="btn btn-login" type="submit" name ="submit" value="Login"/>
                        </div>
 									 </div>
-							  	<div class="row">
-										<div class="col-lg-4"></div>
-										<div class="col-lg-4">
-											<div class="form-group move">
-                    		<a href="<?php echo site_url('forgotPassword')?>">Forgot Password?</a>
-											</div>
-										</div>
-										<div class="col-lg-4"></div>
-									</div>
 								</form>
 	            </div>
 	        </section>
