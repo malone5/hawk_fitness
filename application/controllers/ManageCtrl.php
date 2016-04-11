@@ -54,7 +54,14 @@ class ManageCtrl extends CI_Controller {
 			// $this->load->view('templates/admin_header', $data);
 			// $this->load->view('manage/reports');
 			// $this->load->view('templates/admin_footer');
+		}
 
+		public function userManual() {
+			$data['title'] = 'User Manual';
+			
+			$this->load->view('templates/admin_header', $data);
+			$this->load->view('manage/user_manual');
+			$this->load->view('templates/admin_footer');
 		}
 
 		public function manage_checkin(){
