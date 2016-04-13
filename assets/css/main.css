@@ -1,8 +1,5 @@
 body{
-  background-image: url("../images/fjg-mac2.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  /*background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/mac.jpg") ;
+  background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/fjg-mac2.png") ;
   background-position:center center;
   background-repeat: no-repeat;
   background-attachment:fixed;
@@ -12,23 +9,23 @@ body{
   background-size: cover;
   background-color:#464646;
   -webkit-transform: translate3d(0, 0, 0);
-  box-sizing: content-box;*/
+  box-sizing: content-box;
 }
 
 .title {
   display: block;
   text-align: center;
- font-family: 'Droid Serif', serif;
- padding: 20px;
+  font-family: 'Droid Serif', serif;
+  padding: 20px;
    margin: 10px;
-   background: #3F5688;
+   /*background: #3F5688;*/
    color: #fff;
    font-size: 21px;
    font-weight: bold;
    line-height: 1.3em;
-   border: 2px dashed #fff;
+   /*border: 2px dashed #fff;*/
    border-radius: 10px;
-   box-shadow: 0 0 0 4px #3F5688, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   /*box-shadow: 0 0 0 4px #3F5688, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);*/
    text-shadow: -1px -1px #aa3030;
    font-weight: normal;
    width: auto;
@@ -400,7 +397,6 @@ body{
    clear: both;
    /*height:0;*/
    margin-top: 20px;
-  background-color: rgba(35, 35, 35, 0.77);
 }
 .foot{
   opacity:0;

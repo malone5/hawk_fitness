@@ -95,7 +95,7 @@ class ManageCtrl extends CI_Controller {
             $fname = $this->input->post('fname');	//full name
             $email = $this->input->post('email');
             $attendee = $this->input->post('attendee');
-
+						$student_id = "";
 						//checks if attendee type is not student and sets academinc type to empty
 						if($this->input->post('academic')!='Student'){
                 $academic = '';
@@ -107,8 +107,10 @@ class ManageCtrl extends CI_Controller {
             else{
                 $academic = $this->input->post('academic');
             }
-
+						if(trim($this->input->post('studentID')) != ""){
             $student_id = 's'.$this->input->post('studentID');
+						}
+						
 						//array of attendee information
 						$attendeeInfo = array('class_type'=>$class_type, 'fname'=>$fname,'email'=>$email,'attendee'=>$attendee,
 															'acad_level'=>$academic,'student_id'=>$student_id, 'date'=>date("Y-m-d")

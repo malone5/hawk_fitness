@@ -70,7 +70,7 @@
             </div>
             <a href="<?php echo site_url('manage/classtypes'); ?>">
                 <div class="panel-footer">
-                    <span class="pull-left">Mange Class Types</span>
+                    <span class="pull-left">Manage Class Types</span>
                     <span class="pull-right"><span class="fa fa-arrow-circle-right"></span></span>
                     <div class="clearfix"></div>
                 </div>

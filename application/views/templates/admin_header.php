@@ -92,8 +92,6 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="<?php echo site_url('manage/account'); ?>"><span class="fa fa-user fa-fw"></span> User Profile</a>
                         </li>
-                        <li><a href="#"><span class="fa fa-gear fa-fw"></span> Settings</a>
-                        </li>
                         <li class="divider"></li>
                         <li><a href="<?php echo site_url('manage/logout'); ?>"><span class="fa fa-sign-out fa-fw"></span> Logout</a>
                         </li>
