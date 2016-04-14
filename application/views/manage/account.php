@@ -5,10 +5,12 @@
   </p>
 </div>
 <div class="page-messages text-center">
-  <?php
-        if($this->session->flashdata('user_update')!=null)
-        echo $this->session->flashdata('user_update');
-  ?>
+  <?php  if($this->session->flashdata('user_update')!=null){?>
+      <p style="color:green"><?php echo $this->session->flashdata('user_update');?></p>
+  <?php }?>
+  <?php if($this->session->flashdata('user_taken')!=null){?>
+      <p style="color:red"><?php echo $this->session->flashdata('user_taken'); ?></p>
+  <?php }?>
 </div>
 <!-- Username change form  -->
 <div class="username-form container-fluid">

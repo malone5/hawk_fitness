@@ -56,6 +56,18 @@ Class User_model extends CI_Model {
         $this->db->update('users');
         return true;
     }
+		function checkUsername($uname){
+				$this->db->select('id');
+				$this->db->from('users');
+				$this->db->where('uname',$uname);
+				$query = $this->db->get();
+				if($query ->num_rows()==1){
+					return true;
+				}
+				else{
+					return false;
+				}
+		}
 }
 
 ?>

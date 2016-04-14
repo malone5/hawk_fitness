@@ -193,15 +193,23 @@ class ManageCtrl extends CI_Controller {
 				redirect('manage/account');
 			}
 			else{
-				//If username input value is not empty
-				$query = $this->User_model->updateUsername($uname,$id);
-				if($query){
-					$this->session->set_flashdata('user_update','Username Updated!');
+				$user_query = $this->User_model->checkUsername($uname);
+
+				if($user_query == true){
+					$this->session->set_flashdata('user_taken','Username Taken! Please select another one');
 					redirect('manage/account');
 				}
 				else{
-					$this->session->set_flashdata('user_update','username not updated.');
-					redirect('manage/account');
+					//If username input value is not empty
+					$query = $this->User_model->updateUsername($uname,$id);
+					if($query){
+						$this->session->set_flashdata('user_update','Username Updated!');
+						redirect('manage/account');
+					}
+					else{
+						$this->session->set_flashdata('user_update','username not updated.');
+						redirect('manage/account');
+					}
 				}
 			}
 		}
