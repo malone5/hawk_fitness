@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
     <!--Modal for batch-delete-->
         <div class="modal fade" id="delete-batch-modal"  tabindex="-1" role="dialog">
       <div class="modal-dialog">
@@ -10,8 +9,8 @@
             </div>
           <div class="modal-body">
             <div class="selects">
-
-              </div>
+                <!--selected classes will display here for approval of deletion-->
+            </div>
           </div>
           <div class="modal-footer">
               <a id="multipleDelete" class ="btn btn-danger" data-dismiss="modal" href="javascript:;" >Delete</a>
@@ -30,17 +29,17 @@
             </div>
           <div class="modal-body">
             <form id = "edit-form" action="" method="post" accept-charset="utf-8">
-              <div> <select id="class-type" name = "class_type" class="form-control">
+              <div><label class="edit-label">Class Type:</label><select id="class-type" name = "class_type" class="form-control edit-input">
                       <!-- <option id="current-name" selected value="" > </option> -->
                       <?php foreach($classtypes as $fitClass){?>
                       <option value="<?php echo $fitClass['name']?>"> <?php echo $fitClass['name']?> </option>
                       <?php }?>
                     </select>
               </div>
-              <div> <input type="text" class="form-control" id="edit-instructor" name="instructor" value="" placeholder="instructor" required /></div>
-              <div> <input type="text" class="form-control" id="edit-location" name="location" value="" placeholder="location" required /></div>
-              <div> <input type="text" class="form-control" id="edit-time" name="start_time" value="" placeholder="start time" required /></div>
-              <div> <input type="text" class="form-control" id="edit-date" name="date" value="" placeholder="date" required /></div>
+              <div><label class="edit-label">Instructor:</label> <input type="text" class="form-control edit-input" id="edit-instructor" name="instructor" value="" placeholder="instructor" required /></div>
+              <div><label class="edit-label">Location:</label> <input type="text" class="form-control edit-input" id="edit-location" name="location" value="" placeholder="location" required /></div>
+              <div><label class="edit-label">Start Time:</label> <input type="text" class="form-control edit-input" id="edit-time" name="start_time" value="" placeholder="start time" required /></div>
+              <div><label class="edit-label">Date:</label> <input type="text" class="form-control edit-input" id="edit-date" name="date" value="" placeholder="date" required /></div>
           </div>
           <div class="modal-footer">
               <div style="width:50%;"> <input type="submit" class="btn btn-primary" value="update" /></div>
@@ -50,6 +49,19 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <?php if($this->session->flashdata('newclasstype')!=null){?>
+      <!-- success message for newly added classtype-->
+      <span id="classtype-message" class="alert alert-success">
+        <?php echo $this->session->flashdata('newclasstype');?>
+      </span>
+      <?php } ?>
+      <script type="text/javascript">
+      // timer to display new classtype sucess message for 2 seconds
+      setTimeout(function(){
+        document.getElementById('classtype-message').style.display = 'none';
+      }, 2000);
+      </script>
+
     <div class="row">
         <h1><?php echo  $title; ?></h1>
     </div>
@@ -58,7 +70,10 @@
 
         <!--Page action buttons-->
          <div class="action-buttons" >
+           <div>
              <a class="btn btn-success" href="<?php echo site_url('manage/new_fitnessclass'); ?>">Create New Fitness Class</a>
+             <a class="btn btn-primary" href="<?php echo site_url('manage/new_classtype_2'); ?>">Create New Class Type</a>
+           </div>
              <div class="batch-label">Batch Delete:
                  <span class="btn-group btn-toggle delete-buttons-group">
                         <button id="batch-delete-on" class="btn btn-xs btn-default">ON</button>
@@ -66,9 +81,7 @@
                  </span>
                  <div class="batch-delete-button"><a type="button" class="deleteM btn btn-sm btn-danger" style="" id="batch-delete" >Delete Selected</a></div>
              </div>
-             <!-- <a type="button" class="deleteM btn btn-sm btn-danger" style="" id="batch-delete" >Delete Selected</a> -->
        </div>
-        <!-- <a  class="deleteM btn btn-sm btn-danger" id="batch-delete" href="javascript:;" >Delete Selected</a> -->
           <div class="table-responsive">
             <table align="center" class="table table-bordered table-striped table-hover">
                 <thead>
@@ -93,7 +106,7 @@
                                 <td class="instructor-class"><?php echo  $fitclass_item['instructor']; ?></td>
                                 <td><?php echo  $fitclass_item['location']; ?></td>
                                 <td><?php echo  $fitclass_item['start_time']; ?></td>
-                                
+
                                 <td class="edit-class">
 
                                         <a class="btn btn-primary btn-xs edit-classes" href="javascript:;" data-title="Edit" data-time = "<?php echo $fitclass_item['start_time'];?>" data-location="<?php echo $fitclass_item['location'];?>" data-id="<?php echo $fitclass_item['id'];?>" data-name="<?php echo $fitclass_item['class_type'];?>"

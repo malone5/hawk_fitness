@@ -48,7 +48,7 @@
 
     <section id="section1">
           <div class="logo text-center">
-            <h3>HawkFitness</h3>
+            <h3 class="title"><?php echo $title; ?></h3>  
           </div>
         </div>
     </section> <!--End Section 1-->

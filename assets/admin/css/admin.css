@@ -5,6 +5,10 @@
   margin-left: auto;
   margin-right:auto;
 }
+.panel-orange{
+  background-color:#34E0C2;
+  color:white;
+}
 @media(min-width:1200px){
   .panel{
     width:70%;
@@ -123,4 +127,91 @@
 
 .nav > li > a {
     color: black;
+}
+
+/* create a class type view */
+.classtype-input{
+  margin-bottom:10px !important;
+}
+.errors-classtypes{
+  width:250px;
+  margin-top:5px;
+  margin-bottom:10px;
+}
+.space{
+
+}
+
+/* Fitness class schedule view css*/
+.edit-group{
+  width:100%;
+}
+.edit-label{
+  min-width:20%;
+}
+@media (max-width:767px){
+  .edit-label{
+    min-width:30%;
+  }
+}
+.edit-input{
+  display:inline-block !important;
+  margin-bottom:10px;
+  height:40px;
+  border:1px solid #BFBFBF !important;
+  box-shadow: 0 1px 1px 0px #ccc;
+  width:65%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* User account settings CSS*/
+.username-form{
+  margin-top: 25px;
+  margin-bottom:30px;
+}
+.error-user{
+  color:red;
+  margin-bottom:10px;
+}
+.password-form{
+  margin-top:10px;
+}
+.form-container{
+  background-color:#FAFAFA;
+  box-shadow: 0 0 2px 2px rgba(117, 117, 117, 0.35);
+  padding: 10px 10px;
+}
+.form-title p{
+  text-align:center;
+  font-size:18px;
+  font-weight: bold;
+}
+.account-input{
+  margin-bottom:5px;
+  height:40px;
+  font-size:16px;
+}
+.page-messages{
+  color:green;
+  font-size:16px;
+}
+.password-notice{
+  font-size:12px;
+  margin-bottom:5px;
+}
+.btn-change, .btn-change:hover{
+  background-color:rgba(255, 59, 0, 0.74);
+  color:white;
+}
+.unmask, .unmask:hover{
+  pointer-events:auto;
+  cursor:pointer !important;
+  top:10px;
+}
+/*checkin (admin view) styling*/
+.checkin-box{
+  height:309px;
+  box-shadow: 2px 2px 2px 0px #ccc;
+  background-color:#FAFAFA;
 }

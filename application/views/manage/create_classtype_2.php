@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12 col-sm-12">
-      <a class="btn btn-default" href="<?php echo site_url('manage/classtypes'); ?>">Back</a>
+      <a class="btn btn-default" href="<?php echo site_url('manage/fitnessclasses'); ?>">Back</a>
 
       <h2><?php echo $title; ?> </h2>
 
       <div class="errors-classtypes">  <?php echo validation_errors(); ?></div>
-      <?php echo form_open('manage/new_classtype'); //open a form in the 'create' controller ?>
+      <?php echo form_open('manage/new_classtype_2'); //open a form in the 'create' controller ?>
 
 
         <div class="input-group">

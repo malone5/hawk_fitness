@@ -29,18 +29,17 @@
 
 	<body>
         <section id="section1">
-            <div class="home text-center">
-                <a class="home-link" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
+            <div class="home">
+                <a class="home-link text-center" href="<?php echo site_url();?>"><span class="glyphicon glyphicon-arrow-left"></span></a>
             </div>
 					</section>
 					<section id="section2">
             <div class="container-fluid">
 								<div class="row"><p class="web-title">HawkFitness<span class="important-text">(admin login)</span></p></div>
-                 <?//php echo form_open('login'); ?>
+                 <?php if ($this->session->flashdata('login_error')!= "null"){?>
+									 <div class="text-center" style="color:red;"><?php echo $this->session->flashdata('login_error');?></div>
+								 <?php }?>
 								 <form id="login-form" action="<?php site_url('login');?>" method="post" accept-charset="utf-8">
-								 <div class="row">
-										<div class="errors"><?php if(isset($invalid)) echo $invalid;?></div>
-									</div>
 									<div class="row">
 											<div class="col-lg-4"></div>
 											<div class="col-lg-4">
@@ -59,18 +58,9 @@
 									 </div>
 									 <div class="row">
                        <div class="form-group move">
-                           <input class="btn btn-defualt" type="submit" name ="submit" value="Login"/>
+                           <input class="btn btn-login" type="submit" name ="submit" value="Login"/>
                        </div>
 									 </div>
-							  	<div class="row">
-										<div class="col-lg-4"></div>
-										<div class="col-lg-4">
-											<div class="form-group move">
-                    		<a href="<?php echo site_url('forgotPassword')?>">Forgot Password?</a>
-											</div>
-										</div>
-										<div class="col-lg-4"></div>
-									</div>
 								</form>
 	            </div>
 	        </section>

@@ -19,13 +19,30 @@ class ReportCtrl extends CI_Controller {
 
 	public function index(){
 
-    	// And now, you can show a list of the elements you want to show from the page:
-    $data['attendees'] = $this->Report_model->getAttendees();
-		$data['title'] = 'Reports';
+		if($this->input->post('submit')=='Delete All'){
+			$this->Report_model->clearAttendeeTable();
+			
+			$data['data_cleared_msg'] =  'Attendee data has been cleared from the daatabase.';
 
-		$this->load->view('templates/admin_header', $data);
-		$this->load->view('manage/reports', $data);
-		$this->load->view('templates/admin_footer');
+
+			$data['attendees'] = $this->Report_model->getAttendees();
+			$data['title'] = 'Reports';
+
+			$this->load->view('templates/admin_header', $data);
+			$this->load->view('manage/reports', $data);
+			$this->load->view('templates/admin_footer');
+
+
+		} else {
+			// And now, you can show a list of the elements you want to show from the page:
+	    	$data['attendees'] = $this->Report_model->getAttendees();
+			$data['title'] = 'Reports';
+
+			$this->load->view('templates/admin_header', $data);
+			$this->load->view('manage/reports', $data);
+			$this->load->view('templates/admin_footer');
+		}
+    	
 	}
 
 	public function getAttendees()

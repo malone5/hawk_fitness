@@ -57,11 +57,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // Manager (logout, profile, other possible additions)
 $route['manage/logout'] = 'ManageCtrl/logout';
-$route['manage/profile'] = 'ManageCtrl/profile';
+$route['manage/account'] = 'ManageCtrl/account';
+$route['manage/username'] = 'ManageCtrl/username';
+$route['manage/password'] = 'ManageCtrl/password';
 
 // Class Type CRUD
 $route['manage/classtypes'] = 'ClassTypeCtrl/index';
 $route['manage/new_classtype'] = 'ClassTypeCtrl/createClassType';
+$route['manage/new_classtype_2'] = 'ClassTypeCtrl/createClassType2';
 $route['manage/classtypes/edit/(:num)'] = 'ClassTypeCtrl/editClassType/$1';
 $route['manage/classtypes/delete/(:num)'] = 'ClassTypeCtrl/deleteClassType/$1';
 
@@ -77,6 +80,9 @@ $route['manage/fitnessclasses/update/(:num)']='FitClassCtrl/editClass';
 
 // Email get
 $route['manage/email_list']='ManageCtrl/emailList';
+
+// User Manual
+$route['manage/user_manual'] = 'ManageCtrl/userManual';
 
 //Public routes
 $route['login'] = 'LoginCtrl/index';

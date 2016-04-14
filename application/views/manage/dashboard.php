@@ -7,7 +7,20 @@
 <!-- /.row -->
 <div class="row">
   <div class="col-md-3">
+      <?php
+        if(isset($checkin_amount)){
+          if($checkin_amount > 0){
+      ?>
       <div class="panel panel-green">
+      <?php
+          }
+          else{
+      ?>
+      <div class="panel panel-red">
+      <?php
+          }
+        }
+      ?>
           <div class="panel-heading">
               <div class="row">
                   <div class="col-xs-6 text-center">
@@ -57,7 +70,7 @@
             </div>
             <a href="<?php echo site_url('manage/classtypes'); ?>">
                 <div class="panel-footer">
-                    <span class="pull-left">Mange Class Types</span>
+                    <span class="pull-left">Manage Class Types</span>
                     <span class="pull-right"><span class="fa fa-arrow-circle-right"></span></span>
                     <div class="clearfix"></div>
                 </div>
@@ -65,7 +78,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="panel panel-red">
+        <div class="panel panel-orange">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-12 text-center">
