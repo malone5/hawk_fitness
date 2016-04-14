@@ -18,6 +18,10 @@ class ClassTypeCtrl extends CI_Controller {
 	// Display  all current Class Types in database
 	public function index()
 	{
+			if($this->session->userdata('logged_in')['role']=='limited'){
+				#if access is restricted to role redirect to dashboard
+				redirect('manage');
+			}
 
 			// load class type model
 			$this->load->model('ClassType_model');
@@ -31,14 +35,18 @@ class ClassTypeCtrl extends CI_Controller {
 	}
 
 	function createClassType() {
-    // database insert code
+			if($this->session->userdata('logged_in')['role']=='limited'){
+				#if access is restricted to role redirect to dashboard
+				redirect('manage');
+			}
+    	// database insert code
 
     	$this->load->helper('form');
     	$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
 
-		$data['title'] = 'Add New Class Type';
-		$this->form_validation->set_rules('name', 'Name', 'required');
-		$this->form_validation->set_rules('description', 'Description', 'required');
+			$data['title'] = 'Add New Class Type';
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			$this->form_validation->set_rules('description', 'Description', 'required');
 
 			if ($this->form_validation->run() === FALSE)
 			{
@@ -55,14 +63,18 @@ class ClassTypeCtrl extends CI_Controller {
 			}
 		}
 		function createClassType2() {
-			// database insert code
+				if($this->session->userdata('logged_in')['role']=='limited'){
+					#if access is restricted to role redirect to dashboard
+					redirect('manage');
+				}
+				// database insert code
 
 				$this->load->helper('form');
 				$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
 
-			$data['title'] = 'Add New Class Type';
-			$this->form_validation->set_rules('name', 'Name', 'required');
-			$this->form_validation->set_rules('description', 'Description', 'required');
+				$data['title'] = 'Add New Class Type';
+				$this->form_validation->set_rules('name', 'Name', 'required');
+				$this->form_validation->set_rules('description', 'Description', 'required');
 
 				if ($this->form_validation->run() === FALSE)
 				{

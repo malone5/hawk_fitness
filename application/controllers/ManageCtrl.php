@@ -137,6 +137,10 @@ class ManageCtrl extends CI_Controller {
 
 
 		function emailList(){
+			if($this->session->userdata('logged_in')['role']=='limited'){
+				#if access is restricted to role redirect to dashboard
+				redirect('manage');
+			}
 			$this->load->library('form_validation');
 			$this->load->helper('form');
 	    	$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');

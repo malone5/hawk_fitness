@@ -56,17 +56,6 @@
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js"></script>
-
-    <!-- Custom Dynamic CSS -->
-    <?php if (isset($css)){?>
-			<link rel="stylesheet" href="<?php echo base_url('assets/admin/css').'/'.$css; ?>" >
-	<?php }?>
-
-    <!-- user Manual CSS -->
-    <link rel="stylesheet" type="text/css" href="/Applications/XAMPP/xamppfiles/htdocs/hawk_fitness/assets/admin/css/user_manual.css">
-
-
-
 </head>
 
 <body>

@@ -18,10 +18,14 @@ class ReportCtrl extends CI_Controller {
 	}
 
 	public function index(){
+		if($this->session->userdata('logged_in')['role']=='limited'){
+			#if access is restricted to role redirect to dashboard
+			redirect('manage');
+		}
 
 		if($this->input->post('submit')=='Delete All'){
 			$this->Report_model->clearAttendeeTable();
-			
+
 			$data['data_cleared_msg'] =  'Attendee data has been cleared from the daatabase.';
 
 
@@ -35,14 +39,14 @@ class ReportCtrl extends CI_Controller {
 
 		} else {
 			// And now, you can show a list of the elements you want to show from the page:
-	    	$data['attendees'] = $this->Report_model->getAttendees();
+    	$data['attendees'] = $this->Report_model->getAttendees();
 			$data['title'] = 'Reports';
 
 			$this->load->view('templates/admin_header', $data);
 			$this->load->view('manage/reports', $data);
 			$this->load->view('templates/admin_footer');
 		}
-    	
+
 	}
 
 	public function getAttendees()
