@@ -62,6 +62,9 @@
 			<link rel="stylesheet" href="<?php echo base_url('assets/admin/css').'/'.$css; ?>" >
 	<?php }?>
 
+    <!-- user Manual CSS -->
+    <link rel="stylesheet" type="text/css" href="/Applications/XAMPP/xamppfiles/htdocs/hawk_fitness/assets/admin/css/user_manual.css">
+
 
 
 </head>
