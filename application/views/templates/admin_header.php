@@ -62,6 +62,9 @@
 			<link rel="stylesheet" href="<?php echo base_url('assets/admin/css').'/'.$css; ?>" >
 	<?php }?>
 
+    <!-- user Manual CSS -->
+    <link rel="stylesheet" type="text/css" href="/Applications/XAMPP/xamppfiles/htdocs/hawk_fitness/assets/admin/css/user_manual.css">
+
 
 
 </head>
@@ -123,6 +126,9 @@
                       </li>
                       <li>
                           <a href="<?php echo site_url('manage/email_list'); ?>"><span class="fa fa-envelope-o fa-fw"></span> Email List</a>
+                      </li>
+                      <li>
+                          <a href="<?php echo site_url('manage/user_manual'); ?>"><span class="fa fa-book fa-fw"></span> User Manual</a>
                       </li>
                     </ul>
                 </div>

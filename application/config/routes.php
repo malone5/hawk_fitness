@@ -81,6 +81,9 @@ $route['manage/fitnessclasses/update/(:num)']='FitClassCtrl/editClass';
 // Email get
 $route['manage/email_list']='ManageCtrl/emailList';
 
+// User Manual
+$route['manage/user_manual'] = 'ManageCtrl/userManual';
+
 //Public routes
 $route['login'] = 'LoginCtrl/index';
 $route['forgotPassword'] = 'LoginCtrl/forgotPassword';

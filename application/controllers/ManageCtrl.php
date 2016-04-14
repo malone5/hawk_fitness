@@ -45,16 +45,12 @@ class ManageCtrl extends CI_Controller {
 
 		}
 
-		//This will be removed to a "Report Controller" when reports are implemented
-		public function reports() {
-			redirect ('manage/reports');
-			//
-			// $data['title'] = 'Reports!';
-			//
-			// $this->load->view('templates/admin_header', $data);
-			// $this->load->view('manage/reports');
-			// $this->load->view('templates/admin_footer');
+		public function userManual() {
+			$data['title'] = 'User Manual';
 
+			$this->load->view('templates/admin_header', $data);
+			$this->load->view('manage/user_manual');
+			$this->load->view('templates/admin_footer');
 		}
 
 		public function manage_checkin(){
@@ -110,7 +106,7 @@ class ManageCtrl extends CI_Controller {
 						if(trim($this->input->post('studentID')) != ""){
             $student_id = 's'.$this->input->post('studentID');
 						}
-						
+
 						//array of attendee information
 						$attendeeInfo = array('class_type'=>$class_type, 'fname'=>$fname,'email'=>$email,'attendee'=>$attendee,
 															'acad_level'=>$academic,'student_id'=>$student_id, 'date'=>date("Y-m-d")
