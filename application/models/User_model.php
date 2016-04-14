@@ -30,7 +30,7 @@ Class User_model extends CI_Model {
 			}
 	}
 	function getUserID($uname){
-			$this->db->select('id');
+			$this->db->select('id, role');
 			$this->db->from('users');
 			$this->db->where('uname',$uname);
 			$query = $this->db->get();

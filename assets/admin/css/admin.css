@@ -9,15 +9,27 @@
   background-color:#34E0C2;
   color:white;
 }
+.page-header{
+  margin: 15px 0 20px;
+}
 @media(min-width:1200px){
   .panel{
-    width:70%;
+    width:80%;
   }
 }
 @media (max-width:992px){
   .panel{
     width:60%;
   }
+}
+.dash-text{
+  color:#337ab7;
+}
+.user-links{
+  margin-top:35px;
+}
+.user-links>a:{
+  text-decoration: underline;
 }
 /*fix for user account dropdown not showing in mobile view*/
 @media (max-width:768px){
@@ -41,12 +53,6 @@
         transition-duration:2s;
         transition-timing-function: ease-in;
     }
-    /*.panel{
-        margin-right: auto;
-        margin-left:auto;
-        width:70%;
-    }*/
-
 }
 @media (min-width:768px){
   .dropdown.open>ul.dropdown-menu.dropdown-user{
@@ -57,11 +63,6 @@
         right:0;
         left:auto;
     }
-    /*.panel{
-        margin-right: auto;
-        margin-left:auto;
-        width:60%;
-    }*/
 }
 
 
@@ -215,3 +216,12 @@
   box-shadow: 2px 2px 2px 0px #ccc;
   background-color:#FAFAFA;
 }
+
+/*User manual CSS*/
+.task {
+    font-size: 150%;
+}
+
+.workflow {
+  font-size: 14px;
+  font-weight:bold;

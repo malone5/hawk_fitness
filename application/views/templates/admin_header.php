@@ -109,6 +109,17 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav in" id="side-menu">
+                      <?php if($this->session->userdata('logged_in')['role'] == 'limited'){?>
+                        <li>
+                          <a href="<?php echo site_url('manage/'); ?>"><span class="fa fa-dashboard fa-fw"></span> Dashboard</a>
+                        </li>
+                        <li>
+                          <a href="<?php echo site_url('manage/checkin'); ?>"><span class="fa fa-check-square-o fa-fw"></span> Check-ins' </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo site_url('manage/user_manual'); ?>"><span class="fa fa-book fa-fw"></span> User Manual</a>
+                        </li>
+                      <?php }else{?>
                       <li>
                         <a href="<?php echo site_url('manage/'); ?>"><span class="fa fa-dashboard fa-fw"></span> Dashboard</a>
                       </li>
@@ -130,6 +141,7 @@
                       <li>
                           <a href="<?php echo site_url('manage/user_manual'); ?>"><span class="fa fa-book fa-fw"></span> User Manual</a>
                       </li>
+                      <?php }?>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
