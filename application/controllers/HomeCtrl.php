@@ -77,7 +77,7 @@ class HomeCtrl extends CI_Controller {
       $this->load->view('templates/header', $data);
       $this->load->view('public/class_types', $data);
       $this->load->view('templates/footer');
-    } 
+    }
     else
     {
       $data['admin_btn']="Administration";
@@ -94,13 +94,6 @@ class HomeCtrl extends CI_Controller {
 
     }
   }
-
-    public function getSchedule()
-    {
-        $users = $this->Home_model->get_classes();
-        echo json_encode($users);
-    }
-
 		/*
 		*		returns the First date/day of the week(assuming Monday is the start of the week).
 		*/

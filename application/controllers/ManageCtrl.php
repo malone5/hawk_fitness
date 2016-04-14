@@ -62,11 +62,6 @@ class ManageCtrl extends CI_Controller {
 		*/
     public function checkin(){
        if($this->input->post('submit')=='sign in'){
-
-            if($this->session->userdata('logged_in')['dbl_submit']==true){
-                //prevent double entry for attendee sign in
-                redirect(current_url());
-            }
             $sess = $this->session->userdata('logged_in');
             $sess['dbl_submit'] ='true';
             $this->session->set_userdata('logged_in', $sess);
@@ -103,13 +98,13 @@ class ManageCtrl extends CI_Controller {
             $add = $this->Manage_model->insertAttendee($attendeeInfo);
 
             if($add){
-                # insertion successful
-                $data['success'] = 'sign in successful';
-                $this->load->view('manage/check_in',$data);
+							# insertion successful
+								$this->session->set_flashdata('checkin_form_message','success');
+								redirect(current_url());
             }
             else{
-                $data['success'] = 'Error with db';
-                $this->load->view('manage/check_in',$data);
+							$this->session->set_flashdata('checkin_form_message','negative');
+							redirect(current_url());
             }
 
         }

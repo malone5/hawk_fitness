@@ -1,5 +1,6 @@
 body{
-  background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/fjg-mac2.png") ;
+  background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/mac.jpg") ;
+  background-color: #1E3E68;
   background-position:center center;
   background-repeat: no-repeat;
   background-attachment:fixed;
@@ -7,7 +8,6 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color:#464646;
   -webkit-transform: translate3d(0, 0, 0);
   box-sizing: content-box;
 }

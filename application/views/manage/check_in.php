@@ -20,8 +20,24 @@
         <title><?php echo $title;?></title>
     </head>
     <body>
+      <?php if($this->session->flashdata('checkin_form_message')=='success'){?>
+        <script>
+            new jBox('Notice', {
+                animation:{open:'tada',close:'flip'},
+                content: 'Check-in Successful',
+                attributes: {
+                    x: 'left',
+                    y: 'bottom'
+                },
+                autoClose:3000,
+                color:'green'
 
-        <div hidden id="success" style="color:red"><?php if(isset($success)) echo $success; ?></div>
+            });
+        </script>
+      <?php }?>
+      <?php if($this->session->flashdata('checkin_form_message')=='negative'){?>
+        <div class="text-center" style="color:red">Something went wrong! Try Again</div>
+      <?php }?>
         <div class="content-container">
             <div class="back-container">
                 <a class="btn btn-back" href="<?php echo site_url('manage/checkin');?>">back</a>
@@ -133,14 +149,14 @@
               /*
               *  this is executed if Sign-in is successful
               */
-                $("#success").ready(function(){
-                    if($("#success").html()!=""){
-                       show_checkin_message();
-                       setTimeout(function(){
-                            window.location.reload();
-                        },1000);
-                    }
-                });
+                // $("#success").ready(function(){
+                //     if($("#success").html()!=""){
+                //        show_checkin_message();
+                //        setTimeout(function(){
+                //             window.location.reload();
+                //         },1000);
+                //     }
+                // });
 
 
                 /*
@@ -166,19 +182,19 @@
                 * Creates a small message on the bottom left to indicate successful
                 * sign-in
                 */
-                function show_checkin_message(){
-                  new jBox('Notice', {
-                      animation:{open:'tada',close:'flip'},
-                      content: 'Check-in Successful',
-                      attributes: {
-                          x: 'left',
-                          y: 'bottom'
-                      },
-                      autoClose:3000,
-                      color:'green'
-
-                  });
-                }
+                // function show_checkin_message(){
+                //   new jBox('Notice', {
+                //       animation:{open:'tada',close:'flip'},
+                //       content: 'Check-in Successful',
+                //       attributes: {
+                //           x: 'left',
+                //           y: 'bottom'
+                //       },
+                //       autoClose:3000,
+                //       color:'green'
+                //
+                //   });
+                // }
             });
         </script>
     </body>

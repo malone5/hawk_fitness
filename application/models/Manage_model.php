@@ -11,7 +11,7 @@ class Manage_model extends CI_Model {
 		//$query = $this->db->get('fit_classes');
 		$this->db->from('fit_classes');
 		$this->db->order_by("date", "desc");
-		$query = $this->db->get(); 
+		$query = $this->db->get();
 
 		return $query->result_array();
 	}
@@ -20,8 +20,8 @@ class Manage_model extends CI_Model {
 	{
 
 	    $data = array(
-	      	'class_type' => $this->input->post('class_type'),
-	      	'instructor' => $this->input->post('instructor'),
+    	'class_type' => $this->input->post('class_type'),
+    	'instructor' => $this->input->post('instructor'),
 			'location' => $this->input->post('location'),
 			'start_time' => $this->input->post('start_time'),
 			'date' => $this->input->post('date'),
@@ -41,7 +41,7 @@ class Manage_model extends CI_Model {
 	function getTodaysClasses($date){
 		return $this->db->get_where('fit_classes',array('date'=>$date))->result_array();
 	}
-	
+
 
 	function get_emails(){
 		$start = $this->input->post('min');
