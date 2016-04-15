@@ -57,7 +57,7 @@
 <hr>
 
 
-<div class="row">
+<div class="report-container row">
 <div class="table-responsive">
 <table id="myTable" class="table table-striped display" cellspacing="0" width="100%" >
   <thead>

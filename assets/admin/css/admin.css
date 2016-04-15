@@ -57,6 +57,15 @@ hr{
 .btn-class-type:hover,.btn-class-type:focus{
   color:white;
 }
+#myTable_wrapper{
+  margin-top:10px;
+}
+button.dt-button, div.dt-button, a.dt-button{
+  background-color:#E0E0E0 !important;
+  background-image:none !important;
+  border-radius:0 !important;
+  border: 1px solid #B1B1B1 !important;
+}
 /*fix for user account dropdown not showing in mobile view*/
 @media (max-width:767px){
     .navbar-top-links .dropdown-user{
