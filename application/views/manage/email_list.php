@@ -13,12 +13,10 @@ td {
     <div class="row text-center">
         <h1>Email List</h1>
     </div>
-
-
+    <hr>
     <?php echo validation_errors(); ?>
 
-    <?php echo form_open('manage/email_list'); ?>
-   <!--  <form action="<?php echo site_url('manage/email_list');?>" id="class-form" method="post" accept-charset="utf-8"> -->
+    <form action="<?php echo site_url('manage/email_list');?>" id="email-list-form" method="post" accept-charset="utf-8">
         <div class="form-inline text-center">
           <div class="input-group">
               <div class="input-group-addon"><i class="glyphicon glyphicon-calendar" ></i> Min Date </div>
@@ -29,10 +27,9 @@ td {
               <div class="input-group-addon"><i class="glyphicon glyphicon-calendar" ></i> Max Date </div>
               <input class="form-control" type="text" id="max" name="max" placeholder="yyyy-mm-dd" maxlength="10" value="<?php echo date("Y-m-d"); ?>">
           </div>
-          <input class="btn" type="submit" name="submit" value="Get Email List" />
+          <input class="btn btn-email-list" type="submit" name="submit" value="Get Email List" />
         </div>
-    <!-- </form>
- -->
+      </form>
   <hr>
 	<div class="row clearfix">
         <div class="">
@@ -42,20 +39,20 @@ td {
                     <?php if( !empty( $emails )): ?>
                         <p>
                         <?php foreach ($emails as $email): ?>
-                            <?php 
+                            <?php
 
                             if( $email != ''){
-                                echo $email['email']; 
+                                echo $email['email'];
                             }
 
-                            ?> 
-                            ; 
+                            ?>
+                            ;
                         <?php endforeach; ?>
                         </p>
                     <?php else: ?>
                         <p>Submit a date range to produce a list of emails for class attendees</p>
                     <?php endif; ?>
-          </div>  
+          </div>
         </div>
 	</div>
   <div class="row">
@@ -70,7 +67,7 @@ td {
             </tr>
             </thead>
             <tbody>
-                
+
                 <?php foreach ($scheduale as $class): ?>
                     <tr>
                         <td><?php echo  $class['date']; ?></td>
@@ -95,8 +92,8 @@ $( "#min" ).datepicker({
 });
 $( "#max" ).datepicker({
       showButtonPanel: true,
-      dateFormat: "yy-mm-dd"
+      dateFormat: "yy-mm-dd",
+      maxDate:0
 });
 
 </script>
-

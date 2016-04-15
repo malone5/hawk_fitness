@@ -1,6 +1,6 @@
 <div class="container-fluid">
-<h3 class="text-center">Reports</h3>
-
+<h1 class="text-center">Reports</h1>
+<hr>
 <div class="row">
 <div class="form-inline text-center">
   <div class="input-group">
@@ -14,12 +14,10 @@
   </div>
 </div>
 
-<hr>
-
 <?php if(isset($data_cleared_msg)): ?>
 <div class="alert alert-info" role="alert"><?php echo $data_cleared_msg; ?></div>
 <?php endif; ?>
-<div class="text-center">
+<div class="clearBtn text-center">
 
     <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#clear-attendees" >
       <span class="glyphicon glyphicon-trash"></span><span> Clear Attendee Data</span>

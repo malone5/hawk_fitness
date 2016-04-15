@@ -31,8 +31,34 @@
 .user-links>a:{
   text-decoration: underline;
 }
+hr{
+  margin-top:0 !important;
+}
+.clearBtn{
+  margin-top:15px;
+  margin-bottom:15px;
+}
+#email-list-form{
+  margin-bottom: 15px;
+}
+.btn-email-list{
+  background-color: #47B2FF;
+  color:white;
+  border-radius:0 !important;
+}
+.btn-email-list:hover,.btn-email-list:active, .btn-email-list:focus{
+  color:white;
+}
+.btn-class-type{
+  background-color: #47B2FF;
+  color:white;
+  border-radius:0 !important;
+}
+.btn-class-type:hover,.btn-class-type:focus{
+  color:white;
+}
 /*fix for user account dropdown not showing in mobile view*/
-@media (max-width:768px){
+@media (max-width:767px){
     .navbar-top-links .dropdown-user{
         right:auto;
         left:0;
@@ -54,7 +80,7 @@
         transition-timing-function: ease-in;
     }
 }
-@media (min-width:768px){
+@media (min-width:767px){
   .dropdown.open>ul.dropdown-menu.dropdown-user{
     transition-duration:3s;
     transition-timing-function: ease-in;

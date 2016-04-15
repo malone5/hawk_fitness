@@ -4,7 +4,7 @@
       <a class="btn btn-default" href="<?php echo site_url('manage/classtypes'); ?>">Back</a>
 
       <h2><?php echo $title; ?> </h2>
-
+      <hr>
       <div class="errors-classtypes">  <?php echo validation_errors(); ?></div>
       <?php echo form_open('manage/new_classtype'); //open a form in the 'create' controller ?>
 
@@ -20,7 +20,7 @@
         </div>
 
 
-        <input class="btn space" type="submit" name="submit" value="Add Class Type" />
+        <input class="btn btn-class-type" type="submit" name="submit" value="Add Class Type" />
       </form>
     </div>
   </div>

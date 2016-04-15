@@ -5,7 +5,7 @@
     </div>
     <div class="col-md-4">
       <div class="user-links">
-        <a href="<?php echo base_url('manage/account')?>" class="pull-left">Account Setting</a>
+        <a href="<?php echo base_url('manage/account')?>" class="pull-left">Account Settings</a>
         <a href="<?php echo base_url('manage/logout')?>" class="pull-right">Logout</a>
       </div>
     </div>

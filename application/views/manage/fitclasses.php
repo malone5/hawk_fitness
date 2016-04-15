@@ -49,22 +49,23 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <?php if($this->session->flashdata('newclasstype')!=null){?>
+    <?php if($this->session->flashdata('newclasstype')!= null){?>
       <!-- success message for newly added classtype-->
       <span id="classtype-message" class="alert alert-success">
         <?php echo $this->session->flashdata('newclasstype');?>
+        <script type="text/javascript">
+        // timer to display new classtype sucess message for 2 seconds
+        setTimeout(function(){
+          document.getElementById('classtype-message').style.display = 'none';
+        }, 2000);
+        </script>
       </span>
       <?php } ?>
-      <script type="text/javascript">
-      // timer to display new classtype sucess message for 2 seconds
-      setTimeout(function(){
-        document.getElementById('classtype-message').style.display = 'none';
-      }, 2000);
-      </script>
 
     <div class="row">
         <h1><?php echo  $title; ?></h1>
     </div>
+    <hr>
   </div>
 <div><span id="msg" style="color:red;"><?php if(isset($success))echo $success;?></span></div>
 

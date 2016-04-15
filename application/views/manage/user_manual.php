@@ -2,6 +2,7 @@
     <div class="row text-center">
         <h1>User Manual</h1>
     </div>
+    <hr>
     <div class="manual-container">
       <?php if($this->session->userdata('logged_in')['role'] == 'admin'){?>
       <div class="admin-manual">

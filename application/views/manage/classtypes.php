@@ -3,17 +3,18 @@
   <span id="classtype-message" class="alert alert-success">
     <?php echo $this->session->flashdata('newclasstype');?>
   </span>
-  <?php } ?>
   <script type="text/javascript">
   // timer to display new classtype sucess message for 2 seconds
   setTimeout(function(){
     document.getElementById('classtype-message').style.display = 'none';
   }, 2000);
   </script>
+  <?php } ?>
 
 <div class="classtype-title-container">
   <h1><?php echo  $title; ?></h1>
 </div>
+<hr>
 <div class="newclasstype-container">
   <a class="btn btn-success" href="<?php echo site_url('manage/new_classtype'); ?>">Create New Class Type</a>
 </div>
