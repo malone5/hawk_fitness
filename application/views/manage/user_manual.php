@@ -1,21 +1,13 @@
-<style>
-.task {
-    font-size: 150%;
-}
-
-.workflow {
-    font-weight:bold;
-}
-</style>
-
 <div class="container-fluid">
     <div class="row text-center">
         <h1>User Manual</h1>
     </div>
-    <div>
-        <p class="task" dir="ltr">
+    <div class="manual-container">
+      <?php if($this->session->userdata('logged_in')['role'] == 'admin'){?>
+      <div class="admin-manual">
+        <h3  dir="ltr">
             Administrator Workflow
-        </p>
+        </h3>
         <p class="workflow" dir="ltr">
             The HawkFitness admin panel functionality allows the administrator to create and manage fitness classes and present them in the weekly schedule on the
             HawkFitness homepage.
@@ -577,7 +569,7 @@
                 </li>
                 <li dir="ltr">
                     <p dir="ltr">
-                        Select all the emails, then right-click the mouse, then select 'Copy'. Paste anywhere, such as a Word document, email list or 
+                        Select all the emails, then right-click the mouse, then select 'Copy'. Paste anywhere, such as a Word document, email list or
                     </p>
                 </li>
             </ol>
@@ -605,7 +597,9 @@
                 </p>
             </li>
         </ol>
-        <br/>
+      </div>
+      <?php }else{?>
+      <div class="student-manual">
         <p class="task" dir="ltr">
             Monmouth Student / Faculty / Alumni Workflows
         </p>
@@ -686,4 +680,6 @@
                 </ol>
             </ol>
         </ol>
+      </div>
+      <?php }?>
     </div>

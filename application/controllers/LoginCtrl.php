@@ -22,7 +22,8 @@
                 if($check){
                     //username is valid
                     $user_info = $this->User_model->getUserID($username); //user information
-                    $session['id']=$user_info['id'];
+                    $session['id']=$user_info['id'];  //get user's id
+                    $session['role']=$user_info['role'];  //get user's role
                     $this->session->set_userdata('logged_in', $session);
                     redirect('manage');
                 }

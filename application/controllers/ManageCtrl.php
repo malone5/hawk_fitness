@@ -20,7 +20,8 @@ class ManageCtrl extends CI_Controller {
 		public function index(){
 			$num = $this->getCheckinAmount();//Get the number of classes for the day
 			$data['checkin_amount']=$num;
-      		$data['classes'] = $this->Manage_model->get_classes();
+      $data['classes'] = $this->Manage_model->get_classes();
+			$data['role'] = $this->session->userdata('logged_in')['role'];
 			$data['title'] = 'HawkFitness Admin Dashboard';
 			$this->load->view('templates/admin_header', $data);
 			$this->load->view('manage/dashboard', $data);
@@ -61,11 +62,6 @@ class ManageCtrl extends CI_Controller {
 		*/
     public function checkin(){
        if($this->input->post('submit')=='sign in'){
-
-            if($this->session->userdata('logged_in')['dbl_submit']==true){
-                //prevent double entry for attendee sign in
-                redirect(current_url());
-            }
             $sess = $this->session->userdata('logged_in');
             $sess['dbl_submit'] ='true';
             $this->session->set_userdata('logged_in', $sess);
@@ -102,13 +98,13 @@ class ManageCtrl extends CI_Controller {
             $add = $this->Manage_model->insertAttendee($attendeeInfo);
 
             if($add){
-                # insertion successful
-                $data['success'] = 'sign in successful';
-                $this->load->view('manage/check_in',$data);
+							# insertion successful
+								$this->session->set_flashdata('checkin_form_message','success');
+								redirect(current_url());
             }
             else{
-                $data['success'] = 'Error with db';
-                $this->load->view('manage/check_in',$data);
+							$this->session->set_flashdata('checkin_form_message','negative');
+							redirect(current_url());
             }
 
         }
@@ -141,6 +137,10 @@ class ManageCtrl extends CI_Controller {
 
 
 		function emailList(){
+			if($this->session->userdata('logged_in')['role']=='limited'){
+				#if access is restricted to role redirect to dashboard
+				redirect('manage');
+			}
 			$this->load->library('form_validation');
 			$this->load->helper('form');
 	    	$this->form_validation->set_error_delimiters('<li class="error list-group-item list-group-item-danger" role="alert">', '</li>');
@@ -193,15 +193,23 @@ class ManageCtrl extends CI_Controller {
 				redirect('manage/account');
 			}
 			else{
-				//If username input value is not empty
-				$query = $this->User_model->updateUsername($uname,$id);
-				if($query){
-					$this->session->set_flashdata('user_update','Username Updated!');
+				$user_query = $this->User_model->checkUsername($uname);
+
+				if($user_query == true){
+					$this->session->set_flashdata('user_taken','Username Taken! Please select another one');
 					redirect('manage/account');
 				}
 				else{
-					$this->session->set_flashdata('user_update','username not updated.');
-					redirect('manage/account');
+					//If username input value is not empty
+					$query = $this->User_model->updateUsername($uname,$id);
+					if($query){
+						$this->session->set_flashdata('user_update','Username Updated!');
+						redirect('manage/account');
+					}
+					else{
+						$this->session->set_flashdata('user_update','username not updated.');
+						redirect('manage/account');
+					}
 				}
 			}
 		}
