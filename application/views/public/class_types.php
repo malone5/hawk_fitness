@@ -1,4 +1,9 @@
 <div class="row container">
+	<div class="pull-left">
+		<a class="btn btn-default" href="<?php echo site_url(); ?>">Home</a>		
+	</div>
+</div>
+<div class="row container">
 	<div class="col-md-10 col-md-offset-1 type-container">
 	
 		<h1 class="text-centered">Fitness Class Descriptions</h1>
@@ -13,3 +18,4 @@
 		<?php endforeach; ?>
 	</div>
 </div>
+

@@ -231,6 +231,11 @@
                  }
              ?>
         </div>  <!--end of row -->
+        <div class="row">
+          <div class="container text-center">
+            <a class="btn btn-primary ct-btn" href="<?php echo site_url('class_types'); ?>"> Class Descriptions</a>
+          </div>
+        </div>
     </div>
     </section><!--End opf Section2-->
   </div><!--end of wrapper class-->

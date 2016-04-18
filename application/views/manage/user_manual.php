@@ -104,6 +104,11 @@
                         Click on the green ‘Check In’ button.
                     </p>
                 </li>
+                <li dir="ltr">
+                    <p dir="ltr">
+                       <strong>NOTE: Check ins are only availiable for the current day</strong>
+                    </p>
+                </li>
             </ol>
             <li class="task" dir="ltr">
                 <p dir="ltr">
@@ -570,7 +575,7 @@
                 </li>
                 <li dir="ltr">
                     <p dir="ltr">
-                        Select all the emails, then right-click the mouse, then select 'Copy'. Paste anywhere, such as a Word document, email list or
+                        Select all the emails, then right-click the mouse, then select 'Copy'. Paste list into the  "To:" section of a new e-mail.
                     </p>
                 </li>
             </ol>

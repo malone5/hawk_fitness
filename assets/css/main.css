@@ -29,6 +29,8 @@ body{
    text-shadow: -1px -1px #aa3030;
    font-weight: normal;
    width: auto;
+   letter-spacing: 2px;
+   font-variant: small-caps;
 
 }
 
@@ -309,6 +311,7 @@ body{
   font-weight: bold;
   margin: 0 0 5px;
   display: inline-block;
+  font-variant: small-caps;
 }
 .checkin-day{
   /*styling for checkin option/selection*/
@@ -421,4 +424,13 @@ body{
   font-size:14px;
   color:white;
   font-weight: bold;
+}
+
+
+.ct-btn {
+  margin: 10px;
+  border-radius: 0px;
+  font-size: 20px;
+  box-shadow: 5px 5px 4px black;
+  text-align: center;
 }
