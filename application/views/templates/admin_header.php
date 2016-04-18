@@ -14,18 +14,18 @@
     <title>HawkFitness Admin Panel</title>
 
     <!-- Jquery/UI JS/CSS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="<?php echo base_url('assets/js/jquery-2.2.3.min.js');?>"></script>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" >
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
     <script src="<?php echo base_url('assets/js/jquery-timepicker/jquery.timepicker.js');?>"></script>
     <link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-timepicker/jquery.timepicker.css');?>" />
 
 
-      <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" >
 
    <!-- Bootstrap Core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 
     <!--JQuery validate js-->
     <script src="<?php echo base_url('assets/js/jquery-validate/jquery-validate.js');?>" ></script>

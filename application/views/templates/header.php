@@ -3,14 +3,14 @@
 	<head>
 		<title><?php echo $title;?></title>
 
-      <!--jQuery references-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      		<!--jQuery references-->
+      		<script src="<?php echo base_url('assets/js/jquery-2.2.3.min.js');?>"></script>
+		  	<script src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
 			<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 			<!-- Latest compiled and minified CSS -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+			<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" >
+			<script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 					<!-- Font Awesome  -->
 			<link rel='stylesheet' href='<?php echo base_url("assets/admin/bower_components/font-awesome/css/font-awesome.css");?>' />
 
