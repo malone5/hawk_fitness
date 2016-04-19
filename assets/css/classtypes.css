@@ -1,8 +1,8 @@
 body {
-	 /*background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/fjg-mac2.png") ;*/
-	background-image: url("../images/fjg-mac2.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+	 background:linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)), url("../images/fjg-mac2.png") ;
+	 background-repeat: no-repeat;
+	 background-attachment: fixed;
+	 background-size: cover;
 }
 
 .type-container{
@@ -11,7 +11,18 @@ body {
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
-
+.class-info{
+	margin-left:10px;
+	margin-right:10px;
+}
+.class-info-title{
+	margin-left: 0px;
+	margin-right:0px;
+	margin-bottom:10px;
+}
+hr{
+	border:1 !important;
+}
 
 
 /*
@@ -19,9 +30,7 @@ body {
 */
 .footer{
    clear: both;
-   /*height:0;*/
    margin-top: 20px;
-  background-color: rgba(35, 35, 35, 0.77);
 }
 
 .show-section{

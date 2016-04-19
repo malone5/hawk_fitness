@@ -32,8 +32,7 @@ class HomeCtrl extends CI_Controller {
 					$data['day'] = $day;
 					$data['user'] = 'admin';//user check
           $data['extraRef']=array(
-                  '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">',
-                  '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
+                  '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">'
           );
           $this->load->view('templates/header', $data);
           $this->load->view('public/index', $data);
@@ -48,8 +47,7 @@ class HomeCtrl extends CI_Controller {
 					$data['week_date']=array($start_date->format('m/d/y'),$end_date->format('m/d/y'));
 					$data['user']='public';//user check
           $data['extraRef']=array(
-                  '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">',
-                  '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
+                  '<link rel="stylesheet" href="'.base_url('assets/css/main.css').'">'
           );
 
           $this->load->view('templates/header', $data);
@@ -69,7 +67,6 @@ class HomeCtrl extends CI_Controller {
       $data['logout_btn'] = '<a class="btn btn-primary" href="'.site_url('manage/logout').'">Logout</a>';
       $data['extraRef']=array(
         '<link rel="stylesheet" href="'.base_url('assets/css/classtypes.css').'">',
-        '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
       );
       $data['user'] = 'admin';//user check
       $classtypes = $this->Home_model->get_class_types();
@@ -84,8 +81,7 @@ class HomeCtrl extends CI_Controller {
       $classtypes = $this->Home_model->get_class_types();
       $data['classtypes'] = $classtypes;
       $data['extraRef']=array(
-        '<link rel="stylesheet" href="'.base_url('assets/css/classtypes.css').'">',
-        '<link rel="stylesheet" href="'.base_url('assets/css/header.css').'">',
+        '<link rel="stylesheet" href="'.base_url('assets/css/classtypes.css').'">'
       );
       $data['user']='public';//user check
       $this->load->view('templates/header', $data);
