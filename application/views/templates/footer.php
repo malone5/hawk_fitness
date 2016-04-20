@@ -17,7 +17,7 @@
 									<a href="http://www.monmouthhawks.com/ViewArticle.dbml?ATCLID=722884" title="Monmouth University Intramurals"><strong>Intramurals</strong></a>
 									</br>
 									<div class="row text-center copy-right">
-										<p class="copy">Monmouth University Fitness&copy; 2016</p>
+										<p class="copy">&copy 2016 Monmouth University Fitness</p>
 									</div>
 								</div>
 							</div>
