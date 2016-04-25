@@ -70,7 +70,7 @@ td {
 
                 <?php foreach ($scheduale as $class): ?>
                     <tr>
-                        <td><?php echo  $class['date']; ?></td>
+                        <td><?php echo date_format(date_create($class['date']),"M-d-Y"); ?></td>
                         <td><?php echo  $class['start_time']; ?></td>
                         <td><?php echo  $class['location']; ?></td>
                         <td><?php echo  $class['class_type']; ?></td>

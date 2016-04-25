@@ -102,7 +102,7 @@
                         <?php foreach ($fitclasslist as $fitclass_item): ?>
                             <tr>
                                 <td hidden><?php echo  $fitclass_item['id']; ?></td>
-                                <td class="date-class"><?php echo  $fitclass_item['date']; ?></td>
+                                <td class="date-class"><?php echo date_format(date_create($fitclass_item['date']),"M-d-Y"); ?></td>
                                 <td class="class-name"><?php echo  $fitclass_item['class_type']; ?></td>
                                 <td class="instructor-class"><?php echo  $fitclass_item['instructor']; ?></td>
                                 <td><?php echo  $fitclass_item['location']; ?></td>
